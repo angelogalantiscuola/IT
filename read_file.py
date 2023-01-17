@@ -1,7 +1,7 @@
 # LEGGERE UN FILE RIGA PER RIGA
 
 import os
-file_path = './pippo.txt'
+file_path = './voti_alunni.txt'
 
 # controlla se il file esiste
 if os.path.exists(file_path):
