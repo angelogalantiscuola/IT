@@ -14,7 +14,7 @@
 
 ## why a version control software is important
 
-Il controllo di versione del software è uno <mark>strumento essenziale per la gestione del codice sorgente di un progetto</mark>, poiché consente di risolvere diversi problemi che possono sorgere durante lo sviluppo del software.
+Il controllo di versione del software è uno **strumento essenziale per la gestione del codice sorgente di un progetto**, poiché consente di risolvere diversi problemi che possono sorgere durante lo sviluppo del software.
 
 1. **Collaborazione**: Il controllo di versione consente a più sviluppatori di lavorare contemporaneamente sullo stesso progetto, senza che le loro modifiche si sovrappongano o causino conflitti.
 
@@ -34,7 +34,7 @@ In sintesi, il controllo di versione del software è una necessità per qualsias
 
 ### Git
 
-Git è un <mark>sistema di controllo versione distribuito</mark> che consente di tenere traccia delle modifiche apportate ai file e di collaborare con altri utenti. Ci sono alcune caratteristiche chiave di Git:
+Git è un **sistema di controllo versione distribuito **che consente di tenere traccia delle modifiche apportate ai file e di collaborare con altri utenti. Ci sono alcune caratteristiche chiave di Git:
 
 1. **Repository**: ogni progetto in Git ha un repository che contiene tutti i file e la cronologia delle modifiche. I repository possono essere condivisi tra utenti tramite protocolli come HTTPS o SSH.
 
@@ -54,7 +54,7 @@ In sintesi Git è un sistema flessibile e potente che consente di gestire il cod
 
 ### Github
 
-GitHub è una <mark>piattaforma web basata su Git che consente agli utenti di creare e gestire repository per i propri progetti.</mark>  GitHub offre molte caratteristiche utili per la collaborazione e la gestione del codice, tra cui:
+GitHub è una **piattaforma web basata su Git che consente agli utenti di creare e gestire repository per i propri progetti.**  GitHub offre molte caratteristiche utili per la collaborazione e la gestione del codice, tra cui:
 
 1. **Interfaccia web**: GitHub offre un'interfaccia web intuitiva per gestire i repository, creare branch, effettuare commit e gestire i pull request.
 
