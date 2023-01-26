@@ -10,8 +10,6 @@
 
 - [GitHub - Wikipedia](https://it.wikipedia.org/wiki/GitHub)
 
-
-
 ## why a version control software is important
 
 Il controllo di versione del software è uno **strumento essenziale per la gestione del codice sorgente di un progetto**, poiché consente di risolvere diversi problemi che possono sorgere durante lo sviluppo del software.
@@ -30,11 +28,9 @@ Il controllo di versione del software è uno **strumento essenziale per la gesti
 
 In sintesi, il controllo di versione del software è una necessità per qualsiasi progetto di sviluppo software di medie o grandi dimensioni, poiché consente di gestire efficacemente il codice sorgente, facilitando la collaborazione, la tracciabilità e la gestione delle modifiche al codice.
 
-
-
 ### Git
 
-Git è un **sistema di controllo versione distribuito **che consente di tenere traccia delle modifiche apportate ai file e di collaborare con altri utenti. Ci sono alcune caratteristiche chiave di Git:
+Git è un **sistema di controllo versione distribuito** che consente di tenere traccia delle modifiche apportate ai file e di collaborare con altri utenti. Ci sono alcune caratteristiche chiave di Git:
 
 1. **Repository**: ogni progetto in Git ha un repository che contiene tutti i file e la cronologia delle modifiche. I repository possono essere condivisi tra utenti tramite protocolli come HTTPS o SSH.
 
@@ -49,8 +45,6 @@ Git è un **sistema di controllo versione distribuito **che consente di tenere t
 6. **Revert**: è possibile tornare indietro a una versione precedente del progetto in qualsiasi momento, utilizzando il comando "revert" o "reset".
 
 In sintesi Git è un sistema flessibile e potente che consente di gestire il codice sorgente in modo efficiente, consentendo di collaborare con altri sviluppatori, mantenere la versione e rollback in caso di necessità.
-
-
 
 ### Github
 
@@ -69,8 +63,6 @@ GitHub è una **piattaforma web basata su Git che consente agli utenti di creare
 6. **Comunità**: GitHub è una grande piattaforma che consente agli utenti di condividere, scoprire e contribuire a progetti open source.
 
 In sintesi, GitHub è una piattaforma web estremamente utile per la gestione dei progetti di sviluppo software, che offre un'interfaccia intuitiva, funzionalità di collaborazione avanzate, hosting gratuito e una grande comunità di sviluppatori.
-
-
 
 ## use version control software
 
