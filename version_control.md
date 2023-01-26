@@ -2,13 +2,13 @@
 
 ## what is version control?
 
-- [Controllo versione ]([Controllo versione - Wikipedia](https://it.wikipedia.org/wiki/Controllo_versione)) (solo sezione iniziale)
+- [Controllo versione - Wikipedia](https://it.wikipedia.org/wiki/Controllo_versione) (solo sezione iniziale)
 
-- [Controllo versione distribuito]([Controllo versione distribuito - Wikipedia](https://it.wikipedia.org/wiki/Controllo_versione_distribuito))
+- [Controllo versione distribuito - Wikipedia](https://it.wikipedia.org/wiki/Controllo_versione_distribuito)
 
-- [git]([Git (software) - Wikipedia](https://it.wikipedia.org/wiki/Git_(software))) (solo sezione iniziale)
+- [Git (software) - Wikipedia](https://it.wikipedia.org/wiki/Git_(software)) (solo sezione iniziale)
 
-- [github]([GitHub - Wikipedia](https://it.wikipedia.org/wiki/GitHub))
+- [GitHub - Wikipedia](https://it.wikipedia.org/wiki/GitHub)
 
 
 
