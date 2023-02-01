@@ -18,8 +18,8 @@ La differenza fondamentale tra procedure e funzioni è che le seconde possono **
 - [passare una lista come argomento](https://www.w3schools.com/python/gloss_python_function_passing_list.asp)
 
 ## valore di ritorno di una funzione
-[valore di ritorno della funzione](https://www.w3schools.com/python/gloss_python_function_return_value.asp)
+[return](https://www.w3schools.com/python/gloss_python_function_return_value.asp)
 
-## pass per una funzione vuota
+## funzione vuota
 [pass](https://www.w3schools.com/python/gloss_python_function_pass.asp)
 
