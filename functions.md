@@ -6,7 +6,7 @@
 Una funzione è un **blocco di codice che viene eseguito solo quando viene chiamato**.
 
 ## differenza tra funzione e procedura
-La differenza fondamentale tra procedure e funzioni è che le seconde possono **restituire dei valori**, ad esempio il risultato di un'elaborazione oppure un valore di ritorno che determina se la routine ha avuto successo, mentre le procedure no.
+La differenza fondamentale tra procedure e funzioni è che le seconde possono **restituire dei valori**, ad esempio il risultato di un'elaborazione oppure un valore di ritorno che determina il blocco di codice ha avuto successo, mentre le procedure no.
 
 ## argomenti di una funzione
 - I termini parametro e argomento possono essere usati per la stessa cosa: informazioni che vengono passate a una funzione.
