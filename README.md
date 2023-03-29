@@ -28,7 +28,6 @@
 
 ### Function
 
-- [function](function.md)
 - [function](function.ipynb)
 - [passing_by_value_or_reference](passing_by_value_or_reference.ipynb)
 - [type_hinting](type_hinting.ipynb)
