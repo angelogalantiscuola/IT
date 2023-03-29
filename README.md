@@ -41,4 +41,4 @@
 
 ## JS
 
-- [use_JS_code_from_another_file.md](use_JS_code_from_another_file.md)
+- [use_JS_code_from_another_file](use_JS_code_from_another_file.md)
