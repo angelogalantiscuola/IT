@@ -10,8 +10,6 @@
 
 - [version_control](version_control.md)
 
----
-
 ## Python
 
 ### Code Formatting
@@ -40,8 +38,6 @@
 ### Files
 
 - [read_file_line_by_line](read_file_line_by_line.ipynb)
-
----
 
 ### JS
 
