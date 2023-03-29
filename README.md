@@ -1,6 +1,20 @@
 # IT
 
-## Hypervisor
+[absolute_and_relative_path](absolute_and_relative_path.md)
 
-![bare-metal vs hosted architecture](https://www.nakivo.com/blog/wp-content/uploads/2018/10/Type-1-and-type-2-hypervisor-1024x584.webp)
-![KVM architecture](https://www.intel.com/content/dam/develop/external/us/en/images/kvm-arch.jpg)
+[functions](functions.md)
+[functions](functions.ipynb)
+
+[differenze_tra_liste_ed_array](differenze_tra_liste_ed_array.md)
+
+[recursion_and_iteration](recursion_and_iteration.md)
+
+[version_control](version_control.md)
+
+## files
+
+[read_file_line_by_line](read_file_line_by_line.ipynb)
+
+[passaggio_per_valore_e_per_riferimento.ipynb](passaggio_per_valore_e_per_riferimento.ipynb)
+[formattazione_codice.ipynb](formattazione_codice.ipynb)
+[cicli_nidificati.ipynb](cicli_nidificati.ipynb)
