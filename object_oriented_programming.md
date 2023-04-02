@@ -1,7 +1,4 @@
 
-```toc
-```
-
 La programmazione orientata agli oggetti (OOP) è un paradigma di programmazione che permette di definire oggetti software in grado di interagire gli uni con gli altri attraverso lo scambio di messaggi. 
 Gli oggetti sono istanze di classi, che sono astrazioni che rappresentano le proprietà comuni e il comportamento di un insieme di oggetti concreti. 
 I concetti principali della programmazione orientata agli oggetti sono:
@@ -11,9 +8,8 @@ I concetti principali della programmazione orientata agli oggetti sono:
 -   **Polimorfismo**: significa che un oggetto può assumere forme diverse a seconda del contesto in cui viene usato. Questo permette di usare lo stesso nome o lo stesso messaggio per invocare funzionalità diverse su oggetti diversi, purché questi siano compatibili tra loro (cioè siano sottotipi della stessa superclasse o implementino la stessa interfaccia). Il polimorfismo aumenta la flessibilità e l’espressività del codice.
 
 ## Incapsulamento
-L'incapsulamento è il processo di ==nascondere i dettagli di implementazione di un oggetto e fornire solo un'interfaccia ben definita per interagire con esso.== 
+L'incapsulamento è il processo di **nascondere i dettagli di implementazione di un oggetto e fornire solo un'interfaccia ben definita per interagire con esso.** 
 
-> [!NOTE] Esempio
 > Un esempio di incapsulamento potrebbe essere quello di una classe che rappresenta una lampadina. La classe potrebbe avere degli attributi come la potenza, il colore, lo stato (acceso o spento) e dei metodi come accendi, spegni, cambia colore. L'utente della classe non ha bisogno di sapere come funziona internamente la lampadina, ma solo come usare i metodi esposti dall'interfaccia. Questo garantisce il controllo sull'accesso ai dati e alle funzionalità della lampadina e favorisce la modularità e il riuso del codice.
 
 
@@ -76,15 +72,14 @@ console.log(lampadina.getStato()); // false
 ```
 
 ## Astrazione
-L’astrazione è un processo concettuale che permette di ==definire regole e concetti generali a partire da esempi specifici, sensibili o concreti.== L’astrazione ci consente di focalizzarci sulle caratteristiche essenziali di un oggetto o di un fenomeno e di ignorare i dettagli irrilevanti o secondari. L’astrazione facilita la comprensione e la manutenzione del codice.
+L’astrazione è un processo concettuale che permette di **definire regole e concetti generali a partire da esempi specifici, sensibili o concreti.** L’astrazione ci consente di focalizzarci sulle caratteristiche essenziali di un oggetto o di un fenomeno e di ignorare i dettagli irrilevanti o secondari. L’astrazione facilita la comprensione e la manutenzione del codice.
 
-> [!NOTE] Un esempio di astrazione è l’uso di classi per rappresentare gli oggetti software.
 > Una classe è un’astrazione che descrive le proprietà e il comportamento comuni di un insieme di oggetti concreti. Per esempio, una classe Persona potrebbe avere degli attributi come nome, età, sesso e dei metodi come cammina, parla, mangia. Questa classe astrae le caratteristiche comuni di tutte le persone reali e ci permette di usare la stessa interfaccia per interagire con diversi oggetti Persona.
 
 
 
 ## Ereditarieta
-L’ereditarietà è un ==meccanismo che permette di creare nuove classi a partire da classi esistenti, riutilizzando e modificando le loro proprietà e funzionalità==. Una classe che eredita da un’altra classe viene chiamata sottoclasse o classe figlia, mentre la classe da cui eredita viene chiamata superclasse o classe padre. L’ereditarietà favorisce il riuso e il raffinamento del codice.
+L’ereditarietà è un meccanismo che permette di creare nuove classi a partire da classi esistenti, riutilizzando e modificando le loro proprietà e funzionalità. Una classe che eredita da un’altra classe viene chiamata sottoclasse o classe figlia, mentre la classe da cui eredita viene chiamata superclasse o classe padre. L’ereditarietà favorisce il riuso e il raffinamento del codice.
 
 ### Esempio di ereditarieta in Javascript
 
@@ -127,7 +122,7 @@ cane.abbaia(); // Fido abbaia
 ```
 
 ## Polimorfismo
-Il polimorfismo è la ==capacità di un oggetto di assumere forme diverse a seconda del contesto in cui viene usato.== Questo permette di usare lo stesso nome o lo stesso messaggio per invocare funzionalità diverse su oggetti diversi, purché questi siano compatibili tra loro (cioè siano sottotipi della stessa superclasse o implementino la stessa interfaccia). Il polimorfismo aumenta la flessibilità e l’espressività del codice.
+Il polimorfismo è la **capacità di un oggetto di assumere forme diverse a seconda del contesto in cui viene usato.** Questo permette di usare lo stesso nome o lo stesso messaggio per invocare funzionalità diverse su oggetti diversi, purché questi siano compatibili tra loro (cioè siano sottotipi della stessa superclasse o implementino la stessa interfaccia). Il polimorfismo aumenta la flessibilità e l’espressività del codice.
 
 ### Esempio di polimorfismo in Javascript
 
