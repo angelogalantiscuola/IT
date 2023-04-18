@@ -47,6 +47,10 @@
 
 - [array](array.ipynb)
 
+### File formats
+
+- [file_formats](file_formats.md)
+
 ## JS
 
 - [use_JS_code_from_another_file](use_JS_code_from_another_file.md)
