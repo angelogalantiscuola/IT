@@ -1,13 +1,20 @@
-# API
+# APIs
 
 An API is an Application Programming Interface. **It is a way for different programs or applications to communicate with each other** and exchange information or services.
 For example, when you use an app like Facebook or Spotify, you are using their API to access their data and features. You don't need to know how they store their data or how they process your requests, you just need to follow their rules and instructions on how to use their API.
 
 > A simple analogy for an API is a waiter in a restaurant. You can see the menu, which tells you what dishes are available and how to order them, but you can't go into the kitchen and cook them yourself. You have to use the waiter, who is the API, to take your order and bring you the food. The waiter knows how to communicate with the kitchen and deliver the food to you, but you don't need to know the details of how they do it.
 
-An API is a set of rules and protocols that define how different software components or applications can communicate and exchange data or functionality.
+APIs are a type of **[interface](interface.md)** that enable different applications to communicate and exchange data or functionality. APIs are not the only type of interface in programming, but they are one of the most common and widely used ones.
+
+**An API is a set of rules and protocols that define how different software components or applications can communicate and exchange data or functionality.**
 An API specifies what inputs and outputs are expected, what formats are used, and what errors may occur.
 An API also provides documentation and examples for developers to follow and understand how to use it.
+
+For example, suppose you have an API that allows you to access weather data from a web service.
+The interface of the API would tell you what parameters you need to provide to request the data, such as location, date, and time.
+The interface of the API would also tell you what format the data will be returned in, such as JSON or XML.
+The interface of the API would also tell you what possible errors you may encounter, such as invalid parameters, network issues, or server errors.
 
 An API can be seen as a **contract between a provider and a consumer of a service or data**. The provider exposes some functionality or data through the API, and the consumer uses the API to access it. The provider does not need to reveal the internal details or implementation of the service or data, and the consumer does not need to know how the provider works. They only need to agree on the API specification and follow it.
 
