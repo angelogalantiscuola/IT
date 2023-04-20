@@ -47,6 +47,18 @@
 
 - [array](array.ipynb)
 
+### File formats
+
+- [file_formats](file_formats.md)
+
+### interface
+
+- [interface](interface.md)
+
+### APIs
+
+- [APIs](APIs.md)
+
 ## JS
 
 - [use_JS_code_from_another_file](use_JS_code_from_another_file.md)
