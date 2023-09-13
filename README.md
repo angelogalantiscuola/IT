@@ -1,5 +1,8 @@
 # IT
 
+## Concetti fondamentali dell'Informatica
+- [Concetti fondamentali dell'Informatica](http://aptiva.v2.cs.unibo.it/wiki/index.php%3Ftitle=Concetti_fondamentali_dell'Informatica.html)
+
 ## Remote VSCode coding
 - Connettersi con VSCode tramite il protocollo SSH ad una macchina remota:
 [Remote VSCode Coding](https://docs.google.com/document/d/1Hj421cgJWSpHDKt7EvSvzY98OCbt7lCXVqEd5uTHEic/edit?usp=sharing)
