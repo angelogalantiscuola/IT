@@ -17,6 +17,11 @@
 
 ### Version Control System
 
+### Paradigmi di programmazione
+- [paradigma](https://it.wikipedia.org/wiki/Paradigma)
+- [paradigma di programmazione](https://it.wikipedia.org/wiki/Paradigma_di_programmazione)
+  - [programmzione strutturata](https://it.wikipedia.org/wiki/Programmazione_strutturata)
+  - [programmazione orientata agli oggetti](https://it.wikipedia.org/wiki/Programmazione_strutturata)
 
 ## Python
 
