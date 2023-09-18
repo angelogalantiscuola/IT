@@ -18,6 +18,12 @@
 - Eseguire il codice sulla macchina remota, creare un repository, sincronizzare i repository con Github:
 [Sync a repository with Github](https://docs.google.com/document/d/1VSPMp390ovSXxyrg4O-Z2Uw_wgZ9vl-5woab78Ub05A/edit?usp=sharing)
 
+## Theory
+
+### Hypervisor
+
+### Version Control System
+
 ### Paradigmi di programmazione
 - [paradigma](https://it.wikipedia.org/wiki/Paradigma)
 - [paradigma di programmazione](https://it.wikipedia.org/wiki/Paradigma_di_programmazione)
