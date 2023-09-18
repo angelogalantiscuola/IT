@@ -1,3 +1,4 @@
+# OOP - Object Oriented Programming
 
 La programmazione orientata agli oggetti (OOP) è un paradigma di programmazione che permette di definire oggetti software in grado di interagire gli uni con gli altri attraverso lo scambio di messaggi. 
 Gli oggetti sono istanze di classi, che sono astrazioni che rappresentano le proprietà comuni e il comportamento di un insieme di oggetti concreti. 
