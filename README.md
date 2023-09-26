@@ -5,6 +5,10 @@
 
 - [Prefissi del Sistema internazionale di unità di misura](https://it.wikipedia.org/wiki/Prefissi_del_Sistema_internazionale_di_unit%C3%A0_di_misura)
 
+- [Parts Of A Computer And Their Functions](https://computerinfobits.com/parts-of-computer-and-their-functions/)
+
+- [How To Tell If Computer Parts Are Compatible With Each Other](https://computerinfobits.com/how-to-tell-if-computer-parts-are-compatible/)
+
 ## Tools
 
 ### Hypervisor
