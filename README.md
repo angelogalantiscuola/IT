@@ -21,7 +21,8 @@
   Seleziona Remote-SSH: Add New SSH Host
   2. Inserire:
   ``` bash
-  ssh cognome@10.40.71.194
+  ssh cognome@10.40.71.194 # per 4M
+  ssh cognome@10.40.71.199 # per 3M
   ```
   3. Invio fino a che non si chiude la finestra
   4. Premi F1 su VSCode
