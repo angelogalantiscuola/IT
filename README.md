@@ -11,7 +11,6 @@
 
 ## Tools
 
-### Hypervisor
 
 ### Version Control System
 
