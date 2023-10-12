@@ -57,6 +57,15 @@
 
 ### Data Types
 
+### Operators
+
+### Logical
+
+| A     | NOT A |
+|-------|-------|
+| false | true  |
+| true  | false |
+
 #### Lists
 
 ### Loops
