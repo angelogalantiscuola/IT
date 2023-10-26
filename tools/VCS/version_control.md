@@ -64,28 +64,3 @@ GitHub è una **piattaforma web basata su Git che consente agli utenti di creare
 
 In sintesi, GitHub è una piattaforma web estremamente utile per la gestione dei progetti di sviluppo software, che offre un'interfaccia intuitiva, funzionalità di collaborazione avanzate, hosting gratuito e una grande comunità di sviluppatori.
 
-## use version control software
-
-### use git with Github Desktop
-
-1. Creare un repository su github
-
-2. Clonare il repository su Github Desktop (download)
-
-3. Modificare un file del repository
-
-4. Fare il commit (salvataggio)
-
-5. Fare il push (upload) --> Problemi
-   - Configurare git definendo username e email (da cartella con repository):
-
-     ``` bash
-     git config --global user.email "angelo.galanti@isissgobetti.it"
-     git config --global user.name "Angelo Galanti"
-     ```
-
-   - Autenticarsi con le credenziali github (username e password):
-
-### use git with VSCode
-
-1. Fare le stesse operazioni utilizzando VSCode
