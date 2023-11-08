@@ -7,7 +7,10 @@
 
 - [Parts Of A Computer And Their Functions](https://computerinfobits.com/parts-of-computer-and-their-functions/)
 
+- [Strumenti per programmare](https://github.com/angelogalantiscuola/IT/blob/main/tools/tools.md)
+
 - [How To Tell If Computer Parts Are Compatible With Each Other](https://computerinfobits.com/how-to-tell-if-computer-parts-are-compatible/)
+
 
 ## Tools
 
