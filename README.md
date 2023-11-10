@@ -18,6 +18,9 @@
 
 
 ### Version Control System
+
+`new` [Using Git with Visual Studio Code](https://www.youtube.com/watch?v=i_23KUAEtUM)
+
 #### Sincronizzare repository locale e repository remoto
 
 ##### Autenticazione
