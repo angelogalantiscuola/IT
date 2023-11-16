@@ -95,51 +95,6 @@ Student "*" -- "*" Course: takes
 
 ## Associations in Python
 
-### Association 1-*
-
-```python
-class User:
-  def __init__(self, username):
-    self.username = username
-    self.profile = Profile(self)
-
-class Profile:
-  def __init__(self, user):
-    self.bio = ""
-    self.user = user
-```
-
-### Association 1-*
-
-```python
-class Mother:
-  def __init__(self, name):
-    self.name = name
-    self.children = []
-
-  def add_child(self, child):
-    self.children.append(child)
-
-class Child:
-  def __init__(self, name):
-    self.name = name
-```
-
-
-### Association \*-\*
-
-```python
-class Student:
-  def __init__(self, name):
-    self.name = name
-    self.courses = []
-
-  def take_course(self, course):
-    self.courses.append(course)
-    course.students.append(self)
-
-class Course:
-  def __init__(self, name):
-    self.name = name
-    self.students = []
-```
+- [Association 1-1](association11.py)
+- [Association 1-*](association1N.py)
+- [Association \*-\*](associationNN.py)
