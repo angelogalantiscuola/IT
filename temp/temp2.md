@@ -1,8 +1,9 @@
+# temp2
+
 for browsing extensions by category
 @category:
 
-https://marketplace.visualstudio.com/items?itemName=ms-python.python
-
+<https://marketplace.visualstudio.com/items?itemName=ms-python.python>
 
 Python extension pack
 Python - Linting, Debugging (multi-threaded, remote), Intellisense, code formatting, refactoring, unit tests, snippets, Data Science (with Jupyter), PySpark and more.
@@ -14,8 +15,6 @@ Python Docstring Generator - Quickly insert Python comment blocks with contextua
 Python Indent - Correct python indentation in Visual Studio Code.
 Jupyter - Provides Jupyter notebook support for Python language, used for data science, scientific computing and machine learning.
 
-
-
 Python Snippets 3
 isort
 Python Indent
@@ -23,8 +22,7 @@ Python Environment Manager
 Black Formatter
 Intellicode
 
-
 linters vs formatters?
 
-`python tutorial no vscode website` https://code.visualstudio.com/docs/python/python-tutorial
-`profile creation` https://code.visualstudio.com/docs/editor/profiles
+`python tutorial no vscode website` <https://code.visualstudio.com/docs/python/python-tutorial>
+`profile creation` <https://code.visualstudio.com/docs/editor/profiles>
