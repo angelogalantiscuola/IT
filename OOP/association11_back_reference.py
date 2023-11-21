@@ -1,11 +1,16 @@
 class User:
     def __init__(self, username):
         self.username = username
-        self.profile = Profile() # Reference to Profile object
+        self.profile = Profile(self) # Reference to Profile object
 
 class Profile:
-    def __init__(self):
+    def __init__(self, user):
         self.bio = ""
+        self.user = user # Reference to User object
+        # The back-reference to User can be useful in scenarios 
+        # where you have a Profile instance and need to access 
+        # the associated User's data.
+
 
 # Example of usage
 user1 = User("Alice")

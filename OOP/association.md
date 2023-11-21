@@ -98,3 +98,7 @@ Student "*" -- "*" Course: takes
 - [Association 1-1](association11.py)
 - [Association 1-*](association1N.py)
 - [Association \*-\*](associationNN.py)
+
+- [Association 1-1 with back reference](association11_back_reference.py)
+- [Association 1-* with back reference](association1N_back_reference.py)
+- [Association \*-\* with back reference](associationNN_back_reference.py)
