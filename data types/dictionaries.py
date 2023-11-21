@@ -1,36 +1,24 @@
-import json
+# Step 1: Create a dictionary
+my_dict = {"name": "John", "age": 30, "city": "New York"}
 
-# info di una persona
-# nome, cognome, eta, sesso
-nome = "Pippo"
-cognome = "Pippi"
-eta = 20
-sesso = "M"
-nome_classe = "4M"
-# dizionario
-persona = {"nome": nome, "cognome": cognome, "eta": eta, "sesso": sesso}
-# classe
-# classe = [persona, persona, persona]
-classe = {"nome della classe": nome_classe, "alunni": [persona, persona, persona]}
-# classi di tutta la scuola
-scuola = [classe, classe, classe]
+# Step 2: Add an item to the dictionary
+my_dict["job"] = "Engineer"
 
+# Step 3: Change an item in the dictionary
+my_dict["city"] = "San Francisco"
 
-# json.dumps() -> dizionario -> stringa
-# salvare la scuola in un file json
-file_json = "scuola.json"
-with open(file_json, "w") as f:
-    json.dump(scuola, f)
-f.close()
+# Step 4: Delete an item from the dictionary
+del my_dict["age"]
 
-# json.loads() -> stringa -> dizionario
-# leggere la scuola dal file json
-file_json = "scuola.json"
-with open(file_json, "r") as f:
-    scuola = json.load(f)
-f.close()
+# Step 5: Loop through the dictionary
+# Print keys
+for key in my_dict:
+    print(key)
 
-print(scuola[0])  # prima classe
-print(scuola[0]["nome della classe"])  # nome prima classe
-print(scuola[0]["alunni"][0])  # primo alunno prima classe
-print(scuola[0]["alunni"][0]["nome"])  # nome primo alunno prima classe
+# Print values
+for value in my_dict.values():
+    print(value)
+
+# Print items
+for key, value in my_dict.items():
+    print(key, value)
