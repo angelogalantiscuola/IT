@@ -1,3 +1,6 @@
+"""
+Temporary file to test out some code
+"""
 import math
 
 # List of all the attributes and methods
