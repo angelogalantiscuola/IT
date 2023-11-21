@@ -1,9 +1,10 @@
+# Python Mindmap
 <!-- 
 Render the file using https://markmap.js.org/repl
 Copy and paste the following code
 -->
 
-``` markmap
+```markmap
 # Python
 ## execute files
 ## indentation

@@ -1,6 +1,7 @@
+# Packaging, Dependencies, Virtual Environments
 
 python-poetry/poetry: Python packaging and dependency management made easy
-https://github.com/python-poetry/poetry
+<https://github.com/python-poetry/poetry>
 
 There are several tools available to handle virtual environments in Python. Some popular ones include virtualenv, venv (which comes with Python 3),
 

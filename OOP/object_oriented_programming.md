@@ -2,8 +2,8 @@
 
 Object-oriented programming (OOP) is a programming paradigm that uses objects and classes to design applications. In OOP, objects are self-contained entities that store data and code. Classes are blueprints for creating objects.
 
-
 ## Four Pillars of OOP
+
 OOP is based on four main pillars:
 
 - **Encapsulation**: Encapsulation is the process of wrapping data and code together into a single unit. This makes it easier to manage and protect the data.
@@ -12,6 +12,7 @@ OOP is based on four main pillars:
 - **Polymorphism**: Polymorphism allows objects of differe
 
 ## Simple Example
+
 ```python
 class Dog:
     """A class to represent a dog."""
@@ -30,13 +31,16 @@ my_dog.bark()
 ```
 
 ## Benefits of OOP
+
 Here are some of the benefits of using OOP in Python:
+
 - OOP makes it easier to model real-world entities and their relationships.
 - OOP helps to reduce code duplication and make it more reusable.
 - OOP makes code more modular and easier to maintain.
 - OOP makes code more flexible and extensible.
 
 ## Example of each of the four main pillars of OOP in Python
+
 ```python
 class Animal:
     """An abstract class to represent an animal."""
