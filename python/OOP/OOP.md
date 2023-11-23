@@ -1,3 +1,10 @@
+%% Begin Waypoint %%
+- [associations](./associations.md)
+- [OOP_in_Python](./OOP_in_Python.md)
+- [python_OOP_mindmap](./python_OOP_mindmap.md)
+
+%% End Waypoint %%
+
 # OOP - Object Oriented Programming
 
 Object-oriented programming (OOP) is a programming paradigm that uses objects and classes to design applications. In OOP, objects are self-contained entities that store data and code. Classes are blueprints for creating objects.

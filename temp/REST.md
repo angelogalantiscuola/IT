@@ -1,6 +1,3 @@
-# REST
-
-<!-- TOC -->
 
 - [REST](#rest)
   - [1. representation of a resource](#1-representation-of-a-resource)
@@ -10,17 +7,34 @@
     - [3.2. URLs](#32-urls)
   - [4. RESTful API](#4-restful-api)
 
-<!-- /TOC -->
 
 **REST** stands for **RE**presentational **S**tate **T**ransfer. **It’s a way for two different programs to talk to each other over the internet.** For example, you might use a program on your phone to check the weather. That program needs to get the weather information from another program that runs on a big computer somewhere else. To do that, they use REST.
 
 **REST is a software architectural style** that describe a way of designing web services that follows some principles and constraints, such as:
 
 - using HTTP methods,
-- identifying resources with URLs,
+- identifying resources with [URLs](./endpoint.md),
 - transferring representations of resources between clients and servers.
 
 The name implies that **each program can represent the state of a resource in different ways, depending on the needs and preferences of the program**. For example, a resource can be represented as text, XML, JSON, HTML, or any other format that can be transferred over HTTP.
+
+
+## In depth
+
+
+REST, which stands for Representational State Transfer, is an `architectural style for designing and developing APIs` ([Application Programming Interfaces](./APIs)). It is a set of principles that define how two pieces of software can communicate with each other. RESTful APIs are designed to be lightweight, scalable, and easy to use.
+
+**Key principles of REST:**
+
+1. `Client-server architecture`: RESTful APIs follow a client-server architecture, where clients send requests to a server, and the server processes those requests and returns responses.
+
+2. `Statelessness`: RESTful APIs are stateless, meaning that each request from a client contains all the information necessary to fulfill the request. The server does not store any information about the client's previous requests.
+
+3. `Cacheable data`: RESTful APIs should be designed to allow clients and intermediaries to cache responses to improve performance.
+
+4. `Uniform interface`: RESTful APIs should have a uniform interface, meaning that all resources are accessed using the same set of methods and operations.
+
+
 
 ## 1. representation of a resource
 
@@ -110,16 +124,38 @@ If your phone program wants to change the temperature in Paris (maybe you’re f
 
 If your phone program wants to delete the temperature in Paris (maybe you’re feeling evil), it can send a **DELETE** request with this URL: <https://example.com/weather/city/paris/temperature>. The big computer program will check if it’s allowed to do that, and if so, it will delete the temperature and send back a response. The response might look like this: ``{"status": "OK"}``.
 
-## 4. RESTful API
+## RESTful API
 
 REST stands for REpresentational State Transfer, which is a software architecture that defines how different programs can communicate with each other over the internet using HTTP (Hypertext Transfer Protocol)
 
 RESTful API is **a type of API that follows the principles and constraints of REST**.
 
-So, REST is an architectural style, while RESTful API is an implementation of that style.
+**So, REST is an architectural style, while RESTful API is an implementation of that style.**
 
-The main difference between API and REST API is that API is a broad term that covers any kind of interface between software applications, while REST API is a specific kind of web API that follows a certain architectural style.
+The main difference between API and REST API is that API is a broad term that covers any kind of interface between software applications, while REST API is a specific kind of web API that follows a certain architectural style. **Not all APIs are RESTful, but all RESTful APIs use REST.**
 
-Not all APIs are RESTful, but all RESTful APIs use REST.
+## RESTful API interaction
 
-REST APIs are designed to be simple, uniform, scalable, and stateless. They use HTTP as their application protocol and common data formats and media types to represent resources. They also transfer all the necessary state information with each request and response. This makes them easier to cache, distribute, and load-balance requests across multiple servers.
+1. **Client sends a request:** A client application, such as a web browser or mobile app, sends an HTTP request to the server hosting the RESTful API. The request includes the following information:
+
+    * **HTTP method:** The HTTP method specifies the type of operation the client wants to perform, such as GET (retrieve data), POST (create data), PUT (update data), or DELETE (remove data).
+
+    * **URI (Uniform Resource Identifier):** The URI identifies the specific resource the client wants to access, such as /users/123 to retrieve data about a specific user.
+
+    * **Headers:** Headers provide additional information about the request, such as authentication credentials or content type.
+
+    * **Body:** The body of the request can optionally contain data to be sent to the server, such as a new user record to be created.
+
+2. **Server processes the request:** The server receives the HTTP request and processes it according to the RESTful principles. It validates the request, identifies the resource, and performs the requested operation.
+
+3. **Server sends a response:** The server sends an HTTP response back to the client. The response includes the following information:
+
+    * **HTTP status code:** The HTTP status code indicates whether the request was successful or not. Common status codes include 200 (OK), 400 (Bad Request), 404 (Not Found), and 500 (Internal Server Error).
+
+    * **Headers:** Headers provide additional information about the response, such as the content type of the response data.
+
+    * **Body:** The body of the response contains the requested data or an error message if the request failed.
+
+4. **Client receives the response:** The client receives the HTTP response and processes it. It extracts the data from the response body and displays it to the user or updates the application's state accordingly.
+
+This process repeats for each interaction between the client and the server. RESTful APIs allow for a seamless exchange of data and functionality between different applications and services.

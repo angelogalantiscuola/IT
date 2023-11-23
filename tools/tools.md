@@ -1,3 +1,8 @@
+%% Begin Waypoint %%
+- [version_control_system](./version_control_system.md)
+- **[vscode](./vscode/vscode.md)**
+
+%% End Waypoint %%
 # Strumenti
 
 ## Quali strumenti servono per programmare?
