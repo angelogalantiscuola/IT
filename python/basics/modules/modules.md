@@ -1,3 +1,8 @@
+%% Begin Waypoint %%
+
+
+%% End Waypoint %%
+
 # Python modules
 
 Python comes with a large standard library that includes several lightweight modules. Here are some of the simplest and most commonly used ones:

@@ -1,3 +1,37 @@
+### Version Control System
+
+`new` [Using Git with Visual Studio Code](https://www.youtube.com/watch?v=i_23KUAEtUM)
+
+#### Sincronizzare repository locale e repository remoto
+
+##### Autenticazione
+
+- Fare il login su Github
+- Fare il login su Vscode (icona in basso a destra)
+
+1. Il primo modo non funziona
+2. Il secondo modo non funziona
+3. Il terzo modo (con il codice funziona)
+
+##### Download del repository
+
+- Clonare il repository
+
+1. Su Github copiare l'URL del repository
+2. Su Vscode cliccare la terza icona del menu a sinistra (Source Control)
+
+##### Aggiornare il repository in locale
+
+- Aggiornare il repository scrivendo del codice
+
+##### Upload delle modifiche su Github
+
+- Sincronizzare il repository locale (del PC) con Github
+
+1. Su Vscode cliccare la terza icona del menu a sinistra (Source Control)
+2. Cliccare su commit (le modifiche sono ufficiali ma ancora non sincronizzate)
+3. Cliccare su Sincronizza per inviare i cambiamenti a repository Github
+
 # version control
 
 ## useful links
