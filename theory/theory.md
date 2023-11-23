@@ -24,11 +24,11 @@
   - [programmazione orientata agli oggetti](https://it.wikipedia.org/wiki/Programmazione_strutturata)
 
 %% Begin Waypoint %%
-- [[file_formats]]
-- **[[tools]]**
-	- [[hypervisor]]
-	- [[version_control]]
-	- [[vscode_extensions]]
-- [[tools]]
+- [file_formats](./file_formats.md)
+- **[tools](./tools/tools.md)**
+	- [hypervisor](./tools/hypervisor.md)
+	- [version_control](./tools/version_control.md)
+	- [vscode_extensions](./tools/vscode_extensions.md)
+- [tools](./tools.md)
 
 %% End Waypoint %%
