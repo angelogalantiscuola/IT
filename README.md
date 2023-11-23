@@ -2,10 +2,10 @@
 # IT
 
 ## Theory
-[Theory](theory.md)
+[Theory](./theory/theory.md)
 
 ## Tools
-[Tools](tools.md)
+[Tools](./tools/tools.md)
 
 ## Python
-[Python](python.md)
+[Python](./python/python.md)
