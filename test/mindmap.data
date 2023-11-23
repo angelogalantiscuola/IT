@@ -1,0 +1,13 @@
+API -- Web_API
+Web_API -- RESTful_API
+Web_API -- HTTP
+RESTful_API -- REST
+Web_API -- Endpoint
+Endpoint -- URL
+Virtualization -- Containerization
+Virtualization -- Hypervisor
+Hypervisor -- VM
+Containerization -- Docker
+Docker -- Container
+Container -- Runtime_environment
+VM -- Container
