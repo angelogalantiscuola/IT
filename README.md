@@ -1,10 +1,11 @@
+
 # IT
 
 ## Theory
 [Theory](theory.md)
 
 ## Tools
-[Tools](tools.md)
+[Tools](theory/tools/tools.md)
 
 ## Python basics
 [Python basics](python_basics.md)
