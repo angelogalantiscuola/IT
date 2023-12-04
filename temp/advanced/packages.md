@@ -21,6 +21,7 @@ https://hugovk.github.io/top-pypi-packages/
 #### dotenv
 ### Command Line Interface
 #### click
+#### argparse
 ### Progress Tracking
 #### tqdm
 ### Exception Handling
@@ -30,6 +31,7 @@ https://hugovk.github.io/top-pypi-packages/
 ### wheel
 ### distlib
 ## Type Checking and Hinting
+### typing
 ### typing_extensions
 ## Testing Frameworks
 ### pytest
