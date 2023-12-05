@@ -1,10 +1,10 @@
 class User:
-    def __init__(self, username):
+    def __init__(self, username: str):
         self.username = username
         self.profile = Profile(self) # Reference to Profile object
 
 class Profile:
-    def __init__(self, user):
+    def __init__(self, user: User):
         self.bio = ""
         self.user = user # Reference to User object
         # The back-reference to User can be useful in scenarios 

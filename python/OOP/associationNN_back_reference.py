@@ -1,16 +1,16 @@
 class Student:
-    def __init__(self, name):
-        self.name = name
-        self.courses = [] # list of Course objects
+    def __init__(self, name: str):
+        self.name: str = name
+        self.courses: list['Course'] = [] # list of Course objects
 
-    def take_course(self, course):
+    def take_course(self, course: 'Course'):
         self.courses.append(course) # reference from Student to Course
         course.students.append(self) # reference from Course to Student
 
 class Course:
-    def __init__(self, name):
-        self.name = name
-        self.students = [] # list of Student objects
+    def __init__(self, name: str):
+        self.name: str = name
+        self.students: list['Student'] = [] # list of Student objects
         # Note that the back-reference to Student is optional
         # and can be useful in some scenarios.
 

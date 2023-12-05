@@ -1,14 +1,14 @@
 class Student:
-    def __init__(self, name):
-        self.name = name
-        self.courses = [] # list of Course objects
+    def __init__(self, name: str):
+        self.name: str = name
+        self.courses: list['Course'] = [] # list of Course objects
 
-    def take_course(self, course):
+    def take_course(self, course: 'Course'):
         self.courses.append(course) # reference from Student to Course
 
 class Course:
-    def __init__(self, name):
-        self.name = name
+    def __init__(self, name: str):
+        self.name: str = name
 
 # Example of usage
 student1 = Student("Alice")

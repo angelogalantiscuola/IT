@@ -1,14 +1,14 @@
 class Mother:
-    def __init__(self, name):
-        self.name = name
-        self.children = [] # list of Child objects
+    def __init__(self, name: str):
+        self.name: str = name
+        self.children: list['Child']  = [] # list of Child objects
 
-    def add_child(self, child):
+    def add_child(self, child: 'Child'):
         self.children.append(child) # reference from Mother to Child
 
 class Child:
-    def __init__(self, name):
-        self.name = name
+    def __init__(self, name: str):
+        self.name: str = name
 
 # Example of usage
 mother = Mother("Jane")

@@ -1,5 +1,5 @@
 class User:
-    def __init__(self, username):
+    def __init__(self, username: str):
         self.username = username
         self.profile = Profile() # Reference to Profile object
 
