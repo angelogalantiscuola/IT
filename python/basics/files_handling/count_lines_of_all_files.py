@@ -2,10 +2,10 @@ import os
 
 
 # count all characters in a single file
-def count_characters_of_a_file(file_path):
+def count_characters_of_a_file(file_path: str) -> int:
     if not os.path.isfile(file_path):
         print("Error: path is not a file")
-        return
+        return 0
     with open(file_path, "r") as f:
         lines = f.readlines()
         # count all characters in file
@@ -16,12 +16,12 @@ def count_characters_of_a_file(file_path):
 
 
 # count characters of all files in a directory, except for files in hidden directories
-def count_characters_of_all_files_except_hidden(path) -> int:
+def count_characters_of_all_files_except_hidden(path: str) -> int:
     characters = 0
 
     if not os.path.isdir(path):
         print("Error: path is not a directory")
-        return
+        return 0
     files = os.listdir(path)
     for file in files:
         file_path = os.path.join(path, file)
