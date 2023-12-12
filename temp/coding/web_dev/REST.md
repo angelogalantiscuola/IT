@@ -8,6 +8,7 @@
   - [4. RESTful API](#4-restful-api)
 
 
+
 **REST** stands for **RE**presentational **S**tate **T**ransfer. **It’s a way for two different programs to talk to each other over the internet.** For example, you might use a program on your phone to check the weather. That program needs to get the weather information from another program that runs on a big computer somewhere else. To do that, they use REST.
 
 **REST is a software architectural style** that describe a way of designing web services that follows some principles and constraints, such as:

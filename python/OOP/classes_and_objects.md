@@ -1,6 +1,5 @@
-```toc
+```table-of-contents
 ```
-
 ## Class
 A class is a **model of a real-world entity or concept**, defining the essential ==attributes== (data) and ==behaviors== (methods) that characterize that entity or concept. It represents the template from which individual objects are created.
 

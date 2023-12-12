@@ -1,8 +1,3 @@
-```table-of-contents
-```
-
-
-# IT
 
 ## Theory
 [Theory](./theory/theory.md)

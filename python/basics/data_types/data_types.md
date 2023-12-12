@@ -1,4 +1,4 @@
 %% Begin Waypoint %%
-- [python_DB](./python_DB.md)
+- [[dictionaries_and_json]]
 
 %% End Waypoint %%

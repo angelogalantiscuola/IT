@@ -17,7 +17,7 @@ OOP is based on four main pillars:
 - **Encapsulation**: Encapsulation is the process of wrapping data and code together into a single unit. This makes it easier to manage and protect the data.
 - **Abstraction**: Abstraction is the process of hiding the implementation details of an object and exposing only its essential functionality. This makes the code more reusable and easier to understand.
 - **Inheritance**: Inheritance allows you to create new classes based on existing classes. This can help you to reuse code and avoid duplication.
-- **Polymorphism**: Polymorphism allows objects of differe
+- **Polymorphism**: Polymorphism allows objects of different classes to be treated as if they were objects of the same class. This can help to reduce complexity and improve maintainability. 
 
 ## Simple Example
 
