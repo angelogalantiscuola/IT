@@ -6,7 +6,7 @@ A class is a **model of a real-world entity or concept**, defining the essential
 *To illustrate, consider a "Car" class. This class defines the attributes that are common to all cars, such as the car's brand, model, color, and engine capacity. It also defines the car's behaviors, such as accelerating, braking, and turning.*
 
 ## Object
-An object is a specific, concrete instance of a class, representing **an actual entity or concept in the real world**. It embodies the class's attributes and behaviors, but with unique values and actions tailored to its specific identity.
+An object is a specific, concrete <mark style="background: #ADCCFFA6;">instance of a class</mark>, representing **an actual entity or concept in the real world**. It embodies the class's attributes and behaviors, but with unique values and actions tailored to its specific identity.
 
 *Continuing the car analogy, a particular car, such as a Toyota Camry, is an object of the "Car" class. This car has a distinct brand, model, color, and engine capacity, representing the values of the class's attributes. It also performs actions, such as accelerating to 60 mph or turning left at an intersection, embodying the class's behaviors.*
 

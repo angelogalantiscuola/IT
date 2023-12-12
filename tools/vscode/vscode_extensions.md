@@ -27,11 +27,11 @@ Benefits of using a linter:
 A formatter is a tool or program that takes data as input and arranges it in a specific format for output.
 Formatters can be used for a variety of purposes, including:
 
-- Converting data from one format to another: For example, a CSV formatter can convert a CSV file to a JSON file.
+- **Converting data** from one format to another: For example, a CSV formatter can convert a CSV file to a JSON file.
 - **Prettifying data**: For example, a code formatter can indent and align code to make it more readable.
-- Validating data: For example, an HTML formatter can check that an HTML file is well-formed.
+- **Validating data**: For example, an HTML formatter can check that an HTML file is well-formed.
 
 Different formatters:
 
 - **Code formatters**: Prettify code by indenting and aligning it. Examples include **Black**, Prettier, and clang-format.
-- Data formatters: Convert data from one format to another. Examples include CSV Formatter, JSON Formatter, and XML Formatter.
+- **Data formatters**: Convert data from one format to another. Examples include CSV Formatter, JSON Formatter, and XML Formatter.

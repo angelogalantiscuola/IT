@@ -1,8 +1,6 @@
-### Remote VSCode coding
+# Remote VSCode coding
 
 - Connettersi con VSCode tramite il protocollo SSH ad una macchina remota:
-
-[Remote VSCode Coding](https://docs.google.com/document/d/1Hj421cgJWSpHDKt7EvSvzY98OCbt7lCXVqEd5uTHEic/edit?usp=sharing)
 
 1. Premi F1 su VSCode: Seleziona Remote-SSH: Add New SSH Host
 2. Inserire: `ssh cognome@10.40.71.194 # per 4M   ssh cognome@10.40.71.199 # per 3M`
