@@ -1,3 +1,5 @@
+```toc
+```
 
 ## Main elements of a class diagram
 
@@ -11,7 +13,9 @@ In a UML (Unified Modeling Language) class diagram, you can use the following ma
 
 ## Relationships between classes
 
-- Extension (`Inheritance`): This is represented by `<|--`. The arrow points from the subclass to the superclass.
+In object-oriented programming (OOP), the two main relationships between classes:
+
+1. **Inheritance:** A class inherits attributes and methods from another class, allowing it to reuse and extend the functionality of the parent class. This promotes code reusability and reduces redundancy. This is represented by `<|--`. The arrow points from the subclass to the superclass.
 
 ```plantuml
 @startuml
@@ -25,7 +29,7 @@ Subclass <|-- Superclass
 @enduml
 ```
 
-- An Association represents a "using" relationship between two or more classes. It is a structural relationship, in that it specifies that objects of one class are connected to objects of another and does not represent behaviour. In the context of PlantUML and UML diagrams, the `--` symbol is used to denote an association relationship between two classes.
+2. **Association:** A class is associated with another class when there is a connection between them. An Association represents a "using" relationship between two or more classes. It specifies that objects of one class are connected to objects of another In the context of PlantUML and UML diagrams, the `--` symbol is used to denote an association relationship between two classes.
 
 ```plantuml
 @startuml

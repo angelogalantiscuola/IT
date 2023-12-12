@@ -24,6 +24,6 @@ The application and the user have a user interface that specifies how they inter
 
 ## Interface in OOP
 
-An interface in [OOP](./OOP_and_ER.md) is **a way of describing the actions or behaviors that an object can do, without specifying how they are implemented.** An interface defines a set of methods, properties, events, or other members that an object must have in order to be considered as an instance of that interface. An interface is like a *contract* that an object agrees to follow when it implements the interface.
+An interface in OOP is **a way of describing the actions or behaviors that an object can do, without specifying how they are implemented.** An interface defines a set of methods, properties, events, or other members that an object must have in order to be considered as an instance of that interface. An interface is like a *contract* that an object agrees to follow when it implements the interface.
 
 For example, suppose you have an interface called IAnimal that defines a method called MakeSound. Any class that implements this interface must provide a definition for this method, otherwise it will not compile. The interface does not care how the method is implemented, as long as it exists and has the same signature (name, parameters, and return type). Different classes can implement the same interface in different ways, depending on their logic and purpose.

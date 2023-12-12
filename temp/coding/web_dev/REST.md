@@ -13,7 +13,7 @@
 **REST is a software architectural style** that describe a way of designing web services that follows some principles and constraints, such as:
 
 - using HTTP methods,
-- identifying resources with [URLs](./endpoint.md),
+- identifying resources with URLs (see ==endpoint==),
 - transferring representations of resources between clients and servers.
 
 The name implies that **each program can represent the state of a resource in different ways, depending on the needs and preferences of the program**. For example, a resource can be represented as text, XML, JSON, HTML, or any other format that can be transferred over HTTP.
@@ -22,7 +22,7 @@ The name implies that **each program can represent the state of a resource in di
 ## In depth
 
 
-REST, which stands for Representational State Transfer, is an `architectural style for designing and developing APIs` ([Application Programming Interfaces](./APIs)). It is a set of principles that define how two pieces of software can communicate with each other. RESTful APIs are designed to be lightweight, scalable, and easy to use.
+REST, which stands for Representational State Transfer, is an `architectural style for designing and developing APIs` (==Application Programming Interfaces==) It is a set of principles that define how two pieces of software can communicate with each other. RESTful APIs are designed to be lightweight, scalable, and easy to use.
 
 **Key principles of REST:**
 

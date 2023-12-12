@@ -15,7 +15,7 @@ For example, when you use an app like Facebook or Spotify, you are using their A
 
 > A simple analogy for an API is a waiter in a restaurant. You can see the menu, which tells you what dishes are available and how to order them, but you can't go into the kitchen and cook them yourself. You have to use the waiter, who is the API, to take your order and bring you the food. The waiter knows how to communicate with the kitchen and deliver the food to you, but you don't need to know the details of how they do it.
 
-APIs are a type of **[interface](interface.md)** that enable different applications to communicate and exchange data or functionality. APIs are not the only type of interface in programming, but they are one of the most common and widely used ones.
+APIs are a type of ==interface== that enable different applications to communicate and exchange data or functionality. APIs are not the only type of interface in programming, but they are one of the most common and widely used ones.
 
 **An API is a set of rules and protocols that define how different software components or applications can communicate and exchange data or functionality.**
 An API specifies what inputs and outputs are expected, what formats are used, and what errors may occur.

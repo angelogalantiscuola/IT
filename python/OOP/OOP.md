@@ -1,7 +1,8 @@
 %% Begin Waypoint %%
-- [associations](./associations.md)
+- [classes_and_objects](./classes_and_objects.md)
 - [OOP_in_Python](./OOP_in_Python.md)
 - [python_OOP_mindmap](./python_OOP_mindmap.md)
+- [UML_class_diagram](./UML_class_diagram.md)
 
 %% End Waypoint %%
 

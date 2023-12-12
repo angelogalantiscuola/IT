@@ -1,3 +1,9 @@
+%% Begin Waypoint %%
+- [packages-ai](./packages-ai.md)
+
+%% End Waypoint %%
+
+
 # Main Python packages by category
 
 <!-- 

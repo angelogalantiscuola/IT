@@ -1,18 +1,4 @@
-Several programming languages have frameworks or libraries that can generate SQL tables from Object-Oriented Programming (OOP) classes. This concept is known as Object-Relational Mapping (ORM). Here are a few examples:
-
-Java: Hibernate and Spring Data JPA are popular ORM frameworks in Java. They can generate SQL tables based on Java classes.
-
-Python: SQLAlchemy and Django's ORM can generate SQL tables from Python classes.
-
-C#: Entity Framework is a popular ORM in .NET that can generate SQL tables from C# classes.
-
-Ruby: ActiveRecord, which is part of Ruby on Rails, can generate SQL tables from Ruby classes.
-
-JavaScript/TypeScript: Sequelize and TypeORM are popular ORMs that can generate SQL tables from JavaScript or TypeScript classes.
-
-Remember, while ORMs can simplify database operations, they also come with their own complexities and trade-offs. It's important to understand these before deciding to use an ORM.
-
-## SQLAlchemy ORM
+## SQLAlchemy
 
 SQLAlchemy: SQLAlchemy is a SQL toolkit and ORM that provides a full suite of well known enterprise-level persistence patterns. It allows you to work with relational databases in Python in a way that fits with the language's idiomatic style. SQLAlchemy models can be used to automatically create, read, update, and delete records in your database using simple Python code.
 
@@ -91,16 +77,6 @@ conn.close()
 ```
 
 ## give me a complete hello world example of SQLAlchemy ORM
-
-This script does the following:
-
-Defines a User model with id and name fields.
-Creates a SQLite database named example.db.
-Creates a users table in the database based on the User model.
-Creates a new User with the name "Hello, World!" and adds it to the database.
-Queries the first User with the name "Hello, World!" from the database.
-Prints the name of the queried user.
-Closes the database session.
 
 ```python
 from sqlalchemy import create_engine, Column, Integer, String
