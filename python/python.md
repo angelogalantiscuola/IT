@@ -4,7 +4,7 @@
 - **[OOP](./OOP/OOP.md)**
 - **web**
 	- [python_web](./web/python_web.md)
-	- [RESTful_web_API](./web/RESTful_web_API.md)
+	- [RESTful_web_API](RESTful_web_API.md)
 	- [WEB](./web/WEB.md)
 
 %% End Waypoint %%
