@@ -1,6 +1,10 @@
 # Main Python packages by category
 
 ```markmap
+---
+markmap:
+  height: 329
+---
 # Main Python packages by category
 ## AI and Machine Learning
 ### Deep Learning   

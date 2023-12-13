@@ -1,5 +1,7 @@
 # Extensions installed in VS Code
 
+TODO: need to update this list
+
 ## Juptyer Notebooks
 
 - **ms-toolsai.jupyter** Provides a plugin for working with Jupyter notebooks in VS Code.

@@ -12,11 +12,15 @@ https://hugovk.github.io/top-pypi-packages/
  -->
 
 ```markmap
+---
+markmap:
+  height: 683
+---
 # Main Python packages by category
 ## System and Environment
 ### Operating System
 #### os
-### System-specific Parameters and Functions
+### System-specific Functions
 #### sys
 ### System Utilities
 #### psutil
@@ -53,6 +57,7 @@ https://hugovk.github.io/top-pypi-packages/
 #### Bokeh
 ### Database Management 
 #### SQLAlchemy
+#### SQLModel
 ### Validation
 #### pydantic
 ### JSON and Data Formats
@@ -61,14 +66,13 @@ https://hugovk.github.io/top-pypi-packages/
 #### Query
 ##### jmespath
 ### Parsing and Text Processing
-#### Parsing
-##### pyparsing
-#### Character Set Normalization
-##### charset_normalizer
+#### pyparsing
+#### charset_normalizer
 ## Web and Network
 ### Web Development 
 #### Django
 #### Flask
+#### FastAPI
 ### Web Utilities
 #### werkzeug
 #### jinja2
