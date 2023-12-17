@@ -1,0 +1,10 @@
+[
+    {
+        "type": "Premium",
+        "price": 9.99
+    },
+    {
+        "type": "Standard",
+        "price": 4.99
+    }
+]

@@ -1,0 +1,22 @@
+[
+    {
+        "username": "john_doe",
+        "email": "john_doe@example.com",
+        "subscription_type": "Premium"
+    },
+    {
+        "username": "jane_doe",
+        "email": "jane_doe@example.com",
+        "subscription_type": "Standard"
+    },
+    {
+        "username": "alice_smith",
+        "email": "alice_smith@example.com",
+        "subscription_type": "Premium"
+    },
+    {
+        "username": "bob_johnson",
+        "email": "bob_johnson@example.com",
+        "subscription_type": "Standard"
+    }
+]
