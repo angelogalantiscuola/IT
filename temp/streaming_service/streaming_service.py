@@ -21,7 +21,6 @@ class Song:
     def __str__(self) -> str:
         return f"{self.title} ({self.duration} seconds)"
 
-
 class Album:
     def __init__(self, title: str):
         self.title = title
@@ -61,8 +60,8 @@ class Playlist:
 
 
 class Subscription:
-    def __init__(self, type: str, price: float):
-        self.type = type
+    def __init__(self, subscription_type: str, price: float):
+        self.type = subscription_type
         self.price = price
 
     def __str__(self):
@@ -103,7 +102,6 @@ class Artist:
     def __str__(self):
         return f"Artist: {self.name}, Albums: {[str(album) for album in self.albums]}"
 
-
 def create_objects() -> tuple[list[User], list[Artist]]:
     # Create a subscription
     subscription_base = Subscription("base", 9.99)
@@ -115,6 +113,7 @@ def create_objects() -> tuple[list[User], list[Artist]]:
 
     pink_floyd = Artist("Pink Floyd")
     pink_floyd.create_premium_album("The Dark Side of the Moon", "Secret message")
+
     pink_floyd.albums[0].songs = [
         Song("Speak to Me", 90),
         Song("Breathe", 163),
@@ -122,25 +121,25 @@ def create_objects() -> tuple[list[User], list[Artist]]:
     ]
 
     rolling_stones = Artist("The Rolling Stones")
-    rolling_stones.create_album("Sticky Fingers")
-    rolling_stones.albums[0].songs = [
-        Song("Brown Sugar", 132),
-        Song("Sway", 154),
-        Song("Wild Horses", 215),
-    ]
+
+    rolling_stones.create_album("Sticky Fingers") # questo e di rolling stones
+
+    rolling_stones.albums[0].add_song("Brown Sugar", 132)
+    rolling_stones.albums[0].add_song("Sway", 154)
+    rolling_stones.albums[0].add_song("Wild Horses", 215)
 
     john_playlist = john.create_playlist("Rock")
     john_playlist.add_song(pink_floyd.albums[0].songs[0])
     john_playlist.add_song(rolling_stones.albums[0].songs[1])
 
-    list_of_users = [john, jane]
-    list_of_artists = [pink_floyd, rolling_stones]
+    users = [john, jane]
+    artists = [pink_floyd, rolling_stones]
 
-    return list_of_users, list_of_artists
+    return users, artists
 
 
-def print_objects(list_of_users: list[User], list_of_artists: list[Artist]) -> None:
-    for user in list_of_users:
+def print_objects(users: list[User], artists: list[Artist]) -> None:
+    for user in users:
         print(user.email, user.username, user.subscription.type, user.subscription.price)
 
         for playlist in user.playlists:
@@ -150,7 +149,7 @@ def print_objects(list_of_users: list[User], list_of_artists: list[Artist]) -> N
             print()
         print()
 
-    for artist in list_of_artists:
+    for artist in artists:
         print(f"{artist.name}")
         for album in artist.albums:
             print(f"{album.title}:", end=" ")
