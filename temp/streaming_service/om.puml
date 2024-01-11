@@ -1,0 +1,99 @@
+@startuml
+
+class Customer {
+    +username: String
+    +email: String
+    +makeOrder(orderItem: OrderItem): Order
+    +createWishlist(wishlist: Wishlist): void
+    +writeReview(product: Product, rating: Number, comment: String): Review
+    +viewProduct(product: Product): void
+    +searchProduct(name: String): List<Product>
+}
+
+class Seller {
+    +name: String
+    +rating: Number
+    +addProduct(product: Product): void
+    +removeProduct(product: Product): void
+    +updateProduct(product: Product): void
+}
+
+class Product {
+    +title: String
+    +description: String
+    +price: Number
+    +stockQuantity: Number
+}
+
+class PremiumProduct {
+    +extraFeatures: String
+}
+
+class Category {
+    +name: String
+    +addProduct(product: Product): void
+    +removeProduct(product: Product): void
+}
+
+class Wishlist {
+    +name: String
+    +addProduct(product: Product): void
+    +removeProduct(product: Product): void
+}
+
+class Order {
+    +orderNumber: String
+    +orderDate: Date
+    +status: String
+    +addOrderItem(orderItem: OrderItem): void
+    +removeOrderItem(orderItem: OrderItem): void
+    +updateStatus(status: String): void
+}
+
+class OrderItem {
+    +quantity: Number
+    +price: Number
+}
+
+class Review {
+    +rating: Number
+    +comment: String
+}
+
+class ShippingAddress {
+    +street: String
+    +city: String
+    +state: String
+    +country: String
+    +zipCode: String
+}
+
+class Payment {
+    +paymentMethod: String
+    +amount: Number
+    +paymentDate: Date
+}
+
+Customer "1" -- "many" Order : makes >
+Customer "1" -- "many" Wishlist : creates >
+Customer "1" -- "many" Review : writes >
+
+Seller "1" -- "many" Product : lists >
+
+Product <|-- PremiumProduct
+Product "1" -- "many" Category : belongs to >
+Product "1" -- "many" Review : receives >
+Product "1" -- "many" Wishlist : appears in >
+
+Category "1" -- "many" Product : contains >
+
+Order "1" -- "many" OrderItem : contains >
+Order "1" -- "1" ShippingAddress : has >
+Order "1" -- "1" Payment : has >
+
+OrderItem "1" -- "1" Product : associated with >
+OrderItem "1" -- "1" Order : belongs to >
+
+Review "1" -- "1" Product : associated with >
+
+@enduml
