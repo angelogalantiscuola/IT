@@ -1,6 +1,7 @@
 %% Begin Waypoint %%
 - **[[coding]]**
 - [[data structures]]
+- [[important]]
 - [[python basics]]
 - **[[school]]**
 - **[[streaming_service]]**
