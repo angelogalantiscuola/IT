@@ -1,10 +1,10 @@
 %% Begin Waypoint %%
-- [[coin, stablecoin and token]]
-- [[cryptocurrencies categories]]
-- [[defi]]
-- [[layer 2 scaling solutions]]
-- [[nft]]
-- [[the scalability trilemma]]
+- [coin, stablecoin and token](./coin,%20stablecoin%20and%20token.md)
+- [cryptocurrencies categories](./cryptocurrencies%20categories.md)
+- [defi](./defi.md)
+- [layer 2 scaling solutions](./layer%202%20scaling%20solutions.md)
+- [nft](./nft.md)
+- [the scalability trilemma](./the%20scalability%20trilemma.md)
 
 %% End Waypoint %%
 
