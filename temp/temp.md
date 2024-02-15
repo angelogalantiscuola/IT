@@ -1,8 +1,12 @@
 %% Begin Waypoint %%
-- **[coding](./coding/coding.md)**
-- **streaming_service**
-	- [streaming_service_exercise](./streaming_service/streaming_service_exercise.md)
-- **[unlinked](./unlinked/unlinked.md)**
-- **[virtualization_and_containerization](./virtualization_and_containerization/virtualization_and_containerization.md)**
+
+- **[[coding]]**
+- [[data structures]]
+- [[important]]
+- [[python basics]]
+- **[[school]]**
+- **[[streaming_service]]**
+- **[[unlinked]]**
+- **[[virtualization_and_containerization]]**
 
 %% End Waypoint %%
