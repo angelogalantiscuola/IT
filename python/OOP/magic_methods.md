@@ -1,48 +1,8 @@
-# OOP in Python
-
-Python is a multi-paradigm programming language that supports Object-Oriented Programming (OOP). Here are some specific features of Python regarding OOP:
-
-1. Classes and Instances: Python allows you to define classes using the class keyword and create instances of these classes.
-
-2. Inheritance: Python supports single and `multiple inheritance`, allowing classes to inherit attributes and methods from one or more other classes.
-
-3. Encapsulation: Python doesn't have strict access modifiers like private or protected as in other languages. However, it uses a convention: a variable or method prefixed with an underscore (_) is intended for `internal use`, and a double underscore (__) invokes `name mangling` to avoid naming conflicts in subclasses.
-
-4. Polymorphism: Python supports polymorphism, meaning that a subclass can override a method of its superclass.
-
-5. `Magic Methods`: Python provides magic methods, also known as dunder methods (double underscore methods), such as __init__, __str__, __eq__, etc. These methods provide special syntactic features or do special things. For example, __init__ is a constructor method and __str__ returns a printable string representation of the object.
-
-## Multiple inheritance
-
-In general, multiple inheritance should be used judiciously as it can lead to complex inheritance structures.
-
-```python
-class Bird:
-    def fly(self):
-        return "I can fly"
-
-class Horse:
-    def run(self):
-        return "I can run"
-
-class Pegasus(Bird, Horse):
-    def magic(self):
-        return "I'm a magical creature"
-
-# Create an instance of Pegasus
-pegasus = Pegasus()
-
-# Call methods
-print(pegasus.fly())  # Outputs: I can fly
-print(pegasus.run())  # Outputs: I can run
-print(pegasus.magic())  # Outputs: I'm a magical creature
-```
-
 ## Name mangling
 
 Name mangling is a mechanism in Python to avoid naming conflicts in subclasses. This is particularly useful in the context of inheritance where a subclass might have an attribute or method with the same name as in the superclass.
 
-In Python, any identifier of the form __spam (at least two leading underscores, at most one trailing underscore) is textually replaced with _classname__spam, where classname is the current class name with leading underscore(s) stripped.
+In Python, any identifier of the form `__spam` (at least two leading underscores, at most one trailing underscore) is textually replaced with `_classname__spam`, where `classname` is the current class name with leading underscore(s) stripped.
 
 ```python
 class MyClass:

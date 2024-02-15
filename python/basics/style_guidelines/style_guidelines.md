@@ -1,4 +1,4 @@
-# PEP 8 – Style Guide for Python Code
+# Style Guide for Python Code
 
 ## PEP 8
 

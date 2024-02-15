@@ -1,23 +1,32 @@
 %% Begin Waypoint %%
 - [classes_and_objects](./classes_and_objects.md)
-- [OOP_in_Python](./OOP_in_Python.md)
+- [magic_methods](./magic_methods.md)
+- [multiple_inheritance](./multiple_inheritance.md)
 - [python_OOP_mindmap](./python_OOP_mindmap.md)
 - [UML_class_diagram](./UML_class_diagram.md)
 
 %% End Waypoint %%
 
+
+```table-of-contents
+```
 # OOP - Object Oriented Programming
 
 Object-oriented programming (OOP) is a programming paradigm that uses objects and classes to design applications. In OOP, objects are self-contained entities that store data and code. Classes are blueprints for creating objects.
 
 ## Four Pillars of OOP
 
-OOP is based on four main pillars:
+Python is a multi-paradigm programming language that supports Object-Oriented Programming (OOP). Here are some specific features of Python regarding OOP:
 
-- **Encapsulation**: Encapsulation is the process of wrapping data and code together into a single unit. This makes it easier to manage and protect the data.
-- **Abstraction**: Abstraction is the process of hiding the implementation details of an object and exposing only its essential functionality. This makes the code more reusable and easier to understand.
-- **Inheritance**: Inheritance allows you to create new classes based on existing classes. This can help you to reuse code and avoid duplication.
-- **Polymorphism**: Polymorphism allows objects of different classes to be treated as if they were objects of the same class. This can help to reduce complexity and improve maintainability. 
+1. Classes and Instances: Python allows you to define classes using the class keyword and create instances of these classes.
+
+2. Inheritance: Python supports single and `multiple inheritance`, allowing classes to inherit attributes and methods from one or more other classes.
+
+3. Encapsulation: Python doesn't have strict access modifiers like private or protected as in other languages. However, it uses a convention: a variable or method prefixed with an underscore (_) is intended for `internal use`, and a double underscore (__) invokes `name mangling` to avoid naming conflicts in subclasses.
+
+4. Polymorphism: Python supports polymorphism, meaning that a subclass can override a method of its superclass.
+
+5. `Magic Methods`: Python provides magic methods, also known as dunder methods (double underscore methods), such as __init__, __str__, __eq__, etc. These methods provide special syntactic features or do special things. For example, __init__ is a constructor method and __str__ returns a printable string representation of the object.
 
 ## Simple Example
 
@@ -74,8 +83,6 @@ class Cat(Animal):
         print(f"Meow! My name is {self.name}.")
 
 # **Encapsulation:** The `Animal` class encapsulates the `name` attribute and the `make_sound()` method. This means that the `name` attribute can only be accessed and modified through the `Animal` class methods.
-
-# **Abstraction:** The `Animal` class is an abstract class. This means that it cannot be instantiated directly. Instead, it must be subclassed and the `make_sound()` method must be implemented in the subclasses. This allows us to define a common interface for all animals, without specifying the concrete implementation of each animal.
 
 # **Inheritance:** The `Dog` and `Cat` classes inherit from the `Animal` class. This means that they inherit all of the attributes and methods of the `Animal` class.
 

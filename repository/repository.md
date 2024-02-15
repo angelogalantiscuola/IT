@@ -1,6 +1,12 @@
-# Repository
+%% Begin Waypoint %%
+- [env_file](./env_file.md)
+- [gitignore](./gitignore.md)
+- [virtual_environment](./virtual_environment.md)
 
-## How to create a repo on Github
+%% End Waypoint %%
+
+# Repository
+## How to create a repo on GitHub
 
 1. Sign in to your GitHub account.
 2. Click on the '+' icon at the top right corner of the page, then select 'New repository'.
