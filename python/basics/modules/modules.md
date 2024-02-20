@@ -1,5 +1,5 @@
 %% Begin Waypoint %%
-
+- [library](./library.md)
 
 %% End Waypoint %%
 

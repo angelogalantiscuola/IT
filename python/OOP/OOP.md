@@ -2,6 +2,7 @@
 - [classes_and_objects](./classes_and_objects.md)
 - [magic_methods](./magic_methods.md)
 - [multiple_inheritance](./multiple_inheritance.md)
+- [multiplicity_cardinality_participation](./multiplicity_cardinality_participation.md)
 - [python_OOP_mindmap](./python_OOP_mindmap.md)
 - [UML_class_diagram](./UML_class_diagram.md)
 

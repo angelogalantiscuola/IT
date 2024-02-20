@@ -8,11 +8,12 @@ An interface in programming is a more general term that can refer to **any point
 - An interface can be graphical, textual, auditory, tactile, or any other mode of communication.
 
 For example, suppose you have a computer system that consists of a keyboard, a mouse, a monitor, a printer, an operating system, and an application.
-Each of these components has an interface with one or more other components.
-The keyboard and the mouse have a hardware interface with the computer that specifies how they send signals to the operating system.
-The monitor and the printer have a hardware interface with the computer that specifies how they receive signals from the operating system.
-The operating system and the application have a software interface that specifies how they communicate with each other.
-The application and the user have a user interface that specifies how they interact with each other through graphical elements or commands.
+
+- Each of these components has an interface with one or more other components.
+- The keyboard and the mouse have a hardware interface with the computer that specifies how they send signals to the operating system.
+- The monitor and the printer have a hardware interface with the computer that specifies how they receive signals from the operating system.
+- The operating system and the application have a software interface that specifies how they communicate with each other.
+- The application and the user have a user interface that specifies how they interact with each other through graphical elements or commands.
 
 ## Examples of interfaces in programming
 

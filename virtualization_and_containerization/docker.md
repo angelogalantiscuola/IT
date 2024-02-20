@@ -1,7 +1,5 @@
 # Learn Docker in 7 Easy Steps - Full Beginner's Tutorial
 
-**Summary:**
-
 - The [video]((https://www.youtube.com/watch?v=gAkwW2tuIqE)) provides a hands-on approach to using Docker as a developer.
 - The three main components of Docker are Docker files, images, and containers.
 - The video covers important concepts like port forwarding, volumes, and managing multiple containers with Docker Compose.
