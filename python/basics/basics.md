@@ -1,5 +1,6 @@
 %% Begin Waypoint %%
 - **[data_types](./data_types/data_types.md)**
+- [decorators](./decorators.md)
 - **[files_handling](./files_handling/files_handling.md)**
 - **[functions](./functions/functions.md)**
 - **[modules](./modules/modules.md)**
