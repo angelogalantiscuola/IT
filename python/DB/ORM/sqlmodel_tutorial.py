@@ -4,6 +4,7 @@ and it uses Python's type annotations to define the structure of the database ta
 """
 
 from sqlmodel import Field, Session, SQLModel, create_engine, select, or_
+from sqlalchemy import text
 
 
 class Hero(SQLModel, table=True):
@@ -46,6 +47,7 @@ def create_heroes():
     with Session(engine) as session:
         if session.exec(select(Hero)).first() is None:  # Check if the database is empty
             session.add(hero_1)
+            # equivalent to "INSERT INTO hero (name, secret_name, age) VALUES ('Deadpond', 'Dive Wilson', NULL)"
             session.add(hero_2)
             session.add(hero_3)
             session.add(hero_4)
@@ -60,11 +62,23 @@ def create_heroes():
 def select_heroes():
     with Session(engine) as session:
         # statement = select(Hero)
+        # equivalent to "SELECT * FROM hero"
         # statement = select(Hero).where(Hero.name == "Deadpond")
+        # equivalent to "SELECT * FROM hero WHERE name = 'Deadpond'"
         # statement = select(Hero).where(Hero.name == "Deadpond").where(Hero.age == 48)
+        # equivalent to "SELECT * FROM hero WHERE name = 'Deadpond' AND age = 48"
         # statement = select(Hero).where(Hero.age > 35)
+        # equivalent to "SELECT * FROM hero WHERE age > 35"
         statement = select(Hero).where(or_(Hero.age <= 35, Hero.age > 90))
+        # equivalent to "SELECT * FROM hero WHERE age <= 35 OR age > 90"
         results = session.exec(statement)
+        for hero in results:
+            print(hero)
+
+
+def query_using_SQL_code(statement):
+    with Session(engine) as session:
+        results = session.exec(text(statement))
         for hero in results:
             print(hero)
 
@@ -79,17 +93,23 @@ def read():
 
 
 def update():
+    # https://sqlmodel.tiangolo.com/tutorial/update/
     pass
 
 
 def delete():
+    # https://sqlmodel.tiangolo.com/tutorial/delete/
     pass
 
 
 def main():
-    create_db_and_tables()
-    create()
-    read()
+    create_db_and_tables()  # create the database and the tables
+    create()  # insert data into the database
+    read()  # select data from the database
+
+    # Using SQL code
+    statement = "SELECT * FROM hero WHERE age > 35"
+    query_using_SQL_code(statement)
 
 
 if __name__ == "__main__":
