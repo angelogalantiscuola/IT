@@ -1,20 +1,19 @@
+# Data structures
 
 ```table-of-contents
 ```
 
-# Data structures
-
 ## Which are the main data structures present in all the main programming languages?
 
 Most programming languages have several common data structures, such as
-- arrays, 
-- lists, 
-- map
-- stacks, 
-- queues, 
-- trees, 
-- and graphs.
 
+- arrays,
+- lists,
+- map
+- stacks,
+- queues,
+- trees,
+- and graphs.
 
 ## How to choose which data structure to use?
 
@@ -28,7 +27,6 @@ The choice of data structure depends on the specific requirements of your progra
 - Use trees when you need to store hierarchical data and perform operations such as searching, insertion, and deletion efficiently.
 - Use graphs when you need to represent complex relationships between objects.
 
-
 ## What is an array?
 
 An array is a data structure that stores a collection of elements of the same type in a contiguous block of memory. The elements in an array are accessed using an index, which is an integer value that represents the position of an element in the array. Arrays are commonly used in programming to store and manipulate collections of data, such as a list of numbers or a set of strings.
@@ -37,7 +35,6 @@ An array is a data structure that stores a collection of elements of the same ty
 - Java: `java.util.Arrays`
 - Python: `list`
 - JavaScript: `Array`
-
 
 ## What is a list?
 
@@ -48,16 +45,17 @@ A list is a data structure that consists of a sequence of nodes, where each node
 - Python: `list`
 - JavaScript: `Array` (although it behaves more like a dynamic array than a traditional linked list)
 
-
 ## What is a map?
+
  A map is a data structure that stores key-value pairs, where each key is unique. **It is also known as a dictionary, associative array, or hash table** in different programming languages. The map allows for efficient lookup, insertion, and deletion of key-value pairs. The keys are used to index and locate the corresponding values. Maps are commonly used in various applications such as databases, caching, and indexing.
+
 - C#: `System.Collections.Generic.Dictionary<TKey, TValue>`
 - Java: `java.util.Map<K, V>`
 - Python: `dict`
 - JavaScript: `Map`
 
-
 ## What is a set?
+
  A set is an abstract data type that represents a collection of distinct elements. The elements in a set are unordered, meaning that there is no concept of a "first" or "last" element. Sets are often used to represent mathematical sets, which are collections of unique elements.
 
 - C#: `System.Collections.Generic.HashSet<T>`

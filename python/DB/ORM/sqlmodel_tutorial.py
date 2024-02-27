@@ -76,6 +76,42 @@ def select_heroes():
             print(hero)
 
 
+def update_heroes():
+    with Session(engine) as session:
+        statement = select(Hero).where(Hero.name == "Spider-Boy")
+        results = session.exec(statement)
+        hero = results.one()
+        print("Hero:", hero)
+
+        hero.age = 16
+        session.add(hero)
+        session.commit()
+
+        # Refresh the 'hero' instance with its current state in the database
+        session.refresh(hero)
+        print("Updated hero:", hero)
+
+
+def delete_heroes():
+    with Session(engine) as session:
+        statement = select(Hero).where(Hero.name == "Spider-Youngster")
+        results = session.exec(statement)
+        hero = results.one()
+        print("Hero: ", hero)
+
+        session.delete(hero)
+        session.commit()
+
+        print("Deleted hero:", hero)
+
+        statement = select(Hero).where(Hero.name == "Spider-Youngster")
+        results = session.exec(statement)
+        hero = results.first()
+
+        if hero is None:
+            print("There's no hero named Spider-Youngster")
+
+
 def query_using_SQL_code(statement):
     with Session(engine) as session:
         results = session.exec(text(statement))
@@ -93,19 +129,19 @@ def read():
 
 
 def update():
-    # https://sqlmodel.tiangolo.com/tutorial/update/
-    pass
+    update_heroes()
 
 
 def delete():
-    # https://sqlmodel.tiangolo.com/tutorial/delete/
-    pass
+    delete_heroes()
 
 
 def main():
     create_db_and_tables()  # create the database and the tables
     create()  # insert data into the database
     read()  # select data from the database
+    update()  # update data in the database
+    delete()  # delete data from the database
 
     # Using SQL code
     statement = "SELECT * FROM hero WHERE age > 35"
