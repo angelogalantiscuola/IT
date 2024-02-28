@@ -1,12 +1,13 @@
 %% Begin Waypoint %%
-
-- [recursion_and_iteration](./recursion_and_iteration.md)
+- [args and kwargs](./args%20and%20kwargs.md)
+- [built-in functions](./built-in%20functions.md)
+- [type_hinting](./type_hinting.md)
 
 %% End Waypoint %%
 
 ## Functions in Math
 
-The concept of a function in programming is indeed borrowed from mathematics.
+The concept of a function in programming is borrowed from mathematics.
 
 `y=f(x)` for example `3=√9`
 

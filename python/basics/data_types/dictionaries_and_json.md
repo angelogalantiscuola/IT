@@ -14,7 +14,6 @@ my_dict = {"apple": 2, "banana": 3, "orange": 4}
 
 This creates a dictionary with three key-value pairs, where the keys are "apple", "banana", and "orange", and the corresponding values are 2, 3, and 4, respectively.
 
-
 ## How do I access the values of a dictionary in Python?
 
 You can access the values of a dictionary in Python by using the keys as the index. Here's an example:

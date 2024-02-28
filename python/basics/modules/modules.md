@@ -1,5 +1,5 @@
 %% Begin Waypoint %%
-
+- [library](./library.md)
 
 %% End Waypoint %%
 
@@ -46,14 +46,6 @@ import math
 
 print(type(math.sqrt))  # Outputs: <class 'builtin_function_or_method'>
 print(type(math.pi))  # Outputs: <class 'float'>
-```
-
-In the `datetime` module, `datetime` is a class, and thus an object of type 'type':
-
-```python
-import datetime
-
-print(type(datetime.datetime))  # Outputs: <class 'type'>
 ```
 
 So, `when you import a module, you're actually creating an object` which groups together all the functions, classes, and variables defined in that module.

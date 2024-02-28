@@ -1,4 +1,5 @@
-```toc
+
+```table-of-contents
 ```
 
 ## Main elements of a class diagram

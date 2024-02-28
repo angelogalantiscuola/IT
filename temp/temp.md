@@ -1,11 +1,7 @@
 %% Begin Waypoint %%
-- **[[coding]]**
-- [[data structures]]
-- [[important]]
-- [[python basics]]
-- **[[school]]**
-- **[[streaming_service]]**
-- **[[unlinked]]**
-- **[[virtualization_and_containerization]]**
+- **[coding](./coding/coding.md)**
+- [important](./important.md)
+- **[school](./school/school.md)**
+- **[unlinked](./unlinked/unlinked.md)**
 
 %% End Waypoint %%
