@@ -18,6 +18,7 @@ class Hero(SQLModel, table=True):
     secret_name: str
     age: int | None = None
     team_id: int | None = Field(default=None, foreign_key="team.id")
+
     # These new attributes are not the same as fields,
     # they don't represent a column directly in the database,
     # and their value is not a singular value like an integer.
