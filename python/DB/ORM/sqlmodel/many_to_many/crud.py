@@ -43,7 +43,7 @@ def select_heroes(engine):
         result = session.exec(statement)
         hero_spider_boy = result.one()
 
-        print("Spider-Boy's team again:", hero_spider_boy.team)
+        print("Spider-Boy's team again:", hero_spider_boy.teams)
 
 
 def update_heroes(engine):
@@ -70,16 +70,11 @@ def delete_heroes(engine):
     with Session(engine) as session:
         statement = select(Hero).where(Hero.name == "Spider-Youngster")
         results = session.exec(statement)
-        hero = results.one()
-        print("Hero: ", hero)
-        if hero is not None:
+        try:
+            hero = results.one()
+            print("Hero: ", hero)
             session.delete(hero)
             session.commit()
             print("Deleted hero:", hero)
-
-        statement = select(Hero).where(Hero.name == "Spider-Youngster")
-        results = session.exec(statement)
-        hero = results.first()
-
-        if hero is None:
+        except Exception:
             print("There's no hero named Spider-Youngster")
