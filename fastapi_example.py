@@ -1,28 +1,49 @@
-from contextlib import asynccontextmanager
+# to run it:
+# uvicorn fastapi_example:app --reload
+
+from typing import Optional
 
 from fastapi import FastAPI
+from sqlmodel import Field, Session, SQLModel, create_engine, select
 
 
-def fake_answer_to_everything_ml_model(x: float):
-    return x * 42
+class Hero(SQLModel, table=True):
+    id: Optional[int] = Field(default=None, primary_key=True)
+    name: str = Field(index=True)
+    secret_name: str
+    age: Optional[int] = Field(default=None, index=True)
 
 
-ml_models = {}
+sqlite_file_name = "database.db"
+sqlite_url = f"sqlite:///{sqlite_file_name}"
+
+connect_args = {"check_same_thread": False}
+engine = create_engine(sqlite_url, echo=True, connect_args=connect_args)
 
 
-@asynccontextmanager
-async def lifespan(app: FastAPI):
-    # Load the ML model
-    ml_models["answer_to_everything"] = fake_answer_to_everything_ml_model
-    yield
-    # Clean up the ML models and release the resources
-    ml_models.clear()
+def create_db_and_tables():
+    SQLModel.metadata.create_all(engine)
 
 
-app = FastAPI(lifespan=lifespan)
+app = FastAPI()
 
 
-@app.get("/predict")
-async def predict(x: float):
-    result = ml_models["answer_to_everything"](x)
-    return {"result": result}
+@app.on_event("startup")
+def on_startup():
+    create_db_and_tables()
+
+
+@app.post("/heroes/")
+def create_hero(hero: Hero):
+    with Session(engine) as session:
+        session.add(hero)
+        session.commit()
+        session.refresh(hero)
+        return hero
+
+
+@app.get("/heroes/")
+def read_heroes():
+    with Session(engine) as session:
+        heroes = session.exec(select(Hero)).all()
+        return heroes
