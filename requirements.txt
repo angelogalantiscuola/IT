@@ -1,3 +1,6 @@
 sqlmodel
 fastapi 
 uvicorn[standard]
+matplotlib
+requests
+psutil
