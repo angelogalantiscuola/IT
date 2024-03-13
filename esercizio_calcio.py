@@ -11,6 +11,18 @@ class Team(SQLModel, table=True):
     players: list["Player"] = Relationship(back_populates="team")
 
 
+class PlayerSponsorLink(SQLModel, table=True):
+    sponsor_id: Optional[int] = Field(default=None, foreign_key="sponsor.id", primary_key=True)
+    player_id: Optional[int] = Field(default=None, foreign_key="player.id", primary_key=True)
+
+
+class Sponsor(SQLModel, table=True):
+    id: Optional[int] = Field(default=None, primary_key=True)
+    brand: str = Field(index=True)
+    category: str
+    players: list["Player"] = Relationship(back_populates="sponsor", link_model=PlayerSponsorLink)
+
+
 class Player(SQLModel, table=True):
     id: Optional[int] = Field(default=None, primary_key=True)
     name: str
@@ -19,6 +31,7 @@ class Player(SQLModel, table=True):
     role: str
     team_id: Optional[int] = Field(default=None, foreign_key="team.id")
     team: Optional[Team] = Relationship(back_populates="players")
+    sponsors: list[Sponsor] = Relationship(back_populates="player", link_model=PlayerSponsorLink)
 
 
 # RA = relationship attributes
@@ -61,23 +74,12 @@ def select_records(engine):
     with Session(engine) as session:
 
         statement = select(Team)
-        # .where(Hero.name == "Spider-Boy")
         result = session.exec(statement)
 
         # print all records
         for team in result:
             print(team)
             print(team.players)
-
-        # # new way
-        # print("Spider-Boy's team again:", hero_spider_boy.team)
-
-        # # other example
-        # statement = select(Team).where(Team.name == "Preventers")
-        # result = session.exec(statement)
-        # team_preventers = result.one()
-
-        # print("Preventers heroes:", team_preventers.heroes)
 
 
 def create_engine_with_db(db_name: str, echo: bool):
@@ -98,11 +100,11 @@ def main():
             os.remove(db_name)
         except FileNotFoundError:
             print(f"{db_name} not found")
-            exit()
+            # exit()
     engine = create_engine_with_db(db_name, verbose)
     create_db_and_tables(engine)
-    create_records(engine)
-    select_records(engine)
+    # create_records(engine)
+    # select_records(engine)
     # update_heroes(engine)
     # delete_heroes(engine)
 
