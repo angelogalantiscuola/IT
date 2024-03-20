@@ -4,3 +4,4 @@ uvicorn[standard]
 matplotlib
 requests
 psutil
+flask
