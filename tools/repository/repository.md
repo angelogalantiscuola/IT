@@ -1,11 +1,12 @@
+# repository
+
 %% Begin Waypoint %%
-- [env_file](./env_file.md)
-- [gitignore](./gitignore.md)
-- [virtual_environment](./virtual_environment.md)
+- [[env_file]]
+- [[gitignore]]
+- [[virtual_environment]]
 
 %% End Waypoint %%
 
-# Repository
 ## How to create a repo on GitHub
 
 1. Sign in to your GitHub account.

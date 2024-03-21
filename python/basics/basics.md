@@ -3,7 +3,5 @@
 - **[files_handling](./files_handling/files_handling.md)**
 - **[functions](./functions/functions.md)**
 - **[mindmaps](./mindmaps/mindmaps.md)**
-- **[style_guidelines](./style_guidelines/style_guidelines.md)**
-
 
 %% End Waypoint %%

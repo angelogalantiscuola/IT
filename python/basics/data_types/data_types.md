@@ -1,5 +1,5 @@
 %% Begin Waypoint %%
-- [data structures](./data%20structures.md)
-- [dictionaries_and_json](./dictionaries_and_json.md)
+- [[data structures]]
+- [[dictionaries_and_json]]
 
 %% End Waypoint %%

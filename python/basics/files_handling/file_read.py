@@ -1,21 +1,8 @@
+'''
+Different ways to read a file in Python
+'''
+
 filename = "file_to_read.txt"
-
-# integer = 0
-# print(bool(integer))
-# integer = -33
-# print(bool(integer))
-# integer = 0
-# print(bool(integer))
-
-# string = "hello"
-# print(bool(string))
-# string = ""
-# print(bool(string))
-
-# list = [1, 2, 3]
-# print(bool(list))
-# list = []
-# print(bool(list))
 
 
 # read a file as a whole

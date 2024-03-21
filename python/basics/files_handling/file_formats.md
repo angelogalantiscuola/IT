@@ -13,7 +13,7 @@ Different file formats have different advantages and disadvantages, such as size
 
 - **YAML**: A *human-readable* data-serialization language that uses indentation and keywords to define the data structure. It is commonly used *for configuration files* and can store complex data types such as references and collections. However, it is *more verbose* and less compatible than JSON.
 
-- **others**: There are many other file formats that can store different types of data, such as images, videos, audio, documents, archives, etc. Some examples are jpg, png, gif, mp4, mp3, wav, docx, pdf, zip, rar, etc. Each of these formats has its own specifications and features that make it suitable for certain purposes.
+- **others**: There are many other file formats that can store different types of data, such as images, videos, audio, documents, archives, etc. Some examples are `jpg, png, gif, mp4, mp3, wav, docx, pdf, zip, rar,` etc. Each of these formats has its own specifications and features that make it suitable for certain purposes.
 
 ## Example of the same data stored in txt, csv, xml and json
 

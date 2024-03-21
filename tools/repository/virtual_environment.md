@@ -1,4 +1,4 @@
-# Virtual environment
+# virtual environment
 
 Think of it like a separate box for each of your Python projects. Inside this box, you can have whatever toys (packages) you want and it won't mess up the toys in your other boxes (other projects).
 
@@ -14,7 +14,7 @@ In Python, a virtual environment is an isolated environment where you can instal
 1. **Create a virtual environment**: You can create a virtual environment using the `venv` module that comes with Python. Open a terminal, navigate to your project directory, and run the following command:
 
     ```bash
-    python -m venv myenv
+    python -m venv .venv
     ```
 
     This will create a new virtual environment named `myenv` in your project directory:
@@ -22,7 +22,7 @@ In Python, a virtual environment is an isolated environment where you can instal
     - `python`: This is the command to start the Python interpreter.
     - `-m`: This is a command-line option for the Python interpreter that allows you to run a module as a script. In other words, it lets you run a Python module from the command line.
     - `venv`: This is the name of the Python module that you're running with the `-m` option. The `venv` module is used to create virtual environments in Python.
-    - `myenv`: This is the argument that you're passing to the `venv` module. It specifies the name of the virtual environment that you want to create. In this case, you're creating a virtual environment named `myenv`.
+    - `.venv`: This is the argument that you're passing to the `venv` module. It specifies the name of the virtual environment that you want to create. In this case, you're creating a virtual environment named `.venv`.
 
 2. **Activate the virtual environment**: Before you can use the virtual environment, you need to activate it. The command to do this depends on your operating system:
     - On Windows, run: `myenv\Scripts\activate`

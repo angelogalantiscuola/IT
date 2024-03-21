@@ -1,5 +1,5 @@
 %% Begin Waypoint %%
-- [absolute_and_relative_path](./absolute_and_relative_path.md)
-- [file_formats](./file_formats.md)
+- [[absolute_and_relative_path]]
+- [[file_formats]]
 
 %% End Waypoint %%

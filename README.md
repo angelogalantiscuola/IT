@@ -1,6 +1,5 @@
 # IT
 
-```
 └── 📁python
     └── 📁DB
         └── 📁ORM
@@ -23,4 +22,3 @@
 └── 📁theory
 └── 📁tools
     └── 📁vscode
-```

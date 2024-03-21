@@ -14,6 +14,17 @@ Dynamic typing (or weakly typed): In dynamically typed languages, variables can 
 
 However, Python also supports type hinting, which allows you to specify the expected type of a variable or function return value. This can `help catch certain types of errors and improve code readability`, but it doesn't change the fact that Python is fundamentally a dynamically typed language. The type hints are `optional` and are `not enforced` by the Python interpreter.
 
+Here's an example of type hinting in Python:
+
+```python
+def combine_elements(a: int, b: str, c: list[str]) -> str:
+    return f"{a}, {b}, {', '.join(c)}"
+
+# Usage
+result = combine_elements(5, "Hello", ["Alice", "Bob", "Charlie"])
+print(result)  # Outputs: 5, Hello, Alice, Bob, Charlie
+```
+
 ### Important links on type hinting
 
 [Python Types Intro - FastAPI (tiangolo.com)](https://fastapi.tiangolo.com/python-types/)

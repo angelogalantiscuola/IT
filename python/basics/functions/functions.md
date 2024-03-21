@@ -1,4 +1,7 @@
+# Functions
+
 %% Begin Waypoint %%
+
 - [args and kwargs](./args%20and%20kwargs.md)
 - [built-in functions](./built-in%20functions.md)
 - [type_hinting](./type_hinting.md)
@@ -34,7 +37,7 @@ print(result) # Hello, Pippo
 > [!NOTE]
 > A related topic is [Type hinting](type_hinting.md)
 
-### Procedures
+### Procedure
 
 A procedure is a function without output, the return value is None.
 A procedure can have: no input values, a single input value, or multiple input values.
@@ -50,7 +53,7 @@ def greet_personally(first_name:str, last_name:str) -> None:
     print("Hello, " + first_name + " " + last_name)
 ```
 
-### Functions
+### Function
 
 A function can have: no input values, a single input value, or multiple input values.
 
@@ -77,7 +80,7 @@ def calculate_area_and_perimeter(length: float, width: float) -> tuple[float]:
     return area, perimeter
 ```
 
-#### Second degree equation
+#### Second degree equation example
 
 ```python
 from math import sqrt
