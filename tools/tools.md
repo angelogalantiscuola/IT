@@ -1,4 +1,7 @@
 %% Begin Waypoint %%
+- [[compiler_and_interpreter]]
+- [[git]]
+- [[github]]
 - [[version_control_system]]
 - **[vscode](./vscode/vscode.md)**
 

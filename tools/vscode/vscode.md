@@ -2,7 +2,6 @@
 
 %% Begin Waypoint %%
 - [[vscode_extensions]]
-- [[vscode_ssh]]
 
 %% End Waypoint %%
 

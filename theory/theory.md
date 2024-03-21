@@ -1,5 +1,6 @@
 %% Begin Waypoint %%
-
+- [[programming_languages_abstraction_levels]]
+- [[programming_paradigms]]
 
 %% End Waypoint %%
 
@@ -19,23 +20,3 @@
 
 - [How To Tell If Computer Parts Are Compatible With Each Other](https://computerinfobits.com/how-to-tell-if-computer-parts-are-compatible/)
 
-
-### Paradigmi di programmazione
-
-- [paradigma](https://it.wikipedia.org/wiki/Paradigma)
-- [paradigma di programmazione](https://it.wikipedia.org/wiki/Paradigma_di_programmazione)
-  - [programmzione strutturata](https://it.wikipedia.org/wiki/Programmazione_strutturata)
-  - [programmazione orientata agli oggetti](https://it.wikipedia.org/wiki/Programmazione_strutturata)
-
-
-### programming languages abstraction levels
-
-The level of abstraction in programming languages indicates how close a particular language is to the hardware. The lower the level of abstraction, the more details and low-level operations the programmer has to deal with. The higher the level of abstraction, the more features and functionalities the language provides to simplify and automate complex tasks.
-
-For example, machine code is the lowest level of abstraction, as it consists of binary instructions that can be executed directly by the processor. Assembly language is a level above machine code, as it uses symbolic names for memory locations and operations instead of binary codes. However, assembly language is still specific to the hardware and has to be translated into machine code by an assembler.
-
-C++ is a high-level language that can be compiled into machine code by a compiler. However, C++ is also considered a low-level language compared to other high-level languages because it allows direct access to memory addresses and low-level operations through pointers. C++ is often used for writing system software such as operating systems and compilers.
-
-Python is a higher-level language than C++, as it uses an interpreter or a virtual machine to execute its programs. Python offers greater abstraction than C++, such as dynamic typing, automatic memory management, multiple paradigms and built-in data structures. Python is often used for scripting, web development and data analysis.
-
-Prolog is one of the highest-level languages, as it uses logic programming to express problems and solutions in terms of facts and rules instead of procedures or functions. Prolog abstracts away many details such as control flow, data structures and algorithms from the programmer. Prolog is mainly used for artificial intelligence applications such as natural language processing and expert systems.

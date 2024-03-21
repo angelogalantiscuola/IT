@@ -1,0 +1,3 @@
+## A cosa servono un compilatore o un interprete?
+
+Un compilatore o un interprete sono strumenti utilizzati per **eseguire il codice sorgente** scritto in un linguaggio di programmazione. Il compilatore **traduce il codice sorgente** in un linguaggio macchina eseguibile dal computer, mentre l'interprete **esegue il codice sorgente riga per riga**. In entrambi i casi, il compilatore o l'interprete sono necessari per eseguire il codice sorgente e generare l'output desiderato. La scelta tra l'utilizzo di un compilatore o di un interprete dipende dal linguaggio di programmazione utilizzato e dalle esigenze specifiche del progetto.
