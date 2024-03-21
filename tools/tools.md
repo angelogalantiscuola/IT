@@ -1,5 +1,5 @@
 %% Begin Waypoint %%
-- [version_control_system](./version_control_system.md)
+- [[version_control_system]]
 - **[vscode](./vscode/vscode.md)**
 
 %% End Waypoint %%
