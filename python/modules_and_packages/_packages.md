@@ -1,10 +1,13 @@
+# Packages
+
 %% Begin Waypoint %%
+
+- **examples**
+
 - [[packages-ai]]
 - [[packages-all]]
 
 %% End Waypoint %%
-
-# Packages
 
 ## Difference between module and package
 
@@ -12,11 +15,11 @@ In Python, a module is a single **file** containing Python code, while a package
 
 ## How to create a package
 
-Here is an example of how to create and use a package in Python. Suppose you want to create a package named math with two modules named arithmetic and algebra. You need to create a directory named `math` and add two files named `arithmetic.py` and `algebra.py` inside it. You also need to add an empty file named `__init__.py` inside the math directory. The files can contain some functions or classes related to math operations. 
+Here is an example of how to create and use a package in Python. Suppose you want to create a package named math with two modules named arithmetic and algebra. You need to create a directory named `math` and add two files named `arithmetic.py` and `algebra.py` inside it. You also need to add an empty file named `__init__.py` inside the math directory. The files can contain some functions or classes related to math operations.
 
 Here's the structure of the files:
 
-```
+``` text=
 .
 ├── main.py
 └── math
@@ -58,4 +61,3 @@ from math import arithmetic, algebra
 print(add(2, 3))
 print(solve_quadratic(1, -5, 6))
 ```
-

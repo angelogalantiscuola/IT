@@ -1,6 +1,13 @@
+# Modules and Packages
+
 %% Begin Waypoint %%
+- [[_library]]
+- [[_modules]]
+- [[_packages]]
 - [[decorators]]
-- **[modules](./modules/modules.md)**
-- **[packages](./packages/packages.md)**
+- **examples**
+
+- [[packages-ai]]
+- [[packages-all]]
 
 %% End Waypoint %%
