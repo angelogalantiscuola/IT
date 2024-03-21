@@ -4,4 +4,4 @@ __pycache__/*
 **/*.db
 venv/
 .venv/
-venv2/
+temp.md
