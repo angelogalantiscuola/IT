@@ -3,7 +3,7 @@
 %% Begin Waypoint %%
 - **[basics](./basics/basics.md)**
 - **[DB](./DB/DB.md)**
-- **[modules_and_packages](./modules_and_packages/modules_and_packages.md)**
+- **[modules_library_packages](./modules_library_packages/modules_library_packages.md)**
 - **[OOP](./OOP/OOP.md)**
 - **[web_dev](./web_dev/web_dev.md)**
 

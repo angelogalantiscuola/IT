@@ -1,10 +1,7 @@
 # Modules
 
-%% Begin Waypoint %%
-
-- [[library]]
-
-%% End Waypoint %%
+> [!NOTE]
+> These are all modules in Python. Each one is a single file containing Python definitions and statements related to a specific functionality.
 
 Python comes with a large standard library that includes several lightweight modules. Here are some of the simplest and most commonly used ones:
 
