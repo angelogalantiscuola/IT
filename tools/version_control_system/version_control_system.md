@@ -1,6 +1,13 @@
 # Version Control System
 
-A Version Control System (VCS) is a software tool that helps developers manage changes to source code over time. VCS keeps track of every modification to the code in a special kind of database. If a mistake is made, developers can turn back the clock and compare earlier versions of the code to help fix the mistake while minimizing disruption to all team members. 
+%% Begin Waypoint %%
+- [[git]]
+- [[github]]
+- **[repository](./repository/repository.md)**
+
+%% End Waypoint %%
+
+A Version Control System (VCS) is a software tool that helps developers manage changes to source code over time. VCS keeps track of every modification to the code in a special kind of database. If a mistake is made, developers can turn back the clock and compare earlier versions of the code to help fix the mistake while minimizing disruption to all team members.
 
 There are two types of VCS:
 
@@ -23,6 +30,3 @@ Version control software is an **essential tool for managing a project's source 
 5. **Integration**: Version control makes it easy to integrate changes made by multiple developers into a single project.
 
 6. **Remote Development**: Version control allows for remote work, sharing, and downloading changes made to the project.
-
-
-
