@@ -122,7 +122,93 @@ Now, in both tables, all non-key attributes are fully dependent on the primary k
 - X is a superkey.
 - Each attribute in Y-X (the set difference) is a prime attribute (i.e., each attribute in Y that is not in X is part of some candidate key).
 
-In simpler terms, this means that for every non-trivial functional dependency (X → Y), X should be a superkey. A superkey is a set of columns such that no two rows will have the same combination of values for these columns. 
+In simpler terms, this means that for every non-trivial functional dependency (X → Y), X should be a superkey. A superkey is a set of columns such that no two rows will have the same combination of values for these columns.
 
 BCNF is used to prevent redundancy due to functional dependencies. A table that is in 3NF but not in BCNF is likely to have redundancy.
 
+To move from Third Normal Form (3NF) to Boyce-Codd Normal Form (BCNF), we need to ensure that for every non-trivial functional dependency (X → Y), X is a superkey.
+
+Looking at the `Courses` and `Departments` tables in 3NF:
+
+**Courses Table (3NF)**
+
+| CourseID | CourseName | Department |
+|---|---|---|
+| Math101 | Calculus | Mathematics |
+| Sci102 | Physics | Science |
+
+**Departments Table (3NF)**
+
+| Department | DepartmentHead |
+|---|---|
+| Mathematics | Prof. Newton |
+| Science | Prof. Einstein |
+
+These tables are already in BCNF. In the `Courses` table, `CourseName` and `Department` are fully dependent on `CourseID`, which is a superkey. In the `Departments` table, `DepartmentHead` is fully dependent on `Department`, which is a superkey.
+
+However, if there was a table where a non-key attribute was dependent on another non-key attribute, it would not be in BCNF. For example:
+
+**Departments Table (Not in BCNF)**
+
+| Department | DepartmentHead | HeadOffice |
+|---|---|---|
+| Mathematics | Prof. Newton | Building A |
+| Science | Prof. Einstein | Building B |
+
+In this table, `HeadOffice` is dependent on `DepartmentHead`, not on the superkey `Department`. To bring this table into BCNF, we would need to split it into two tables:
+
+**Departments Table (BCNF)**
+
+| Department | DepartmentHead |
+|---|---|
+| Mathematics | Prof. Newton |
+| Science | Prof. Einstein |
+
+**Offices Table (BCNF)**
+
+| DepartmentHead | HeadOffice |
+|---|---|
+| Prof. Newton | Building A |
+| Prof. Einstein | Building B |
+
+Now, in both tables, all non-key attributes are fully dependent on the superkey, and there are no transitive dependencies.
+
+
+## 3NF vs BCNF
+
+Sure, let's consider an example to illustrate the difference between Third Normal Form (3NF) and Boyce-Codd Normal Form (BCNF).
+
+Consider a table `Students`:
+
+**Students Table (Not in BCNF)**
+
+| StudentID | Major | Advisor |
+|---|---|---|
+| 1 | Computer Science | Prof. Newton |
+| 2 | Physics | Prof. Einstein |
+| 3 | Computer Science | Prof. Newton |
+
+In this table, `StudentID` is the primary key, and `Major` and `Advisor` are non-key attributes. The functional dependencies are `StudentID -> Major`, `StudentID -> Advisor`, and `Major -> Advisor`.
+
+This table is in 3NF because every non-key attribute (`Major` and `Advisor`) is fully functionally dependent on the primary key (`StudentID`), and there are no transitive dependencies.
+
+However, this table is not in BCNF because not all determinants are candidate keys. The determinant `Major` is not a candidate key, but there is a dependency `Major -> Advisor`.
+
+To bring this table into BCNF, we would need to split it into two tables:
+
+**Students Table (BCNF)**
+
+| StudentID | Major |
+|---|---|
+| 1 | Computer Science |
+| 2 | Physics |
+| 3 | Computer Science |
+
+**Majors Table (BCNF)**
+
+| Major | Advisor |
+|---|---|
+| Computer Science | Prof. Newton |
+| Physics | Prof. Einstein |
+
+Now, in both tables, all non-key attributes are fully dependent on the superkey, and there are no transitive dependencies.
