@@ -1,7 +1,9 @@
 # DB
 
 %% Begin Waypoint %%
-
+- [[ER]]
+- [[from_data_to_database]]
+- [[normalization]]
 - **[ORM](./ORM/ORM.md)**
 
 %% End Waypoint %%

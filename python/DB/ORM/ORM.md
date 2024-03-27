@@ -1,8 +1,15 @@
 # ORM
 
 %% Begin Waypoint %%
-- [mapping_object_to_data](./mapping_object_to_data.md)
-- [SQLModel](./SQLModel.md)
+- [[mapping_object_to_data]]
+- **sqlmodel**
+	- **foreign_key**
+
+	- **many_to_many**
+
+	- **relationship_attributes**
+
+- [[SQLModel]]
 
 %% End Waypoint %%
 
