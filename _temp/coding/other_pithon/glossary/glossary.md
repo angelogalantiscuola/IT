@@ -1,62 +1,63 @@
-%% Begin Waypoint %%
+# Glossary
 
+%% Begin Waypoint %%
 
 %% End Waypoint %%
 
-
 [Glossary — Python 3.12.0 documentation](https://docs.python.org/3/glossary.html#term-iterator)
 
-
 - **Object-Oriented Programming**
-    - abstract base class
-    - attribute
-    - object
-    - method
-    - magic method
-    - special method
+  - abstract base class
+  - attribute
+  - object
+  - method
+  - magic method
+  - special method
 
 - **Functions**
-    - argument
-    - callable
-    - callback
-    - decorator
-    - key function
-    - lambda
-    - parameter
+  - argument
+  - callable
+  - callback
+  - decorator
+  - key function
+  - lambda
+  - parameter
 
 - **Documentation**
-    - docstring
-    - PEP
-    - triple-quoted string
+  - docstring
+  - PEP
+  - triple-quoted string
 
 - **Programming Concepts**
-    - duck-typing
-    - immutable
-    - namespace
-    - statement
-    - type
-    - type alias
+  - duck-typing
+  - immutable
+  - namespace
+  - statement
+  - type
+  - type alias
 
 - **Generators**
-    - generator
-    - generator iterator
+  - generator
+  - generator iterator
 
 - **Iterables**
-    - iterable
-    - iterator
+
+  - iterable
+  - iterator
 
 - **Modules and Packages**
-    - module
-    - package
+
+  - module
+  - package
 
 - **Python Environment**
-    - virtual environment
 
-
+  - virtual environment
 
 **abstract base class**: ABCs introduce virtual subclasses, which are classes that don’t inherit from a class
 
-**argument**: A value passed to a function (or method) when calling the function. 
+**argument**: A value passed to a function (or method) when calling the function.
+
 - _keyword argument_: an argument preceded by an identifier
 - _positional argument_: an argument that is not a keyword argument
 
@@ -98,7 +99,8 @@
 
 **package**: A Python module which can contain submodules or recursively, sub-packages.
 
-**parameter**: A named entity in a function (or method) definition that specifies an argument (or in some cases, arguments) that the function can accept. There are five kinds of parameter:
+**parameter**: A named entity in a function (or method) definition that specifies an argument (or in some cases, arguments) that the function can accept. There are five kinds of parameter:+
+
 - _positional-or-keyword_
 - _positional-only_
 - _keyword-only_

@@ -1,4 +1,4 @@
-## Name mangling
+# Name mangling
 
 Name mangling is a mechanism in Python to avoid naming conflicts in subclasses. This is particularly useful in the context of inheritance where a subclass might have an attribute or method with the same name as in the superclass.
 
