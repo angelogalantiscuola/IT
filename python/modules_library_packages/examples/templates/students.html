@@ -1,0 +1,13 @@
+<!-- 
+print each student inside a tag <p>
+-->
+<!-- <ul>
+    <li>Coffee</li>
+    <li>Tea</li>
+    <li>Milk</li>
+</ul> -->
+<ul>
+    {% for student in students %}
+    <li>{{student}}</li>
+    {% endfor %}
+</ul>
