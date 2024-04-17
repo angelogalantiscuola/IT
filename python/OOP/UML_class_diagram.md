@@ -1,7 +1,7 @@
-
-```table-of-contents
+```toc
 ```
 
+**important: add associative classes for n-n with attributes mapping**
 ## Main elements of a class diagram
 
 In a UML (Unified Modeling Language) class diagram, you can use the following main elements:
