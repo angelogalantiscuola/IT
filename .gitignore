@@ -5,3 +5,4 @@ __pycache__/*
 venv/
 .venv/
 temp.md
+temp_prompt.md
