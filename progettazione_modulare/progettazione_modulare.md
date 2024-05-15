@@ -24,7 +24,6 @@ def inserisci_dati() -> Contatto:
 def aggiungi_contatto(rubrica: list[Contatto], contatto: Contatto) -> list[Contatto]:
     pass
 
-
 # Funzione per visualizzare tutti i contatti
 def visualizza_contatti(rubrica: list[Contatto]) -> None:
     pass
@@ -38,8 +37,8 @@ def cerca_contatto(rubrica: list[Contatto], nome: str) -> Contatto | None:
 # Funzione principale
 def main() -> None:
     rubrica = []
-    nome, indirizzo, numero = inserisci_dati()
-    rubrica = aggiungi_contatto(rubrica, nome, indirizzo, numero)
+    contatto = inserisci_dati()
+    rubrica = aggiungi_contatto(rubrica, contatto)
 
     visualizza_contatti(rubrica)
 
