@@ -34,4 +34,20 @@ def annulla_prenotazione(cinema: Cinema, sala: str, film: str) -> Cinema:
     pass
 
 def main():
-    pass
+    cinema = {}
+    cinema = aggiungi_sala(cinema, 'Sala 1', 100)
+    cinema = aggiungi_sala(cinema, 'Sala 2', 50)
+    cinema = aggiungi_film(cinema, 'Sala 1', 'Il Signore degli Anelli')
+    cinema = aggiungi_film(cinema, 'Sala 1', 'Harry Potter')
+    cinema = aggiungi_film(cinema, 'Sala 2', 'Star Wars')
+    print(visualizza_sale(cinema))
+    print(visualizza_film(cinema, 'Sala 1'))
+    print(visualizza_film(cinema, 'Sala 2'))
+    cinema = prenota_posto(cinema, 'Sala 1', 'Il Signore degli Anelli')
+    cinema = prenota_posto(cinema, 'Sala 1', 'Il Signore degli Anelli')
+    cinema = prenota_posto(cinema, 'Sala 1', 'Harry Potter')
+    cinema = prenota_posto(cinema, 'Sala 2', 'Star Wars')
+    cinema = annulla_prenotazione(cinema, 'Sala 1', 'Il Signore degli Anelli')
+    print(visualizza_film(cinema, 'Sala 1'))
+    print(visualizza_film(cinema, 'Sala 2'))
+
