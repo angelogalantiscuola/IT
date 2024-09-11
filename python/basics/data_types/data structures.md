@@ -3,18 +3,6 @@
 ```toc
 ```
 
-## Programming languages data structures
-
-Most programming languages have several common data structures, such as
-
-- arrays,
-- lists,
-- map
-- stacks,
-- queues,
-- trees,
-- graphs.
-
 ## How to choose which data structure to use?
 
 The choice of data structure depends on the specific requirements of your program. Here are some general guidelines:
@@ -34,8 +22,18 @@ An array is a data structure that **stores a collection of elements of the same 
 
 - C#: `System.Array`
 - Java: `java.util.Arrays`
-- Python: `list`
+- Python: `list` or `array` (from the `array` module)
 - JavaScript: `Array`
+
+```python
+import array
+
+# Create an array of integers
+arr = array.array('i', [1, 2, 3, 4, 5])
+
+# Access elements
+print(arr[0])  # Output: 1
+```
 
 ### List
 
@@ -46,6 +44,20 @@ A list is a data structure that consists of a sequence of nodes, where each node
 - Python: `list`
 - JavaScript: `Array` (although it behaves more like a dynamic array than a traditional linked list)
 
+```python
+# Create a list of integers
+lst = [1, 2, 3, 4, 5]
+
+# Access elements
+print(lst[0])  # Output: 1
+
+# Append an element
+lst.append(6)
+
+# Remove an element
+lst.remove(3)
+```
+
 ### Map
 
  A map is a data structure that stores **key-value pairs**, where each key is unique. **It is also known as a dictionary, associative array, or hash table** in different programming languages. The map allows for efficient lookup, insertion, and deletion of key-value pairs. The keys are used to index and locate the corresponding values. Maps are commonly used in various applications such as databases, caching, and indexing.
@@ -54,6 +66,20 @@ A list is a data structure that consists of a sequence of nodes, where each node
 - Java: `java.util.Map<K, V>`
 - Python: `dict`
 - JavaScript: `Map`
+
+```python
+# Create a dictionary
+dct = {'a': 1, 'b': 2, 'c': 3}
+
+# Access elements
+print(dct['a'])  # Output: 1
+
+# Add a new key-value pair
+dct['d'] = 4
+
+# Remove a key-value pair
+del dct['b']
+```
 
 ### Set
 
@@ -64,6 +90,20 @@ A list is a data structure that consists of a sequence of nodes, where each node
 - Python: `set`
 - JavaScript: `Set`
 
+```python
+# Create a set
+st = {1, 2, 3, 4, 5}
+
+# Add an element
+st.add(6)
+
+# Remove an element
+st.remove(3)
+
+# Check if an element is in the set
+print(4 in st)  # Output: True
+```
+
 ### Stack
 
 A stack is a data structure that stores a **collection of elements and operates on them in a last-in, first-out (LIFO)** manner. Elements can be added to the top of the stack, and removed from the top of the stack. This means that the last element added to the stack is the first one to be removed. Stacks can be used to implement various algorithms, such as depth-first search and backtracking. They are also used in programming languages to manage function calls and local variables.
@@ -72,6 +112,20 @@ A stack is a data structure that stores a **collection of elements and operates 
 - Java: `java.util.Stack<E>`
 - Python: `list` (although it can be used as a stack by using the `append()` and `pop()` methods)
 - JavaScript: There is no built-in Stack data structure in JavaScript, but you can implement a Stack using an Array.
+
+```python
+# Create a stack using a list
+stack = []
+
+# Push elements onto the stack
+stack.append(1)
+stack.append(2)
+stack.append(3)
+
+# Pop elements from the stack
+print(stack.pop())  # Output: 3
+print(stack.pop())  # Output: 2
+```
 
 ### Queue
 
@@ -82,6 +136,22 @@ A queue is a data structure that stores a **collection of elements and operates 
 - Python: `queue.Queue`
 - JavaScript: There is no built-in Queue data structure in JavaScript, but you can implement a Queue using an Array or a LinkedList.
 
+```python
+from queue import Queue
+
+# Create a queue
+q = Queue()
+
+# Enqueue elements
+q.put(1)
+q.put(2)
+q.put(3)
+
+# Dequeue elements
+print(q.get())  # Output: 1
+print(q.get())  # Output: 2
+```
+
 ### Tree
 
 A tree is a data structure that consists of a **collection of nodes, where each node has a value and zero or more child nodes**. The topmost node in a tree is called the root, and each child node is connected to its parent node by a single edge. Trees are commonly used in computer science to represent hierarchical structures, such as file systems, organization charts, and HTML documents. They can also be used to implement various algorithms, such as binary search and decision trees.
@@ -91,6 +161,24 @@ A tree is a data structure that consists of a **collection of nodes, where each 
 - Python: There is no built-in Tree data structure in Python, but you can implement a Tree using classes and objects.
 - JavaScript: There is no built-in Tree data structure in JavaScript, but you can implement a Tree using classes and objects.
 
+```python
+class TreeNode:
+    def __init__(self, value):
+        self.value = value
+        self.children = []
+
+# Create a tree
+root = TreeNode(1)
+child1 = TreeNode(2)
+child2 = TreeNode(3)
+root.children.append(child1)
+root.children.append(child2)
+
+# Access elements
+print(root.value)  # Output: 1
+print(root.children[0].value)  # Output: 2
+```
+
 ### Graph
 
 A graph is a data structure that consists of a **collection of nodes, called vertices, and a collection of edges that connect pairs of vertices**. Each edge can be directed or undirected, and can have a weight or a cost associated with it. Graphs are commonly used in computer science to represent complex relationships between objects, such as social networks, road networks, and computer networks. They can also be used to implement various algorithms, such as shortest path algorithms and minimum spanning tree algorithms.
@@ -99,3 +187,77 @@ A graph is a data structure that consists of a **collection of nodes, called ver
 - Java: `org.jgrapht.Graph<V, E>`
 - Python: `networkx.Graph`
 - JavaScript: There is no built-in Graph data structure in JavaScript, but you can implement a Graph using classes and objects.
+
+```python
+import networkx as nx
+
+# Create a graph
+G = nx.Graph()
+
+# Add nodes
+G.add_node(1)
+G.add_node(2)
+
+# Add an edge
+G.add_edge(1, 2)
+
+# Access nodes and edges
+print(G.nodes)  # Output: [1, 2]
+print(G.edges)  # Output: [(1, 2)]
+```
+
+## Programming languages data structures
+
+Most programming languages have several common data structures, such as
+
+- arrays,
+- lists,
+- map,
+- set,
+- stacks,
+- queues,
+- trees,
+- graphs.
+
+```python
+### Array
++---+---+---+---+---+
+| 1 | 2 | 3 | 4 | 5 |
++---+---+---+---+---+
+
+### List
+1 -> 2 -> 3 -> 4 -> 5
+
+### Map (Dictionary)
+a: 1
+b: 2
+c: 3
+d: 4
+
+### Set
+{ 1, 2, 3, 4, 5 }
+
+### Stack
+| 3 |
+| 2 |
+| 1 |
++---+
+
+### Queue
+1 <- 2 <- 3
+
+### Tree
+    1
+   / \
+  2   3
+ / \
+4   5
+
+### Graph
+  1
+ / \
+2 - 3
+ \ /
+  4
+  
+```

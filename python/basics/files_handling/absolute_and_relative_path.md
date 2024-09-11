@@ -1,13 +1,26 @@
-# absolute_and_relative_path
+# Absolute and Relative Paths
 
-An absolute path in Linux provides the **exact location** of a file or directory, starting from the **root directory** (/).
+## Absolute Path
+An absolute path is a complete path from the root directory to the target file or directory. It always starts with the root directory (e.g., `/` in Unix/Linux systems or a drive letter like `C:` in Windows).
 
-For example, `/home/user/documents/report.txt` is an absolute path.
+### Example:
+- Unix/Linux: `/home/user/documents/file.txt`
+- Windows: `C:\Users\User\Documents\file.txt`
 
-A relative path in Linux refers to a file or directory **in relation to the current directory**.
+## Relative Path
+A relative path is a path that starts from the current working directory. It does not start with the root directory but rather from the current location in the file system.
 
-For example, if you are in the `/home/user` directory and you want to access the `report.txt` file, you can use `documents/report.txt` as a relative path.
+### Example:
+- If the current directory is `/home/user`:
+  - `documents/file.txt` refers to `/home/user/documents/file.txt`
+  - `../user2/file.txt` refers to `/home/user2/file.txt`
 
-You can also use special symbols like `.` (single dot) and `..` (double dot) to refer to the current directory and the parent directory respectively.
+## Special Symbols in Relative Paths
+- `.` (single dot) refers to the current directory.
+- `..` (double dots) refers to the parent directory.
 
-For example, if you are in the `/home/user/documents` directory and you want to access the `report.txt` file, you can use `./report.txt` as a relative path. If you want to access the user directory `/home/user/`, you can use `../` as a relative path.
+### Example:
+- If the current directory is `/home/user/documents`:
+  - `./file.txt` refers to `/home/user/documents/file.txt`
+  - `../file.txt` refers to `/home/user/file.txt`
+  - `../../file.txt` refers to `/home/file.txt`

@@ -7,11 +7,11 @@
 
 `new` [Basic Editing](https://code.visualstudio.com/docs/editor/codebasics)
 
-- multiple selections (multi-cursor)
-- column (box) selection
-- find and replace
-- search and replace across files
-- intellisense
-- formatting
-- folding
-- indentation
+- Multiple selections (multi-cursor)
+- Column (box) selection
+- Find and replace
+- Search and replace across files
+- Intellisense
+- Formatting
+- Folding
+- Indentation
