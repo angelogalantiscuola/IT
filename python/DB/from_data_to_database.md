@@ -19,8 +19,8 @@ Creating a database from a document of requirements involves several steps:
 Let's say we are creating a database for a university. The requirements document might specify that the university needs to store information about students, courses, and the professors who teach those courses.
 
 - For students, the university needs to store the student ID, name, major, and the courses they are enrolled in.
-- For courses, the university needs to store the course ID, course name, the professor who teaches it, and the students who are enrolled in it.
-- For professors, the university needs to store the professor ID, name, the course they teach, and the students they are teaching. A professor can teach only one course.
+- For courses, the university needs to store the course ID, course name, the professor who teaches it, and the students who are enrolled in it. A course is taught by only one professor.
+- For professors, the university needs to store the professor ID, name, the course they teach, and the students they are teaching. 
 
 The operations that need to be performed on the data could include enrolling a student in a course, assigning a professor to a course, listing all students enrolled in a specific course, listing all courses a specific student is enrolled in, etc.
 
