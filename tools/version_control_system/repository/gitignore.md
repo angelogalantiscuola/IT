@@ -8,10 +8,10 @@ In a `.gitignore` file, you typically include files and directories that you don
 
 - **Language-specific files**: For Python, this might include `__pycache__` directories, `.pyc` files, and `.pyo` files.
 
-- **Environment files**: If you're using a virtual environment, you might include `.venv/` or `venv/` (see [virtual environment](virtual_environment.md)).
+- **Environment files**: If you're using a virtual environment, you might include `.venv/` or `venv/` .
 
 - **Build files**: If your project involves a build process, you might include the output directory, like `dist/` or `build/`.
 
-- **Configuration files**: Files that contain sensitive information, like [.env](env_file.md) files that contain environment variables, should be ignored.
+- **Configuration files**: Files that contain sensitive information, like *.env* files that contain environment variables, should be ignored.
 
 - **IDE/Editor files**: Temporary files or user-specific files created by your code editor or IDE, like `.vscode/`, `.idea/`, etc.

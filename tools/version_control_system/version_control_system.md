@@ -1,8 +1,7 @@
 # Version Control System
 
 %% Begin Waypoint %%
-- [[git]]
-- [[github]]
+- **[git](./git/git.md)**
 - **[repository](./repository/repository.md)**
 
 %% End Waypoint %%

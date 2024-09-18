@@ -1,6 +1,6 @@
 # .env
 
-`.env` is a plain text file that is used to store environment variables. Environment variables are a kind of variable that is available system-wide and can be used to configure your application's behavior. For example, you might use environment variables to store API keys, database connection strings, or the path to important directories. The `.env` file is often used in local development to mimic the environment variables that will be used in production. However, because they can contain sensitive information, `.env` files should not be tracked by Git and should be included in your [.gitignore](gitignore.md) file.
+`.env` is a plain text file that is used to store environment variables. Environment variables are a kind of variable that is available system-wide and can be used to configure your application's behavior. For example, you might use environment variables to store API keys, database connection strings, or the path to important directories. The `.env` file is often used in local development to mimic the environment variables that will be used in production. However, because they can contain sensitive information, `.env` files should not be tracked by Git and should be included in your *.gitignore* file.
 
 ``` txt
 # .env file

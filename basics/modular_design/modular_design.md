@@ -1,3 +1,8 @@
+%% Begin Waypoint %%
+
+
+%% End Waypoint %%
+
 # Progettazione modulare
 
 Gli esercizi richiedono di seguire un approccio top-down alla progettazione del software. In questo approccio, si inizia definendo l'interfaccia di alto livello del programma (in questo caso, la funzione main) e poi si definiscono le "signature" delle funzioni di supporto.

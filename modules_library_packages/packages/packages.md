@@ -1,7 +1,6 @@
 # Packages
 
 %% Begin Waypoint %%
-
 - [[packages-ai]]
 - [[packages-all]]
 

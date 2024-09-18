@@ -1,11 +1,7 @@
 # Python
 
 %% Begin Waypoint %%
-- **[basics](./basics/basics.md)**
-- **[DB](./DB/DB.md)**
-- **[modules_library_packages](./modules_library_packages/modules_library_packages.md)**
-- **[OOP](./OOP/OOP.md)**
-- **[web_dev](./web_dev/web_dev.md)**
+
 
 %% End Waypoint %%
 
@@ -45,7 +41,7 @@ The PEP 8 guidelines cover many areas of code formatting, including line length,
 ### Some of the Most Important Conventions
 
 1. **Naming**:
-    - Variable and function names should be descriptive and follow the "snake_case" convention.
+    - Variable and function names should be descriptive and follow the *snake_case* convention.
     - Class names should follow the "CamelCase" convention.
 2. **Blank Lines**:
     - Two blank lines should be inserted between functions and classes.
