@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+<title>Markmap</title>
+<style>
+* {
+  margin: 0;
+  padding: 0;
+}
+#mindmap {
+  display: block;
+  width: 100vw;
+  height: 100vh;
+}
+</style>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/markmap-toolbar@0.17.0/dist/style.css">
+</head>
+<body>
+<svg id="mindmap"></svg>
+<script src="https://cdn.jsdelivr.net/npm/d3@7.8.5/dist/d3.min.js"></script><script src="https://cdn.jsdelivr.net/npm/markmap-view@0.17.0/dist/browser/index.js"></script><script src="https://cdn.jsdelivr.net/npm/markmap-toolbar@0.17.0/dist/index.js"></script><script>(r => {
+                setTimeout(r);
+              })(() => {
+  const {
+    markmap,
+    mm
+  } = window;
+  const {
+    el
+  } = markmap.Toolbar.create(mm);
+  el.setAttribute('style', 'position:absolute;bottom:20px;right:20px');
+  document.body.append(el);
+})</script><script>((getMarkmap, getOptions, root2, jsonOptions) => {
+              const markmap = getMarkmap();
+              window.mm = markmap.Markmap.create(
+                "svg#mindmap",
+                (getOptions || markmap.deriveOptions)(jsonOptions),
+                root2
+              );
+            })(() => window.markmap,null,{"content":"Argomenti","children":[{"content":"Unità di Misura e Prefissi","children":[{"content":"Bit, Byte, Hertz","children":[],"payload":{"lines":"2,3"}},{"content":"Kilo, Mega, Giga, Tera","children":[],"payload":{"lines":"3,4"}}],"payload":{"lines":"1,2"}},{"content":"Architettura dei Computer","children":[{"content":"Componenti: CPU, GPU, Bus","children":[],"payload":{"lines":"5,6"}},{"content":"Memorie: Cache, RAM, SSD, HD","children":[],"payload":{"lines":"6,7"}},{"content":"I/O (Input/Output)","children":[],"payload":{"lines":"7,8"}},{"content":"Architettura Multicore","children":[],"payload":{"lines":"8,9"}}],"payload":{"lines":"4,5"}},{"content":"Formati dei File di Testo: TXT, CSV, XML, JSON","children":[],"payload":{"lines":"9,10"}},{"content":"Programmazione","children":[{"content":"Paradigmi di Programmazione","children":[{"content":"Imperativo","children":[{"content":"Strutture di Controllo: Condizionali, Cicli, Funzioni","children":[],"payload":{"lines":"13,14"}},{"content":"Variabili e Assegnazioni","children":[],"payload":{"lines":"14,15"}},{"content":"Gestione degli Errori","children":[],"payload":{"lines":"15,16"}}],"payload":{"lines":"12,13"}},{"content":"OOP","children":[{"content":"Classi e Oggetti","children":[],"payload":{"lines":"17,18"}},{"content":"Attributi e Metodi","children":[],"payload":{"lines":"18,19"}},{"content":"Visibilità: Pubblica, Privata","children":[],"payload":{"lines":"19,20"}},{"content":"Incapsulamento","children":[],"payload":{"lines":"20,21"}},{"content":"Ereditarietà","children":[],"payload":{"lines":"21,22"}},{"content":"Polimorfismo","children":[],"payload":{"lines":"22,23"}},{"content":"<strong>Diagramma delle Classi UML</strong>","children":[],"payload":{"lines":"23,24"}}],"payload":{"lines":"16,17"}}],"payload":{"lines":"11,12"}},{"content":"Compilatori e Interpreti","children":[],"payload":{"lines":"24,25"}},{"content":"Linguaggi di Programmazione: Alto Livello, Basso Livello","children":[],"payload":{"lines":"25,26"}},{"content":"Tipi di Dati","children":[{"content":"Primitivi","children":[],"payload":{"lines":"27,28"}},{"content":"Composti: Liste, Dizionari, Array","children":[],"payload":{"lines":"28,29"}}],"payload":{"lines":"26,27"}},{"content":"Ambiente Virtuale in Python","children":[{"content":"Creazione di un Ambiente Virtuale","children":[],"payload":{"lines":"30,31"}},{"content":"Attivazione e Disattivazione","children":[],"payload":{"lines":"31,32"}},{"content":"Gestione dei Pacchetti","children":[],"payload":{"lines":"32,33"}}],"payload":{"lines":"29,30"}},{"content":"Programmazione Web: Frontend, Backend","children":[],"payload":{"lines":"33,34"}}],"payload":{"lines":"10,11"}},{"content":"Strumenti di Versionamento: Git","children":[{"content":"Comandi Principali: Commit, Pull, Push","children":[],"payload":{"lines":"35,36"}},{"content":"Workflow di Sviluppo","children":[],"payload":{"lines":"36,37"}},{"content":"Gestione dei Repository: Creazione, Clonazione","children":[],"payload":{"lines":"37,38"}},{"content":"Branching e Merging","children":[],"payload":{"lines":"38,39"}}],"payload":{"lines":"34,35"}},{"content":"Sistemi Operativi","children":[{"content":"Gestione dei Processi","children":[{"content":"Programma vs Processo","children":[],"payload":{"lines":"41,42"}},{"content":"Stati dei Processi","children":[],"payload":{"lines":"42,43"}},{"content":"Scheduling dei Processi","children":[],"payload":{"lines":"43,44"}}],"payload":{"lines":"40,41"}},{"content":"Gestione della Memoria: Allocazione, Memoria Virtuale","children":[],"payload":{"lines":"44,45"}},{"content":"Gestione del File System","children":[{"content":"Struttura del File System","children":[],"payload":{"lines":"46,47"}},{"content":"Operazioni sui File","children":[],"payload":{"lines":"47,48"}},{"content":"Percorso Assoluto e Relativo","children":[],"payload":{"lines":"48,49"}},{"content":"Permessi e Sicurezza","children":[],"payload":{"lines":"49,50"}}],"payload":{"lines":"45,46"}},{"content":"Interfaccia Utente: CLI, GUI","children":[],"payload":{"lines":"50,51"}},{"content":"Virtualizzazione","children":[],"payload":{"lines":"51,52"}}],"payload":{"lines":"39,40"}},{"content":"Reti di Calcolatori","children":[{"content":"Modello OSI e TCP/IP","children":[],"payload":{"lines":"53,54"}},{"content":"Indirizzamento IP","children":[{"content":"IPv4, IPv6","children":[],"payload":{"lines":"55,56"}},{"content":"Subnetting e Netmask","children":[],"payload":{"lines":"56,57"}},{"content":"NAT","children":[],"payload":{"lines":"57,58"}},{"content":"DHCP","children":[],"payload":{"lines":"58,59"}},{"content":"IP pubblici e privati","children":[],"payload":{"lines":"59,60"}}],"payload":{"lines":"54,55"}},{"content":"TCP, UDP","children":[],"payload":{"lines":"60,61"}},{"content":"Reti LAN, WAN","children":[],"payload":{"lines":"61,62"}},{"content":"DNS","children":[],"payload":{"lines":"62,63"}},{"content":"HTTP/HTTPS","children":[{"content":"Struttura delle Richieste e Risposte","children":[],"payload":{"lines":"64,65"}},{"content":"Metodi HTTP: Get e Post","children":[],"payload":{"lines":"65,66"}},{"content":"Codici di Stato HTTP","children":[],"payload":{"lines":"66,67"}}],"payload":{"lines":"63,64"}}],"payload":{"lines":"52,53"}},{"content":"Ingegneria del Software","children":[{"content":"Diagrammi UML: Progettazione di Sistemi Software","children":[{"content":"Classi","children":[{"content":"Attributi","children":[],"payload":{"lines":"70,71"}},{"content":"Metodi","children":[],"payload":{"lines":"71,72"}}],"payload":{"lines":"69,70"}},{"content":"Relazioni","children":[{"content":"Associazione","children":[],"payload":{"lines":"73,74"}},{"content":"Aggregazione","children":[],"payload":{"lines":"74,75"}},{"content":"Composizione","children":[],"payload":{"lines":"75,76"}},{"content":"Ereditarietà","children":[],"payload":{"lines":"76,77"}}],"payload":{"lines":"72,73"}}],"payload":{"lines":"68,69"}},{"content":"Diagrammi ER: Progettazione dei Database","children":[],"payload":{"lines":"77,78"}}],"payload":{"lines":"67,68"}}],"payload":{"lines":"0,1"}},{})</script>
+</body>
+</html>
