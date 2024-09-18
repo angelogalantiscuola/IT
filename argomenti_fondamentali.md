@@ -1,3 +1,5 @@
+[Rendered version](https://rawcdn.githack.com/angelogalantiscuola/IT/refs/heads/main/argomenti_fondamentali.html)
+
 # Argomenti
 ## Unità di Misura e Prefissi
 ### Bit, Byte, Hertz
@@ -77,4 +79,3 @@
 ##### Ereditarietà
 ### Diagrammi ER: Progettazione dei Database
 
-[Link to rendered version](argomenti_fondamentali.html)
