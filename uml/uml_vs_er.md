@@ -1,18 +1,4 @@
-# DB
-
-%% Begin Waypoint %%
-- [[ER]]
-- [[from_data_to_database]]
-- [[normalization]]
-- **[ORM](./ORM/ORM.md)**
-
-%% End Waypoint %%
-
-A **database** is a system to store and manage data in a structured and very efficient way.
-
-If you don't know everything about databases, here's a quick overview: [Intro to Databases](https://sqlmodel.tiangolo.com/databases/)
-
-## OOP class model vs DB ER model
+## OOP UML class model vs DB ER model
 
 Object-Oriented Programming (OOP) UML Class Model and Database Entity-Relationship (ER) Model are both tools used to visually represent and design systems. However, they have different focuses and use different terminologies.
 

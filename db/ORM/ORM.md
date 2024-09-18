@@ -1,6 +1,7 @@
 # ORM
 
 %% Begin Waypoint %%
+- [[0_percorso_orm]]
 - [[mapping_object_to_data]]
 - **sqlmodel**
 	- **foreign_key**
