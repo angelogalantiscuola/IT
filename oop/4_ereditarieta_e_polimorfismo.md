@@ -1,8 +1,8 @@
-## 4. Ereditarietà e Polimorfismo
+## Ereditarietà e Polimorfismo
 
 L'ereditarietà e il polimorfismo sono concetti fondamentali nella programmazione orientata agli oggetti (OOP). Questi meccanismi permettono di riutilizzare il codice in modo più efficiente e flessibile, riducendo la duplicazione e migliorando la manutenzione.
 
-### 4.1 Ereditarietà: Specializzazione delle Classi
+### Ereditarietà: Specializzazione delle Classi
 
 L'ereditarietà consente a una classe (classe derivata o sottoclasse) di ereditare attributi e metodi da un'altra classe (classe base o superclasse). Questo permette di creare nuove classi basate su quelle esistenti, estendendo o modificando il loro comportamento.
 
@@ -36,7 +36,7 @@ Vantaggi dell'Ereditarietà:
 - **Riutilizzo del codice**: Evita di riscrivere codice già presente in altre classi.
 - **Gerarchia logica**: Permette di organizzare le classi in una gerarchia di specializzazione, con le classi più generiche che stanno alla base e quelle più specifiche in cima.
 
-### 4.2 Polimorfismo: Diversi Comportamenti per Classi Derivate
+### Polimorfismo: Diversi Comportamenti per Classi Derivate
 
 Il polimorfismo è la capacità di usare lo stesso metodo in contesti diversi, a seconda dell'oggetto su cui viene chiamato. In altre parole, classi diverse possono implementare lo stesso metodo, ma con comportamenti diversi.
 
@@ -60,7 +60,7 @@ print(veicolo2.descrizione())  # Output: Moto: Yamaha R1
 
 Il polimorfismo permette di trattare oggetti di classi diverse in modo uniforme, migliorando la flessibilità del codice.
 
-### 4.3 Ereditarietà Multipla in Python
+### Ereditarietà Multipla in Python
 
 In Python, una classe può ereditare da più classi contemporaneamente, un concetto chiamato "ereditarietà multipla". Ad esempio:
 
@@ -83,7 +83,7 @@ class AutoElettrica(Veicolo, Elettrico):
 
 L'ereditarietà multipla è potente, ma va usata con attenzione per evitare problemi di complessità e ambiguità (ad esempio, quando più superclassi contengono metodi con lo stesso nome).
 
-### 4.4 Diagrammi UML: Ereditarietà e Polimorfismo
+### Diagrammi UML: Ereditarietà e Polimorfismo
 
 Nel diagramma UML, l'ereditarietà viene rappresentata con una freccia vuota che punta dalla sottoclasse alla superclasse. Un esempio di diagramma UML per il nostro sistema di `Veicolo`, `Auto`, e `Moto` potrebbe apparire così:
 

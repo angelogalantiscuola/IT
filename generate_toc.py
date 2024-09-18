@@ -1,3 +1,4 @@
+import os
 import re
 
 
@@ -14,18 +15,17 @@ def extract_headers(file_path):
     return headers
 
 
-def generate_toc(files):
-    toc_lines = ["# Table of Contents\n"]
+def generate_toc(folder, files):
+    toc_lines = [f"# {folder[:-1]}\n"]
     for file in files:
-        headers = extract_headers(file)
-        print(headers)
+        file_path = os.path.join(folder, file)
+        headers = extract_headers(file_path)
         for level, title, anchor in headers:
-            print(title)
             # remove parts after  <!-- omit in toc -->
             if "<!-- omit in toc -->" in title:
                 title = title.split("<!-- omit in toc -->")[0]
             # add # for each level
-            title = "#" * (level - 1) + " " + title
+            title = "#" * (level) + " " + title
             toc_lines.append(title + "\n")
     return toc_lines
 
@@ -35,11 +35,22 @@ def write_toc(toc_lines, output_file):
         file.writelines(toc_lines)
 
 
-# List of Markdown files
-markdown_files = ["1_1_1.md", "1_1_2.md", "1_1_3.md", "1_1_4.md"]
+# function to get all the md files in the folder except the table of contents file
+def get_md_files(folder, toc_file):
+    files = []
+    for file in os.listdir(folder):
+        if file.endswith(".md") and file != toc_file:
+            files.append(file)
+    return files
+
+
+# folder = "oop/"
+folder = "db/"
+toc_file = "0_table_of_contents.md"
+markdown_files = get_md_files(folder, toc_file)
 
 # Generate TOC
-toc = generate_toc(markdown_files)
+toc = generate_toc(folder, markdown_files)
 
 # Write TOC to a file
-write_toc(toc, "table_of_contents.md")
+write_toc(toc, os.path.join(folder, toc_file))

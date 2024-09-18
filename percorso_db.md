@@ -21,6 +21,5 @@ graph TD
     U --> V[SQL Injection e Sicurezza nelle Query]
 
     A --> W[ORM: Object-Relational Mapping]
-    W --> X[Introduzione agli ORM]
-    X --> Y[SQLModel]
+    W --> X[SQLModel]
 ```

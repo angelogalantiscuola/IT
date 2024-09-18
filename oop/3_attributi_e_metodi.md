@@ -1,23 +1,23 @@
-## 3. Attributi e Metodi in Python <!-- omit in toc -->
+## Attributi e Metodi in Python <!-- omit in toc -->
 
-- [3.1 Attributi: i dati degli oggetti](#31-attributi-i-dati-degli-oggetti)
-  - [3.1.1 Attributi di istanza](#311-attributi-di-istanza)
-  - [3.1.2 Attributi di classe](#312-attributi-di-classe)
-- [3.2 Metodi: le azioni degli oggetti](#32-metodi-le-azioni-degli-oggetti)
-  - [3.2.1 Metodi di istanza](#321-metodi-di-istanza)
-  - [3.2.2 Metodi di classe](#322-metodi-di-classe)
-  - [3.2.3 Metodi statici](#323-metodi-statici)
+- [Attributi: i dati degli oggetti](#attributi-i-dati-degli-oggetti)
+  - [Attributi di istanza](#attributi-di-istanza)
+  - [Attributi di classe](#attributi-di-classe)
+- [Metodi: le azioni degli oggetti](#metodi-le-azioni-degli-oggetti)
+  - [Metodi di istanza](#metodi-di-istanza)
+  - [Metodi di classe](#metodi-di-classe)
+  - [Metodi statici](#metodi-statici)
 
 
 Gli **attributi** e i **metodi** sono gli elementi fondamentali che definiscono il comportamento di una classe e degli oggetti creati da essa. Gli attributi rappresentano i dati associati a un oggetto, mentre i metodi definiscono le azioni che un oggetto può compiere. In questa lezione esploreremo in dettaglio questi concetti e come vengono utilizzati in Python.
 
-### 3.1 Attributi: i dati degli oggetti
+### Attributi: i dati degli oggetti
 
 Un **attributo** è una variabile associata a un oggetto o a una classe. Esistono due tipi principali di attributi:
 - **Attributi di istanza**: Questi sono specifici di un oggetto particolare e rappresentano lo stato individuale dell'oggetto.
 - **Attributi di classe**: Questi sono condivisi tra tutte le istanze della classe.
 
-#### 3.1.1 Attributi di istanza
+#### Attributi di istanza
 
 Gli attributi di istanza vengono definiti all'interno del metodo speciale `__init__()`, il costruttore della classe. Ogni volta che si crea un nuovo oggetto, Python chiama automaticamente questo metodo, permettendo di inizializzare gli attributi con valori specifici.
 
@@ -43,7 +43,7 @@ print(studente2.nome)  # Output: Laura
 
 Ogni oggetto `studente1` e `studente2` ha i propri valori distinti per gli attributi `nome`, `eta`, e `matricola`. Questi valori sono mantenuti separati per ogni istanza della classe.
 
-#### 3.1.2 Attributi di classe
+#### Attributi di classe
 
 Gli attributi di classe, al contrario degli attributi di istanza, sono condivisi tra tutte le istanze della classe. Vengono definiti direttamente nella classe, al di fuori di qualsiasi metodo, e sono accessibili da ogni oggetto della classe.
 
@@ -70,11 +70,11 @@ print(studente1.scuola)  # Output: Liceo Classico
 
 Indipendentemente dal numero di istanze della classe `Studente` che creiamo, l’attributo `scuola` rimane invariato.
 
-### 3.2 Metodi: le azioni degli oggetti
+### Metodi: le azioni degli oggetti
 
 I **metodi** sono funzioni definite all'interno di una classe e rappresentano le azioni che un oggetto può eseguire. Il primo parametro di ogni metodo, per convenzione chiamato `self`, si riferisce all'istanza dell'oggetto che invoca il metodo.
 
-#### 3.2.1 Metodi di istanza
+#### Metodi di istanza
 
 I metodi di istanza operano su attributi di istanza e possono accedere sia a questi attributi che ad altri metodi della classe. Possono essere definiti all'interno della classe come normali funzioni, ma il loro primo argomento sarà sempre `self`, che fa riferimento all'oggetto che sta chiamando il metodo.
 
@@ -98,7 +98,7 @@ studente1.studia()  # Output: Marco sta studiando.
 
 Il metodo `studia()` accede all'attributo `nome` dell'oggetto `studente1` per personalizzare il messaggio di output. Ogni oggetto può invocare questo metodo e ottenere un risultato coerente con i propri dati.
 
-#### 3.2.2 Metodi di classe
+#### Metodi di classe
 
 I metodi di classe operano sugli attributi di classe. Per definire un metodo di classe, si utilizza il decoratore `@classmethod`, e il primo argomento del metodo sarà `cls`, che si riferisce alla classe stessa.
 
@@ -125,7 +125,7 @@ print(Studente.scuola)  # Output: Liceo Scientifico
 
 In questo esempio, il metodo `cambia_scuola()` modifica l’attributo di classe `scuola` per tutte le istanze.
 
-#### 3.2.3 Metodi statici
+#### Metodi statici
 
 I metodi statici, definiti con il decoratore `@staticmethod`, non accedono né agli attributi di istanza né a quelli di classe. Sono funzioni che appartengono logicamente alla classe, ma non dipendono né dagli oggetti né dalla classe stessa.
 

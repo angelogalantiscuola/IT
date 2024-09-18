@@ -1,14 +1,14 @@
-## 1. Introduzione alla Programmazione Orientata agli Oggetti (OOP) <!-- omit in toc -->
+## Introduzione alla OOP <!-- omit in toc -->
 
-- [1.1 Paradigmi di programmazione: imperativo vs orientato agli oggetti](#11-paradigmi-di-programmazione-imperativo-vs-orientato-agli-oggetti)
-- [1.2 Oggetti e Classi: il cuore della OOP](#12-oggetti-e-classi-il-cuore-della-oop)
-- [1.3 Un esempio pratico: la classe Studente](#13-un-esempio-pratico-la-classe-studente)
-- [1.4 Vantaggi dell’OOP](#14-vantaggi-delloop)
-- [1.5 Diagrammi UML di base](#15-diagrammi-uml-di-base)
+- [Paradigmi di programmazione: imperativo vs orientato agli oggetti](#paradigmi-di-programmazione-imperativo-vs-orientato-agli-oggetti)
+- [Oggetti e Classi: il cuore della OOP](#oggetti-e-classi-il-cuore-della-oop)
+- [Un esempio pratico: la classe Studente](#un-esempio-pratico-la-classe-studente)
+- [Vantaggi dell’OOP](#vantaggi-delloop)
+- [Diagrammi UML di base](#diagrammi-uml-di-base)
 
 La programmazione orientata agli oggetti (Object-Oriented Programming, OOP) è un paradigma di programmazione che organizza il codice attorno a **oggetti**, piuttosto che a semplici istruzioni o funzioni. Ogni oggetto rappresenta un'entità del mondo reale o concettuale e possiede delle caratteristiche (dati) e dei comportamenti (funzionalità). Questo approccio è particolarmente utile per gestire sistemi complessi, poiché promuove la modularità e la riusabilità del codice.
 
-### 1.1 Paradigmi di programmazione: imperativo vs orientato agli oggetti
+### Paradigmi di programmazione: imperativo vs orientato agli oggetti
 
 Prima di esplorare l’OOP, è importante comprendere la differenza tra la **programmazione imperativa** e quella **orientata agli oggetti**. La programmazione imperativa, che probabilmente già conosci, si concentra sull'esecuzione sequenziale di comandi. Un programma imperativo è costituito da una serie di istruzioni che modificano lo stato del programma, aggiornando variabili globali e locali. In questo paradigma, il programmatore indica chiaramente **cosa** fare e **come** farlo.
 
@@ -16,7 +16,7 @@ Nella programmazione orientata agli oggetti, invece, l'enfasi è posta sulla **c
 
 > **Esempio**: Se vogliamo modellare un sistema per gestire un insieme di studenti in un istituto, nella programmazione imperativa potremmo usare array o liste per memorizzare i dati degli studenti e una serie di funzioni per gestire queste informazioni. In OOP, invece, creeremmo una **classe** `Studente` con attributi come nome, età e matricola, e metodi come `studia()` o `partecipa_a_lezione()`.
 
-### 1.2 Oggetti e Classi: il cuore della OOP
+### Oggetti e Classi: il cuore della OOP
 
 Il concetto chiave della OOP è che tutto nel programma è rappresentato da **oggetti**. Un oggetto è una combinazione di dati e metodi che agiscono su quei dati. Per comprendere meglio, è utile introdurre il concetto di **classe**.
 
@@ -24,7 +24,7 @@ Il concetto chiave della OOP è che tutto nel programma è rappresentato da **og
 
 - **Oggetto**: Un oggetto è una realizzazione concreta di una classe. Mentre la classe descrive il modello, l'oggetto è un'istanza specifica di quel modello. Ogni oggetto ha uno **stato** (determinato dai valori dei suoi attributi) e un **comportamento** (determinato dai suoi metodi).
 
-### 1.3 Un esempio pratico: la classe Studente
+### Un esempio pratico: la classe Studente
 
 Immaginiamo di dover creare un programma per gestire gli studenti di una scuola. Potremmo definire una classe `Studente`, che include attributi come il nome, l'età e il numero di matricola, e metodi per eseguire azioni come studiare o partecipare a una lezione.
 
@@ -52,7 +52,7 @@ Nel codice sopra, la classe `Studente` definisce:
 
 Quando creiamo un oggetto `studente1`, usiamo la classe `Studente` come modello per costruire un'entità concreta. L'oggetto `studente1` ha uno stato specifico (il nome è "Marco", l'età è 16, la matricola è "12345") e può eseguire comportamenti definiti (ad esempio, il metodo `studia()`).
 
-### 1.4 Vantaggi dell’OOP
+### Vantaggi dell’OOP
 
 Perché dovremmo scegliere l'OOP rispetto alla programmazione imperativa? L’OOP offre diversi vantaggi che rendono lo sviluppo del software più efficiente e gestibile, specialmente per sistemi complessi:
 
@@ -66,7 +66,7 @@ Perché dovremmo scegliere l'OOP rispetto alla programmazione imperativa? L’OO
 
 - **Astrazione**: Permette di concentrarsi su cosa fa un oggetto, senza preoccuparsi di come lo fa.
 
-### 1.5 Diagrammi UML di base
+### Diagrammi UML di base
 
 Per facilitare la comprensione e la progettazione dei sistemi OOP, spesso si utilizzano i **diagrammi delle classi UML (Unified Modeling Language)**. Questi diagrammi offrono una rappresentazione visiva delle classi, dei loro attributi e metodi, e delle relazioni tra le classi.
 

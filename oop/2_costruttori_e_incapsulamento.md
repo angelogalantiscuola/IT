@@ -1,14 +1,14 @@
-## 2. Costruttori e Incapsulamento <!-- omit in toc -->
+## Costruttori e Incapsulamento <!-- omit in toc -->
 
-- [2.1 Costruttori](#21-costruttori)
-- [2.2 Incapsulamento](#22-incapsulamento)
-  - [2.2.1 Attributi pubblici e privati](#221-attributi-pubblici-e-privati)
+- [Costruttori](#costruttori)
+- [Incapsulamento](#incapsulamento)
+  - [Attributi pubblici e privati](#attributi-pubblici-e-privati)
 
 
 I **metodi** sono funzioni definite all'interno di una classe che permettono agli oggetti di eseguire azioni. Il primo parametro di un metodo è sempre `self`, che **rappresenta l'istanza corrente dell'oggetto**.
 Questo parametro permette al metodo di accedere agli attributi e ad altri metodi della stessa istanza.
 
-### 2.1 Costruttori
+### Costruttori
 
 Il metodo speciale `__init__()` è chiamato **costruttore** e viene eseguito automaticamente quando un nuovo oggetto della classe viene creato. Serve per inizializzare gli attributi di istanza con valori specifici.
 
@@ -27,11 +27,11 @@ studente1 = Studente("Marco", 16, "12345")
 Ogni volta che creiamo un nuovo oggetto `Studente`, il costruttore assegna i valori degli attributi in base ai parametri passati.
 
 
-### 2.2 Incapsulamento
+### Incapsulamento
 
 L'**incapsulamento** è un principio fondamentale dell'OOP che consente di nascondere i dettagli interni di un oggetto e di controllare l'accesso ai suoi attributi e metodi. Ciò aiuta a mantenere il codice modulare e a ridurre gli errori.
 
-#### 2.2.1 Attributi pubblici e privati
+#### Attributi pubblici e privati
 
 Gli attributi possono essere **pubblici** o **privati**:
 - Gli attributi pubblici sono accessibili da qualsiasi parte del programma.
