@@ -39,7 +39,7 @@ def write_toc(toc_lines, output_file):
 def get_md_files(folder, toc_file):
     files = []
     for file in os.listdir(folder):
-        if file.endswith(".md") and file != toc_file:
+        if file.endswith(".md") and file != toc_file and not file.startswith("0_"):
             files.append(file)
     return files
 
