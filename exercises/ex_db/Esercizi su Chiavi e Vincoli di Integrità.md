@@ -44,9 +44,9 @@ Prodotto(ProdottoID, NomeProdotto, PrezzoCatalogo, Disponibilità)
 
 Compito:
 1. Definisci le chiavi primarie e esterne per tutte le relazioni.
-2. Descrivi un vincolo di dominio per assicurare che la Quantità in DettaglioOrdine sia sempre maggiore di zero.
-3. Spiega come implementeresti un vincolo di unicità sull'Email del Cliente.
-4. Descrivi un vincolo di integrità che assicuri che il TotaleOrdine sia sempre uguale alla somma dei (Quantità * PrezzoUnitario) nei DettaglioOrdine corrispondenti.
+2. Descrivi quale vincolo di dominio applicare su Quantità in DettaglioOrdine.
+3. Descrivi quale vincolo di unicità applicare sull'Email del Cliente.
+4. Descrivi quale vincolo di integrità applicare su TotaleOrdine considerando Quantità e PrezzoUnitario in DettaglioOrdine.
 
 ## Esercizio 4: Analisi e Correzione di Vincoli di Integrità
 **Livello: Esperto**
@@ -64,4 +64,3 @@ Compito:
 2. Proponi miglioramenti allo schema, giustificando le tue scelte.
 3. Descrivi vincoli aggiuntivi per garantire l'integrità dei dati (es. assicurarsi che la DataNascita dell'Animale non sia nel futuro).
 4. Crea una nuova relazione per i Veterinari e stabilisci la relazione appropriata con la relazione Visita.
-5. Spiega come i tuoi miglioramenti garantiscono una migliore integrità dei dati nel sistema.
