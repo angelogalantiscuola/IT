@@ -66,7 +66,3 @@ Durante la progettazione concettuale, è importante includere le **regole di bus
 ### Relazione con altre lezioni
 
 Questo materiale si concentra sull'analisi dei requisiti e sulla progettazione concettuale. Nella lezione successiva si approfondirà la **Progettazione Logica**, dove si vedrà come il diagramma ER verrà tradotto in uno schema relazionale per l'implementazione nel database.
-
----
-
-Se hai ulteriori richieste o desideri più dettagli su alcuni aspetti, fammi sapere!

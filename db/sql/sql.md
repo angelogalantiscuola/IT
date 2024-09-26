@@ -23,12 +23,15 @@ SQL è diviso in vari sottolinguaggi, ognuno con uno scopo specifico per la gest
 #### Linguaggio di Definizione Dati (DDL)
 Il **Data Definition Language (DDL)** è utilizzato per definire e modificare la struttura del database. Le operazioni principali includono la creazione, la modifica e l'eliminazione di tabelle e altri oggetti del database.
 
+- **`CREATE DATABASE`**: Crea un nuovo database.
 - **`CREATE`**: Crea una nuova tabella, vista, indice o altro oggetto del database.
 - **`ALTER`**: Modifica la struttura di una tabella esistente.
 - **`DROP`**: Elimina una tabella o un altro oggetto dal database.
 
 Esempio:
 ```sql
+CREATE DATABASE Scuola;
+
 CREATE TABLE Studenti (
     ID INT PRIMARY KEY,
     Nome VARCHAR(100),

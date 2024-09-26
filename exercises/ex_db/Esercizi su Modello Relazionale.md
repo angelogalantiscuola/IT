@@ -10,13 +10,22 @@ Compito:
 2. Per ogni entità, elenca almeno 3 attributi.
 3. Descrivi almeno 2 relazioni tra le entità.
 
-## Esercizio 2: Creazione di uno Schema ER
+### Esempio di Output:
+Entità:
+- Libro(ID, Titolo, Autore, Genere)
+- Cliente(ID, Nome, Cognome, Email)
+
+Relazioni:
+- Un Cliente può prendere in prestito più Libri.
+- Un Libro può essere preso in prestito da più Clienti nel tempo.
+
+## Esercizio 2: Creazione di uno Schema Relazionale
 **Livello: Intermedio**
 
 Scenario: Un'università vuole creare un database per gestire corsi, studenti e professori.
 
 Compito:
-1. Crea un diagramma ER che includa le seguenti entità: Studente, Corso, Professore.
+1. Crea uno schema relazionale che includa le seguenti entità: Studente, Corso, Professore.
 2. Aggiungi almeno 4 attributi per ogni entità.
 3. Definisci le relazioni appropriate tra le entità.
 4. Aggiungi almeno un'entità aggiuntiva che potrebbe essere rilevante (es. Dipartimento).
