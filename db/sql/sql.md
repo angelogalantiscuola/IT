@@ -8,6 +8,7 @@
 - [Query di Selezione: Il Cuore di SQL](#query-di-selezione-il-cuore-di-sql)
   - [Ordinamento e Raggruppamento](#ordinamento-e-raggruppamento)
 - [Funzioni Aggregate](#funzioni-aggregate)
+- [JOIN: Collegare Tabelle](#join-collegare-tabelle)
 - [SQL Tutorial Completo](#sql-tutorial-completo)
 
 Il **Structured Query Language (SQL)** è il linguaggio standard utilizzato per la gestione e la manipolazione di dati all'interno di database relazionali. Introdotto per la prima volta negli anni '70, SQL è diventato il linguaggio di riferimento per creare, modificare, interrogare e gestire i dati nei database relazionali. Il suo successo deriva dalla semplicità e dalla potenza espressiva che consente di definire complessi modelli di dati e operazioni senza dover entrare nei dettagli dell'implementazione interna.
@@ -123,6 +124,17 @@ FROM Studenti;
 ```
 Questa query calcola la media delle date di nascita degli studenti.
 
+### JOIN: Collegare Tabelle
+
+Le **JOIN** sono utilizzate per combinare righe da due o più tabelle, basandosi su una condizione correlata tra di esse. Le JOIN sono fondamentali per lavorare con database relazionali, dove i dati sono distribuiti tra diverse tabelle.
+
+```sql
+SELECT Studenti.Nome, Studenti.Cognome, Scuole.NomeScuola
+FROM Studenti
+INNER JOIN Scuole ON Studenti.ScuolaID = Scuole.ID;
+```
+
+Questa query restituisce i nomi e i cognomi degli studenti insieme ai nomi delle scuole a cui sono iscritti, mostrando solo le righe che hanno corrispondenze in entrambe le tabelle coinvolte.
 ### SQL Tutorial Completo
 
 Per ulteriori informazioni su SQL, puoi consultare il seguente link: [W3Schools SQL Tutorial](https://www.w3schools.com/sql/)

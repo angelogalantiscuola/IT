@@ -11,9 +11,9 @@ graph TD
 
     B[VSCode] 
     B --> Y[WSL] 
-    B --> R[SSH in VSCode] 
-    R --> V[Configurazione della connessione SSH]
-    V --> W[Connessione al server remoto]
+    B --> X[SSH in VSCode] 
+    X --> AC[Configurazione della connessione SSH]
+    AC --> W[Connessione al server remoto]
 
     Y[WSL] 
     Y --> AA[Perché usare WSL]
@@ -21,9 +21,10 @@ graph TD
 
     F[Repository] 
     F --> G[Creare]
-    F --> H[Clonare]
-    F --> I[Aprire]
+    G --> H[Clonare]
+    H --> I[Aprire]
     F --> J[Sincronizzare]
+    F --> AD[Ambiente Virtuale]
 
     J[Sincronizzare] 
     J --> K[Autenticazione su Github]
@@ -35,6 +36,7 @@ graph TD
     N --> Q[Problemi]
 
     R[Shell] 
+    Z --> R[VSCode]
     R --> S[Linguaggi di scripting]
     S --> T[Bash]
     S --> U[Cmd]
