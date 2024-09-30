@@ -1,4 +1,4 @@
-## Comandi di Bash
+## Comandi Bash
 
 ### Comando man
 
