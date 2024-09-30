@@ -16,7 +16,7 @@ query = "INSERT INTO persone (nome, cognome) VALUES (?, ?)"
 values = [
     ("Luca", "Bianchi"),
     ("Paolo", "Verdi"),
-]  # Valori da inserire si potrebbero anche leggere da un file JSON
+]  # I Valori da inserire si potrebbero anche leggere da un file JSON
 cursor.executemany(
     query, values
 )  # Esecuzione di una query di inserimento di molti record
