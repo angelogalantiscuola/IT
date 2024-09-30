@@ -34,4 +34,10 @@ graph TD
     N --> P[Pull]
     N --> Q[Problemi]
 
+    R[Shell] 
+    R --> S[Linguaggi di scripting]
+    S --> T[Bash]
+    S --> U[Cmd]
+    S --> V[Powershell]
+
 ```
