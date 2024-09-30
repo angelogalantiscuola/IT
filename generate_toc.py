@@ -39,19 +39,14 @@ def write_toc(toc_lines, output_file):
 def get_md_files(folder, toc_file):
     files = []
     for file in os.listdir(folder):
-        if (
-            file.endswith(".md")
-            and file != toc_file
-            and not file.startswith("0_")
-            and not file.startswith("00_")
-        ):
+        if file.endswith(".md") and file != toc_file and not file.startswith("0_") and not file.startswith("00_"):
             files.append(file)
     return files
 
 
 # folder = "oop/"
-folder = "db/"
-toc_file = "0_table_of_contents.md"
+folder = "oop/"
+toc_file = "table_of_contents.md"
 markdown_files = get_md_files(folder, toc_file)
 
 # Generate TOC
