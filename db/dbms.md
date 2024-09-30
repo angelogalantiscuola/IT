@@ -1,8 +1,16 @@
-## Sistema di Gestione di Database (DBMS)
+## Sistema di Gestione di Database (DBMS) <!-- omit in toc -->
+
+- [Archiviazione dei Dati](#archiviazione-dei-dati)
+- [Gestione delle Transazioni](#gestione-delle-transazioni)
+- [Controllo della Concorrenza](#controllo-della-concorrenza)
+- [Recupero e Ripristino](#recupero-e-ripristino)
+- [Sicurezza](#sicurezza)
+- [Conclusioni](#conclusioni)
+
 
 Un **DBMS** (Database Management System) è un software complesso progettato per gestire i database in modo efficiente, consentendo la memorizzazione, la gestione e il recupero dei dati in modo sicuro e affidabile. Per comprendere meglio il funzionamento di un DBMS, vediamo in dettaglio le sue funzioni chiave:
 
-### 1. **Archiviazione dei Dati**
+### Archiviazione dei Dati
 
 Il DBMS gestisce la memorizzazione fisica dei dati su disco rigido o altri dispositivi di archiviazione permanenti. I dati sono organizzati in tabelle, ognuna composta da righe (tuple) e colonne (attributi). 
 
@@ -20,7 +28,7 @@ Il DBMS gestisce la memorizzazione fisica dei dati su disco rigido o altri dispo
 
 Oltre all'archiviazione, il DBMS ottimizza la disposizione fisica dei dati per migliorare le prestazioni delle query, ad esempio attraverso tecniche come la **normalizzazione** o l'uso di **indici**.
 
-### 2. **Gestione delle Transazioni**
+### Gestione delle Transazioni
 
 Una transazione è un insieme di operazioni che vengono eseguite come un'unità logica. Il DBMS garantisce che tutte le operazioni all'interno di una transazione vengano completate correttamente o, in caso di errore, annullate (rollback) per mantenere l'integrità dei dati. Questo si basa sulle proprietà **ACID**:
 
@@ -40,7 +48,7 @@ Una transazione è un insieme di operazioni che vengono eseguite come un'unità 
 
 Se uno degli aggiornamenti fallisce, l'intera transazione viene annullata per evitare stati incoerenti.
 
-### 3. **Controllo della Concorrenza**
+### Controllo della Concorrenza
 
 Il **controllo della concorrenza** è necessario quando più utenti o applicazioni accedono simultaneamente al database. Il DBMS deve garantire che le operazioni eseguite da un utente non interferiscano con quelle di altri utenti, mantenendo l'integrità dei dati.
 
@@ -57,7 +65,7 @@ Esistono due approcci principali al controllo della concorrenza:
   UPDATE Inventario SET quantita = quantita - 10 WHERE id = 10;
   ```
 
-### 4. **Recupero e Ripristino**
+### Recupero e Ripristino
 
 Il **recupero** dei dati è un aspetto cruciale per i DBMS, che devono garantire la possibilità di ripristinare il database a uno stato coerente in caso di guasti, come interruzioni dell'alimentazione, errori hardware o software.
 
@@ -69,7 +77,7 @@ Le tecniche di ripristino includono:
 
 - **Esempio**: Se durante una transazione complessa si verifica un'interruzione di corrente, il DBMS può utilizzare il log delle transazioni per identificare quali operazioni erano state completate e quali no, ripristinando così il database a uno stato coerente.
 
-### 5. **Sicurezza**
+### Sicurezza
 
 La sicurezza è fondamentale per impedire l'accesso non autorizzato ai dati. Un DBMS offre vari meccanismi per garantire che solo gli utenti autorizzati possano accedere o modificare i dati. Le tecniche di sicurezza includono:
 

@@ -1,4 +1,10 @@
-## Ereditarietà e Polimorfismo
+## Ereditarietà e Polimorfismo  <!-- omit in toc -->
+
+- [Ereditarietà: Specializzazione delle Classi](#ereditarietà-specializzazione-delle-classi)
+- [Polimorfismo: Diversi Comportamenti per Classi Derivate](#polimorfismo-diversi-comportamenti-per-classi-derivate)
+- [Ereditarietà Multipla in Python](#ereditarietà-multipla-in-python)
+- [Diagrammi UML: Ereditarietà e Polimorfismo](#diagrammi-uml-ereditarietà-e-polimorfismo)
+
 
 L'ereditarietà e il polimorfismo sono concetti fondamentali nella programmazione orientata agli oggetti (OOP). Questi meccanismi permettono di riutilizzare il codice in modo più efficiente e flessibile, riducendo la duplicazione e migliorando la manutenzione.
 

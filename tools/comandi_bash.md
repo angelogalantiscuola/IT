@@ -1,4 +1,9 @@
-## Comandi Bash
+## Comandi Bash  <!-- omit in toc -->
+
+- [Comando man](#comando-man)
+  - [Sintassi](#sintassi)
+- [Principali comandi di Bash](#principali-comandi-di-bash)
+
 
 ### Comando man
 

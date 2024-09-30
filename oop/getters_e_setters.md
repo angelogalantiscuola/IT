@@ -1,4 +1,10 @@
-## Getters e Setters
+## Getters e Setters  <!-- omit in toc -->
+
+- [Getter](#getter)
+- [Setter](#setter)
+- [Uso delle Proprietà in Python](#uso-delle-proprietà-in-python)
+- [Vantaggi dell’Uso di Getters e Setters](#vantaggi-delluso-di-getters-e-setters)
+
 
 I **getters** e **setters** sono metodi che permettono di accedere e modificare gli attributi privati di una classe in modo controllato. L’uso di questi metodi è strettamente legato al concetto di **incapsulamento**, poiché permette di nascondere i dettagli interni dell'implementazione e offrire un’interfaccia più sicura e intuitiva per accedere ai dati.
 

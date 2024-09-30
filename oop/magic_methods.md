@@ -1,4 +1,11 @@
-## Magic Methods
+## Magic Methods  <!-- omit in toc -->
+
+- [1. `__init__`: Il Costruttore](#1-__init__-il-costruttore)
+- [2. `__str__` e `__repr__`: Rappresentazione degli Oggetti](#2-__str__-e-__repr__-rappresentazione-degli-oggetti)
+- [3. `__add__`, `__sub__`, `__mul__`: Operazioni Aritmetiche](#3-__add__-__sub__-__mul__-operazioni-aritmetiche)
+- [4. `__eq__`, `__lt__`, `__le__`: Operazioni di Confronto](#4-__eq__-__lt__-__le__-operazioni-di-confronto)
+- [Conclusioni](#conclusioni)
+
 
 I **magic methods** (o metodi speciali) in Python sono metodi che hanno nomi speciali e che permettono di definire o modificare il comportamento predefinito degli oggetti. Questi metodi sono sempre racchiusi tra due doppi underscore (`__`), come `__init__`, e sono automaticamente chiamati in specifici contesti, come durante operazioni aritmetiche o confronti.
 

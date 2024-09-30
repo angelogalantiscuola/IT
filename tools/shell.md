@@ -1,4 +1,10 @@
-## Shell
+## Shell  <!-- omit in toc -->
+
+- [Linguaggi di Scripting](#linguaggi-di-scripting)
+  - [Bash (Bourne Again Shell)](#bash-bourne-again-shell)
+  - [CMD (Command Prompt)](#cmd-command-prompt)
+  - [PowerShell](#powershell)
+
 
 Una **shell** è un'interfaccia che permette agli utenti di interagire con il sistema operativo tramite comandi testuali. Le shell possono essere utilizzate per eseguire comandi singoli, script complessi e automazione di compiti ripetitivi. Il termine "shell" deriva dal fatto che essa agisce come un involucro (shell) attorno al kernel del sistema operativo, fornendo un'interfaccia per l'interazione con il sistema.
 

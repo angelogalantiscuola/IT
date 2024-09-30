@@ -5,10 +5,13 @@
   - [Linguaggio di Definizione Dati (DDL)](#linguaggio-di-definizione-dati-ddl)
   - [Linguaggio di Manipolazione Dati (DML)](#linguaggio-di-manipolazione-dati-dml)
   - [Linguaggio di Controllo Dati (DCL)](#linguaggio-di-controllo-dati-dcl)
-- [Query di Selezione: Il Cuore di SQL](#query-di-selezione-il-cuore-di-sql)
-  - [Ordinamento e Raggruppamento](#ordinamento-e-raggruppamento)
+- [Query di Selezione](#query-di-selezione)
+- [Ordinamento e Raggruppamento](#ordinamento-e-raggruppamento)
 - [Funzioni Aggregate](#funzioni-aggregate)
 - [JOIN: Collegare Tabelle](#join-collegare-tabelle)
+  - [Tabelle di esempio](#tabelle-di-esempio)
+  - [Query SQL](#query-sql)
+  - [Output](#output)
 - [SQL Tutorial Completo](#sql-tutorial-completo)
 
 Il **Structured Query Language (SQL)** è il linguaggio standard utilizzato per la gestione e la manipolazione di dati all'interno di database relazionali. Introdotto per la prima volta negli anni '70, SQL è diventato il linguaggio di riferimento per creare, modificare, interrogare e gestire i dati nei database relazionali. Il suo successo deriva dalla semplicità e dalla potenza espressiva che consente di definire complessi modelli di dati e operazioni senza dover entrare nei dettagli dell'implementazione interna.
@@ -69,7 +72,7 @@ GRANT SELECT ON Studenti TO 'utente1';
 ```
 Questo comando concede all'utente `utente1` il permesso di eseguire query **SELECT** sulla tabella **Studenti**.
 
-### Query di Selezione: Il Cuore di SQL
+### Query di Selezione
 
 Il comando **`SELECT`** è probabilmente il più utilizzato in SQL, essendo il fulcro per il recupero dei dati dai database. La sintassi di base di una query di selezione è la seguente:
 
@@ -91,7 +94,7 @@ WHERE DataNascita > '2000-01-01';
 ```
 Questa query recupera i nomi e i cognomi di tutti gli studenti nati dopo il 1° gennaio 2000.
 
-#### Ordinamento e Raggruppamento
+### Ordinamento e Raggruppamento
 
 È possibile ordinare e raggruppare i dati utilizzando i comandi **`ORDER BY`** e **`GROUP BY`**.
 
@@ -128,6 +131,23 @@ Questa query calcola la media delle date di nascita degli studenti.
 
 Le **JOIN** sono utilizzate per combinare righe da due o più tabelle, basandosi su una condizione correlata tra di esse. Le JOIN sono fondamentali per lavorare con database relazionali, dove i dati sono distribuiti tra diverse tabelle.
 
+#### Tabelle di esempio
+
+**Studenti**
+| ID  | Nome  | Cognome | ScuolaID |
+| --- | ----- | ------- | -------- |
+| 1   | Mario | Rossi   | 101      |
+| 2   | Luigi | Bianchi | 102      |
+| 3   | Anna  | Verdi   | 101      |
+
+**Scuole**
+| ID  | NomeScuola        |
+| --- | ----------------- |
+| 101 | Scuola Primaria   |
+| 102 | Scuola Secondaria |
+
+#### Query SQL
+
 ```sql
 SELECT Studenti.Nome, Studenti.Cognome, Scuole.NomeScuola
 FROM Studenti
@@ -135,6 +155,15 @@ INNER JOIN Scuole ON Studenti.ScuolaID = Scuole.ID;
 ```
 
 Questa query restituisce i nomi e i cognomi degli studenti insieme ai nomi delle scuole a cui sono iscritti, mostrando solo le righe che hanno corrispondenze in entrambe le tabelle coinvolte.
+
+#### Output
+
+| Nome  | Cognome | NomeScuola        |
+| ----- | ------- | ----------------- |
+| Mario | Rossi   | Scuola Primaria   |
+| Luigi | Bianchi | Scuola Secondaria |
+| Anna  | Verdi   | Scuola Primaria   |
+
 ### SQL Tutorial Completo
 
 Per ulteriori informazioni su SQL, puoi consultare il seguente link: [W3Schools SQL Tutorial](https://www.w3schools.com/sql/)

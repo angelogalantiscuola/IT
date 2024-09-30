@@ -1,4 +1,13 @@
-## Ambiente Virtuale in Python
+## Ambiente Virtuale in Python  <!-- omit in toc -->
+
+- [Perché usare un ambiente virtuale?](#perché-usare-un-ambiente-virtuale)
+- [Creare un ambiente virtuale](#creare-un-ambiente-virtuale)
+- [Installare librerie nell’ambiente virtuale](#installare-librerie-nellambiente-virtuale)
+- [Installare dipendenze da requirements.txt](#installare-dipendenze-da-requirementstxt)
+- [Disattivare l’ambiente virtuale](#disattivare-lambiente-virtuale)
+- [Vantaggi dell’uso degli ambienti virtuali](#vantaggi-delluso-degli-ambienti-virtuali)
+  - [Integrare l'ambiente virtuale con VSCode](#integrare-lambiente-virtuale-con-vscode)
+
 
 Un **ambiente virtuale** in Python è un modo per isolare le dipendenze di un progetto dagli altri progetti presenti sul sistema. Questo è utile per evitare conflitti tra versioni di librerie e strumenti usati da differenti progetti.
 

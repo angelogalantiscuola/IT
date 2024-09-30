@@ -1,4 +1,4 @@
-### Abstraction Levels in Programming Languages
+# Abstraction Levels in Programming Languages
 
 The level of abstraction in programming languages signifies the proximity of a language to the hardware. The lower the level of abstraction, the more the programmer has to grapple with intricate details and low-level operations. Conversely, the higher the level of abstraction, the more features and functionalities the language offers to simplify and automate complex tasks.
 

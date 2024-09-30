@@ -1,4 +1,12 @@
-# Analisi dei Requisiti
+# Analisi dei Requisiti  <!-- omit in toc -->
+
+- [Progettazione Concettuale](#progettazione-concettuale)
+  - [1. Creazione del Diagramma ER](#1-creazione-del-diagramma-er)
+    - [Componenti principali del diagramma ER:](#componenti-principali-del-diagramma-er)
+    - [Esempio:](#esempio)
+  - [2. Definizione delle regole di business](#2-definizione-delle-regole-di-business)
+    - [Relazione con altre lezioni](#relazione-con-altre-lezioni)
+
 
 L'**analisi dei requisiti** è la prima e fondamentale fase della progettazione di un database. In questa fase, l'obiettivo è comprendere in modo dettagliato le necessità del committente e tradurle in specifiche tecniche per il database. Non si tratta solo di raccogliere informazioni, ma di interpretarle correttamente e organizzare una visione chiara e strutturata delle funzionalità richieste.
 
