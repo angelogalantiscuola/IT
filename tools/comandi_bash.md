@@ -1,7 +1,6 @@
 ## Comandi Bash  <!-- omit in toc -->
 
 - [Comando man](#comando-man)
-  - [Sintassi](#sintassi)
 - [Principali comandi di Bash](#principali-comandi-di-bash)
 
 
@@ -9,7 +8,6 @@
 
 Il comando `man` (abbreviazione di "manual") è utilizzato per visualizzare le pagine di manuale dei comandi disponibili nel sistema. Queste pagine forniscono una descrizione dettagliata del comando, delle sue opzioni e degli esempi di utilizzo.
 
-#### Sintassi
 ```bash
 man comando
 ```
