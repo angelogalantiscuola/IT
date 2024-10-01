@@ -50,8 +50,8 @@ Ad esempio, potremmo avere una classe `Moto` che eredita da `Veicolo`, ma implem
 
 ```python
 class Moto(Veicolo):
-    def descrizione(self):
-        return f'Moto: {self.marca} {self.modello}'
+    def descrizione(self): # stesso metodo di Veicolo
+        return f'Moto: {self.marca} {self.modello}' # messaggio differente
 ```
 
 Ora possiamo avere oggetti di classi diverse (`Auto` e `Moto`) e invocare lo stesso metodo (`descrizione`) su di essi, ottenendo risultati differenti:
