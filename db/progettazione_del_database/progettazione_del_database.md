@@ -32,7 +32,7 @@ La **progettazione concettuale** si concentra sulla rappresentazione dei dati a 
 
 **Esempio**: In un sistema scolastico, le entità principali potrebbero essere "Studente", "Corso" e "Insegnante", mentre le relazioni potrebbero essere "Iscritto a" (tra Studente e Corso) e "Insegna" (tra Insegnante e Corso).
 
-> **Nota**: I diagrammi ER e lo schema concettuale verranno approfonditi nella lezione dedicata a **Schema Concettuale e Diagrammi ER**.
+> **Nota**: I diagrammi ER e lo schema concettuale verranno approfonditi nella lezione dedicata a **Diagrammi ER**.
 
 #### Progettazione Logica
 

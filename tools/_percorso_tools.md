@@ -36,7 +36,7 @@ graph TD
     S --> V[Problemi]
 
     W[Shell] 
-    A --> W[VSCode]
+    A --> W[Shell]
     W --> X[Linguaggi di scripting]
     X --> Y[Bash]
     X --> Z[Cmd]

@@ -9,7 +9,7 @@
 - [Conclusione](#conclusione)
 
 
-Le **forme normali avanzate** rappresentano estensioni e rafforzamenti delle forme normali di base (1NF, 2NF, 3NF) viste in precedenza. In particolare, si concentrano sulla risoluzione di problematiche più complesse legate alla ridondanza dei dati e alle dipendenze funzionali tra gli attributi. Le due forme normali avanzate più importanti sono la **Boyce-Codd Normal Form (BCNF)** e la **Quarta e Quinta Forma Normale (4NF e 5NF)**.
+Le **forme normali avanzate** rappresentano estensioni e rafforzamenti delle forme normali di base (1NF, 2NF, 3NF) viste in precedenza. In particolare, si concentrano sulla risoluzione di problematiche più complesse legate alla ridondanza dei dati e alle dipendenze funzionali tra gli attributi. Le forme normali avanzate più importanti sono la **Boyce-Codd Normal Form (BCNF)** e la **Quarta e Quinta Forma Normale (4NF e 5NF)**.
 
 Queste forme sono utilizzate quando la complessità della struttura dei dati richiede un'ulteriore suddivisione delle tabelle, riducendo così al minimo le anomalie e migliorando l'integrità dei dati.
 
