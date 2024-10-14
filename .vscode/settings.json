@@ -3,8 +3,8 @@
         {
             "previewLimit": 50,
             "driver": "SQLite",
-            "name": "test",
-            "database": "${workspaceFolder:IT}/_ex/ex_db/persone.db"
+            "name": "music-store",
+            "database": "_ex/db/music-store.db"
         },
         {
             "mysqlOptions": {
@@ -15,7 +15,7 @@
             "server": "localhost",
             "port": 3306,
             "driver": "MariaDB",
-            "name": "maria",
+            "name": "mariadb",
             "database": "w3schools",
             "username": "x",
             "password": "x"
