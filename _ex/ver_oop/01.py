@@ -1,12 +1,13 @@
 class Dispositivo:
-    numero_dispositivi = 0
+    numero_dispositivi = 0  # attributo di classe
 
     def __init__(self, marca, modello, prezzo, disponibile=True):
         self.marca = marca
         self.modello = modello
         self.prezzo = prezzo
         self.disponibile = disponibile
-        Dispositivo.numero_dispositivi += 1
+        Dispositivo.numero_dispositivi += 1  # incremento attributo di classe
+        # numero_dispositivi += 1 # errore
 
     def get_marca(self):
         return self.marca
@@ -26,7 +27,10 @@ class Dispositivo:
 
     @staticmethod
     def calcola_sconto(prezzo, percentuale):
-        return prezzo * (1 - percentuale / 100)
+        # return prezzo * (1 - percentuale / 100)
+        sconto = prezzo * percentuale / 100
+        prezzo_scontato = prezzo - sconto
+        return prezzo_scontato
 
 
 class Smartphone(Dispositivo):
@@ -72,7 +76,7 @@ class Inventario:
     def __init__(self):
         self.dispositivi = []
 
-    def aggiungi_dispositivo(self, dispositivo):
+    def aggiungi_dispositivo(self, dispositivo: Dispositivo):
         self.dispositivi.append(dispositivo)
 
     def vendi_dispositivo(self, marca, modello):
@@ -82,10 +86,17 @@ class Inventario:
                 return
 
     def cerca_per_prezzo(self, prezzo_max):
-        return [d for d in self.dispositivi if d.prezzo <= prezzo_max]
+        # return [d for d in self.dispositivi if d.prezzo <= prezzo_max]
+
+        dispositivi_con_prezzo_basso = []
+        for dispositivo in self.dispositivi:
+            if dispositivo.prezzo <= prezzo_max:
+                dispositivi_con_prezzo_basso.append(dispositivo)
+
+        return dispositivi_con_prezzo_basso
 
     def cerca_disponibili(self):
-        return [d for d in self.dispositivi if d.disponibile]
+        return [d for d in self.dispositivi if d.disponibile == True]
 
     def stampa_inventario(self):
         for dispositivo in self.dispositivi:
