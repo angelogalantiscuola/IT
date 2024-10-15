@@ -1,0 +1,20 @@
+## Esercizio 2: Classe `ContoBancario` con Attributo Privato
+
+### Obiettivo
+Creare una classe chiamata `ContoBancario` che rappresenti un conto bancario. La classe deve avere tre attributi di istanza (`numero_conto`, `intestatario`) e un attributo privato (`_saldo`). Deve inoltre avere metodi pubblici per accedere e modificare il saldo.
+
+### Istruzioni
+1. Definisci una classe chiamata `ContoBancario`.
+2. Aggiungi tre attributi di istanza nel metodo `__init__`: `numero_conto`, `intestatario`, `_saldo`.
+3. Implementa un metodo pubblico `get_saldo` per restituire il valore dell'attributo privato `_saldo`.
+4. Aggiungi un metodo `deposita` per incrementare il saldo e un metodo `preleva` per decrementare il saldo, assicurandoti che il saldo non diventi negativo.
+
+### Esempio di Utilizzo
+```python
+# Esempio di utilizzo
+conto = ContoBancario("123456789", "Mario Rossi", 1000.0)
+print(conto.get_saldo())  # Output: 1000.0
+conto.deposita(500.0)
+print(conto.get_saldo())  # Output: 1500.0
+conto.preleva(200.0)
+print(conto.get_saldo())  # Output: 1300.0
