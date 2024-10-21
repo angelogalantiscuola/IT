@@ -13,16 +13,17 @@ graph TD
     B --> C[SSH]
     B --> D[WSL]
     B --> E[Bash]
+    B --> I[Testing]
     E --> F[Version Control]
     F --> G[Repository]
     G --> H[Ambiente Virtuale]
-    
+
     AB --> AC
     AC[Licenze Software]
-    
+
     AB --> J
     J[Livelli di Astrazione dei Linguaggi] --> K[Paradigmi di Programmazione]
-    
+
     K --> L[Programmazione Imperativa]
     L --> M[Variabili e Tipi di Dati]
     M --> N[Strutture di Controllo]
@@ -31,7 +32,7 @@ graph TD
     style M fill:#345
     style N fill:#345
     style O fill:#345
-    
+
     K --> P
     P[Programmazione Orientata agli Oggetti] --> Q[Classi e Oggetti]
     Q --> R[Incapsulamento]
@@ -39,7 +40,7 @@ graph TD
     S --> T[Polimorfismo]
     T .-> Z[Diagrammi delle Classi UML]
     style Z fill:#444
-    
+
     K --> U
     U[Database] --> V[Modello Relazionale]
     V --> W[SQL]

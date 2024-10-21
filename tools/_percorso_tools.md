@@ -6,27 +6,27 @@ graph TD
     A --> B[IDE]
     A --> C[Repository]
 
-    B[IDE] 
+    B[IDE]
     B --> D[VSCode]
 
-    D[VSCode] 
-    D --> E[WSL] 
-    D --> F[SSH in VSCode] 
+    D[VSCode]
+    D --> E[WSL]
+    D --> F[SSH in VSCode]
     F --> G[Configurazione della connessione SSH]
     G --> H[Connessione al server remoto]
 
-    E[WSL] 
+    E[WSL]
     E --> I[Perché usare WSL]
     I --> J[Come installare WSL]
 
-    C[Repository] 
+    C[Repository]
     C --> K[Creare]
     K --> L[Clonare]
     L --> M[Aprire]
     C --> N[Sincronizzare]
     C --> O[Ambiente Virtuale]
 
-    N[Sincronizzare] 
+    N[Sincronizzare]
     N --> P[Autenticazione su Github]
     P --> Q[Configurazione di Git]
     Q --> R[Commit]
@@ -35,12 +35,17 @@ graph TD
     S --> U[Pull]
     S --> V[Problemi]
 
-    W[Shell] 
+    W[Shell]
     A --> W[Shell]
     W --> X[Linguaggi di scripting]
     X --> Y[Bash]
     X --> Z[Cmd]
     X --> AA[Powershell]
     Y --> AB[Comandi Bash]
+
+    AL[Testing]
+    A --> AL[Testing]
+    AL --> AE[Framework Pytest]
+    AE --> AH[Test-Driven Development]
 
 ```
