@@ -18,9 +18,9 @@ Per installare MariaDB su Ubuntu tramite terminale, segui questi passaggi:
    sudo apt update
    ```
 
-2. **Installa il server MariaDB:**
+2. **Installa il server MariaDB, Node.js e npm:**
    ```bash
-   sudo apt install mariadb-server
+   sudo apt install mariadb-server nodejs npm
    ```
 
 3. **Avvia il servizio MariaDB:**
@@ -37,7 +37,10 @@ Per installare MariaDB su Ubuntu tramite terminale, segui questi passaggi:
    ```bash
    sudo mysql_secure_installation
    ```
-   Segui le istruzioni per impostare la password di root e configurare altre opzioni di sicurezza.
+   Segui le istruzioni per impostare la password di root e configurare altre opzioni di sicurezza. Rispondi "yes" alle seguenti domande:
+   
+   - `Change the root password?` Rispondi `yes` e imposta la password desiderata.
+   - `Reload privilege tables now?` Rispondi `yes`.
 
 6. **Verifica che MariaDB sia in esecuzione:**
    ```bash
@@ -58,10 +61,15 @@ mysql -u [nome_utente] -p -h [host] -P [porta]
 Sostituisci [nome_utente] con il nome utente del database, [host] con l'indirizzo del server (ad esempio, localhost), e [porta] con il numero di porta (di solito 3306).
 
 ```bash
-mysql -u x -p -h localhost -P 3306
+mysql -u tuo_cognome -p -h localhost -P 3306
 ```
 
 Dopo esserti connesso al server MariaDB, puoi elencare tutti i database disponibili utilizzando il seguente comando SQL: `SHOW DATABASES;`.
+
+Per uscire dal client MariaDB, utilizza il seguente comando:
+```sql
+EXIT;
+```
 
 ### Utilizzo dell'estensione SQLTools per connettersi a MariaDB
 
@@ -99,5 +107,25 @@ SQLTools è un'estensione di Visual Studio Code che consente di connettersi e in
 
 Con questi passaggi, dovresti essere in grado di connetterti a un database MariaDB utilizzando l'estensione SQLTools in Visual Studio Code.
 
-## temp
-https://sqlzoo.net/wiki/SQLZOO:About
+## Come importare database da un file in MariaDB
+
+Per importare un database da un file in MariaDB, puoi utilizzare il comando `mysql` dalla riga di comando. Ecco i passaggi dettagliati:
+
+1. **Apri il terminale.**
+2. **Esegui il comando seguente:**
+
+```sh
+mysql -u [username] -p [database_name] < [path_to_sql_file]
+```
+
+- `[username]`: il nome utente del database.
+- `[database_name]`: il nome del database in cui vuoi importare i dati.
+- `[path_to_sql_file]`: il percorso del file `.sql` che contiene il dump del database.
+
+### Esempio
+
+Se il tuo nome utente è `root`, il nome del database è `mio_database`, e il file SQL si trova in `/path/to/dump.sql`, il comando sarà:
+
+```sh
+mysql -u root -p mio_database < /path/to/dump.sql
+```

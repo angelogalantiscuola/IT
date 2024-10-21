@@ -7,3 +7,4 @@ venv/
 .venv/
 temp.md
 temp_prompt.md
+settings.json
