@@ -115,17 +115,16 @@ Per importare un database da un file in MariaDB, puoi utilizzare il comando `mys
 2. **Esegui il comando seguente:**
 
 ```sh
-mysql -u [username] -p [database_name] < [path_to_sql_file]
+mysql -u [username] -p < [path_to_sql_file]
 ```
 
 - `[username]`: il nome utente del database.
-- `[database_name]`: il nome del database in cui vuoi importare i dati.
 - `[path_to_sql_file]`: il percorso del file `.sql` che contiene il dump del database.
 
 ### Esempio
 
-Se il tuo nome utente è `root`, il nome del database è `mio_database`, e il file SQL si trova in `/path/to/dump.sql`, il comando sarà:
+Se il tuo nome utente è `root`, e il file SQL si trova in `/path/to/dump.sql`, il comando sarà:
 
 ```sh
-mysql -u root -p mio_database < /path/to/dump.sql
+mysql -u root -p < /path/to/dump.sql
 ```
