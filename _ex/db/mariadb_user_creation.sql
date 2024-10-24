@@ -24,7 +24,7 @@ GRANT SELECT ON *.* TO 'delia'@'localhost';
 
 CREATE USER 'franci'@'localhost' IDENTIFIED BY 'franci';
 GRANT ALL PRIVILEGES ON `franci\_%`.* TO 'franci'@'localhost' WITH GRANT OPTION;
-GRANT SELECT ON *.* TO 'lupafranciscu'@'localhost';
+GRANT SELECT ON *.* TO 'franci'@'localhost';
 
 CREATE USER 'lupascu'@'localhost' IDENTIFIED BY 'lupascu';
 GRANT ALL PRIVILEGES ON `lupascu\_%`.* TO 'lupascu'@'localhost' WITH GRANT OPTION;
