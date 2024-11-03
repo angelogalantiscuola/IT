@@ -11,7 +11,8 @@ graph TD
     B --> E[Progettazione del Database]
     E --> X[Analisi dei Requisiti]
     X --> F[Schema Concettuale e Diagrammi ER]
-    F --> G[Normalizzazione]
+    F --> Z[Progettazione logica]
+    Z --> G[Normalizzazione]
     G --> H[Forme Normali Avanzate]
 
     B --> J[SQL: Linguaggio per DB Relazionali]
