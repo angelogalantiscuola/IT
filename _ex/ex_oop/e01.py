@@ -10,6 +10,8 @@ Usage example:
     print(persona.descrizione())  # Output: Ho 30 anni e vivo a Roma.
 """
 
+import os
+
 
 class Persona:
     def __init__(self, nome, eta, citta):
@@ -36,7 +38,9 @@ class Persona:
         return f"Ho {self.eta} anni e vivo a {self.citta}."
 
 
-# Esempio di utilizzo
-persona = Persona("Mario", 30, "Roma")
-print(persona.saluta())  # Output: Ciao, mi chiamo Mario.
-print(persona.descrizione())  # Output: Ho 30 anni e vivo a Roma.
+if __name__ == "__main__":
+    # Esempio di utilizzo
+    persona = Persona("Mario", 30, "Roma")
+    print("Executing file:", os.path.basename(__file__))
+    print(persona.saluta())  # Output: Ciao, mi chiamo Mario.
+    print(persona.descrizione())  # Output: Ho 30 anni e vivo a Roma.
