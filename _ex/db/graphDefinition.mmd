@@ -1,88 +1,88 @@
 erDiagram
     ALBUMS {
-        INTEGER AlbumId PK
-        TEXT Title
-        INTEGER ArtistId FK
+        INTEGER id PK
+        TEXT title
+        INTEGER artist_id FK
     }
     ARTISTS {
-        INTEGER ArtistId PK
-        TEXT Name
+        INTEGER id PK
+        TEXT name
     }
     TRACKS {
-        INTEGER TrackId PK
-        TEXT Name
-        INTEGER AlbumId FK
-        INTEGER MediaTypeId FK
-        INTEGER GenreId FK
-        REAL Milliseconds
-        REAL Bytes
-        REAL UnitPrice
+        INTEGER id PK
+        TEXT name
+        INTEGER album_id FK
+        INTEGER media_type_id FK
+        INTEGER genre_id FK
+        REAL milliseconds
+        REAL bytes
+        REAL unit_price
     }
     MEDIA_TYPES {
-        INTEGER MediaTypeId PK
-        TEXT Name
+        INTEGER id PK
+        TEXT name
     }
     GENRES {
-        INTEGER GenreId PK
-        TEXT Name
+        INTEGER id PK
+        TEXT name
     }
     PLAYLISTS {
-        INTEGER PlaylistId PK
-        TEXT Name
+        INTEGER id PK
+        TEXT name
     }
     PLAYLIST_TRACKS {
-        INTEGER PlaylistId FK
-        INTEGER TrackId FK
+        INTEGER playlist_id FK
+        INTEGER track_id FK
     }
     CUSTOMERS {
-        INTEGER CustomerId PK
-        TEXT FirstName
-        TEXT LastName
-        TEXT Company
-        TEXT Address
-        TEXT City
-        TEXT State
-        TEXT Country
-        TEXT PostalCode
-        TEXT Phone
-        TEXT Fax
-        TEXT Email
-        INTEGER SupportRepId FK
+        INTEGER id PK
+        TEXT first_name
+        TEXT last_name
+        TEXT company
+        TEXT address
+        TEXT city
+        TEXT state
+        TEXT country
+        TEXT postal_code
+        TEXT phone
+        TEXT fax
+        TEXT email
+        INTEGER support_rep_id FK
     }
     INVOICES {
-        INTEGER InvoiceId PK
-        INTEGER CustomerId FK
-        TEXT InvoiceDate
-        TEXT BillingAddress
-        TEXT BillingCity
-        TEXT BillingState
-        TEXT BillingCountry
-        TEXT BillingPostalCode
-        REAL Total
+        INTEGER id PK
+        INTEGER customer_id FK
+        TEXT invoice_date
+        TEXT billing_address
+        TEXT billing_city
+        TEXT billing_state
+        TEXT billing_country
+        TEXT billing_postal_code
+        REAL total
     }
     INVOICE_LINES {
-        INTEGER InvoiceLineId PK
-        INTEGER InvoiceId FK
-        INTEGER TrackId FK
-        REAL UnitPrice
-        INTEGER Quantity
+        INTEGER id PK
+        INTEGER invoice_id FK
+        INTEGER track_id FK
+        REAL unit_price
+        INTEGER quantity
     }
     EMPLOYEES {
-        INTEGER EmployeeId PK
-        TEXT LastName
-        TEXT FirstName
-        TEXT Title
-        INTEGER ReportsTo FK
-        TEXT BirthDate
-        TEXT HireDate
-        TEXT Address
-        TEXT City
-        TEXT State
-        TEXT Country
-        TEXT PostalCode
-        TEXT Phone
-        TEXT Fax
-        TEXT Email
+        INTEGER id PK
+        TEXT last_name
+        TEXT first_name
+        TEXT title
+        INTEGER reports_to FK
+        TEXT birth_date
+        TEXT hire_date
+        TEXT address
+        TEXT city
+        TEXT state
+        TEXT country
+        TEXT postal_code
+        TEXT phone
+        TEXT fax
+        TEXT email
     }
 
     ALBUMS ||--o{ TRACKS : "contains"
