@@ -34,7 +34,7 @@ La **chiave primaria** è un attributo (o un insieme di attributi) che identific
 
 #### Chiavi Esterne
 
-Le **chiavi esterne** sono attributi che creano un collegamento tra due tabelle. Una chiave esterna in una tabella fa riferimento alla chiave primaria di un'altra tabella, stabilendo una relazione tra le due. Ad esempio, se un "Corso" è frequentato da più studenti, la tabella "Iscrizione" potrebbe avere "IDStudente" come chiave esterna che fa riferimento alla chiave primaria della tabella "Studente".
+Le **chiavi esterne** sono attributi che creano un collegamento tra due tabelle. Una chiave esterna in una tabella fa riferimento alla chiave primaria di un'altra tabella, stabilendo una relazione tra le due. Ad esempio, se un "Corso" è frequentato da più studenti, la tabella "Frequenta" potrebbe avere "IDStudente" come chiave esterna che fa riferimento alla chiave primaria della tabella "Studente".
 
 ### Vincoli di Integrità
 
@@ -61,7 +61,7 @@ Consideriamo un esempio di progettazione logica per un sistema universitario. Pa
 | ------- | --------- | ------- | ------------ | -------------- |
 | PK      |           |         | FK           | FK             |
 
-**Tabella Iscrizione:**
+**Tabella Frequenta:**
 
 | IDStudente | IDCorso | DataIscrizione | Voto |
 | ---------- | ------- | -------------- | ---- |
@@ -81,7 +81,7 @@ Consideriamo un esempio di progettazione logica per un sistema universitario. Pa
 
 **Relazioni:**
 
-- La tabella "Iscrizione" ha chiavi esterne "IDStudente" e "IDCorso" che fanno riferimento rispettivamente alle chiavi primarie delle tabelle "Studente" e "Corso".
+- La tabella "Frequenta" ha chiavi esterne "IDStudente" e "IDCorso" che fanno riferimento rispettivamente alle chiavi primarie delle tabelle "Studente" e "Corso".
 - La tabella "Corso" ha chiavi esterne "IDProfessore" e "IDDipartimento" che fanno riferimento rispettivamente alle chiavi primarie delle tabelle "Professore" e "Dipartimento".
 - La tabella "Professore" ha una chiave esterna "IDDipartimento" che fa riferimento alla chiave primaria della tabella "Dipartimento".
 
