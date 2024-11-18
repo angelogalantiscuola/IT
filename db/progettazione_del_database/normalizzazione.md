@@ -33,27 +33,22 @@ Il processo di normalizzazione avviene attraverso una serie di passi progressivi
 
 ### Prima Forma Normale (1NF)
 
-Ogni attributo deve contenere un valore atomico (non divisibile)
+Ogni attributo deve contenere un valore atomico (non divisibile).
 
 #### Esempio Non 1NF
 
-| Studente_ID | Telefoni         | Corsi         |
-| ----------- | ---------------- | ------------- |
-| 1           | 123-456, 789-012 | Math, Physics |
+| Studente_ID (PK) | Nome    | Telefoni         |
+| ----------- | ------- | ---------------- |
+| 1           | Mario   | 123-456, 789-012 |
 
-- Violazione dell'atomicità: le colonne **Telefoni** e **Corsi** contengono valori multipli separati da virgola
+- Violazione dell'atomicità: la colonna **Telefoni** contiene valori multipli separati da virgola.
 
 #### Esempio 1NF
 
-| Studente_ID | Telefono |
-| ----------- | -------- |
-| 1           | 123-456  |
-| 1           | 789-012  |
-
-| Studente_ID | Corso   |
-| ----------- | ------- |
-| 1           | Math    |
-| 1           | Physics |
+| Studente_ID (PK) | Nome  | Telefono (PK) |
+| ----------- | ----- | -------- |
+| 1           | Mario | 123-456  |
+| 1           | Mario | 789-012  |
 
 ### Seconda Forma Normale (2NF)
 
@@ -73,17 +68,27 @@ Una tabella è in 2NF se soddisfa le seguenti condizioni:
 
 #### Esempio 2NF
 
-| Studente_ID | Corso_ID | Voto |
-| ----------- | -------- | ---- |
-| 1           | C1       | 30   |
+- Separiamo gli attributi in tabelle dove ogni attributo non-chiave dipende completamente dalla chiave primaria.
 
-| Corso_ID | Corso_Nome |
-| -------- | ---------- |
-| C1       | Math       |
+**Tabella StudenteCorso (Relazione tra Studente e Corso):**
 
-| Studente_ID | Studente_Città |
-| ----------- | -------------- |
-| 1           | Roma           |
+| Studente_ID (PK) | Corso_ID (PK) | Voto |
+| ---------------- | ------------- | ---- |
+| 1                | C1            | 30   |
+
+**Tabella Corso:**
+
+| Corso_ID (PK) | Corso_Nome |
+| ------------- | ---------- |
+| C1            | Math       |
+
+**Tabella Studente:**
+
+| Studente_ID (PK) | Studente_Città |
+| ---------------- | -------------- |
+| 1                | Roma           |
+
+In questo modo, ogni attributo non-chiave dipende completamente dalla chiave primaria della rispettiva tabella.
 
 ### Terza Forma Normale (3NF)
 
@@ -94,7 +99,7 @@ Una tabella è in 3NF se soddisfa le seguenti condizioni:
 
 #### Esempio Non 3NF
 
-| Dipartimento_ID | Dipartimento_Nome | Capo_Dipartimento | Stipendio_Capo |
+| Dipartimento_ID (PK) | Dipartimento_Nome | Capo_Dipartimento | Stipendio_Capo |
 | --------------- | ----------------- | ----------------- | -------------- |
 | 1               | Informatica       | Rossi             | 50000          |
 
@@ -102,10 +107,18 @@ Una tabella è in 3NF se soddisfa le seguenti condizioni:
 
 #### Esempio 3NF
 
-| Dipartimento_ID | Dipartimento_Nome | Capo_Dipartimento |
-| --------------- | ----------------- | ----------------- |
-| 1               | Informatica       | Rossi             |
+- Separiamo gli attributi in tabelle dove ogni attributo non-chiave dipende direttamente dalla chiave primaria.
 
-| Capo_Dipartimento | Stipendio_Capo |
-| ----------------- | -------------- |
-| Rossi             | 50000          |
+**Tabella Dipartimento:**
+
+| Dipartimento_ID (PK) | Dipartimento_Nome | Capo_Dipartimento |
+| -------------------- | ----------------- | ----------------- |
+| 1                    | Informatica       | Rossi             |
+
+**Tabella CapoDipartimento:**
+
+| Capo_Dipartimento (PK) | Stipendio_Capo |
+| ---------------------- | -------------- |
+| Rossi                  | 50000          |
+
+In questo modo, ogni attributo non-chiave dipende direttamente dalla chiave primaria della rispettiva tabella, eliminando le dipendenze transitive.

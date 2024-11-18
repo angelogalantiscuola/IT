@@ -101,8 +101,8 @@ Ecco un esempio più complesso che mostra un diagramma ER per un sistema univers
 
 ```mermaid
 erDiagram
-    STUDENTE ||--o{ ISCRIZIONE : "effettua"
-    CORSO ||--o{ ISCRIZIONE : "riceve"
+    STUDENTE ||--o{ FREQUENTA : "effettua"
+    CORSO ||--o{ FREQUENTA : "riceve"
     PROFESSORE ||--o{ CORSO : "insegna"
     DIPARTIMENTO ||--o{ CORSO : "offre"
     DIPARTIMENTO ||--o{ PROFESSORE : "impiega"
@@ -127,7 +127,7 @@ erDiagram
         string codice
         string nome
     }
-    ISCRIZIONE {
+    FREQUENTA {
         date data_iscrizione
         float voto
     }

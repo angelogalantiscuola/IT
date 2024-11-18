@@ -13,7 +13,6 @@ graph TD
     X --> F[Schema Concettuale e Diagrammi ER]
     F --> Z[Progettazione logica]
     Z --> G[Normalizzazione]
-    G --> H[Forme Normali Avanzate]
 
     B --> J[SQL: Linguaggio per DB Relazionali]
     J --> Y[Uso di SQL in un Linguaggio di Programmazione]
