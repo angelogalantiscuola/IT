@@ -1,5 +1,6 @@
 [Rendered version](https://rawcdn.githack.com/angelogalantiscuola/IT/refs/heads/main/argomenti_fondamentali.html)
 
+```markmap
 # Argomenti
 ## Unità di Misura e Prefissi
 ### Bit, Byte, Hertz
@@ -26,7 +27,7 @@
 ##### **Diagramma delle Classi UML**
 ### Compilatori e Interpreti
 ### Linguaggi di Programmazione: Alto Livello, Basso Livello
-### Tipi di Dati 
+### Tipi di Dati
 #### Primitivi
 #### Composti: Liste, Dizionari, Array
 ### Ambiente Virtuale in Python
@@ -78,4 +79,4 @@
 ##### Composizione
 ##### Ereditarietà
 ### Diagrammi ER: Progettazione dei Database
-
+```
