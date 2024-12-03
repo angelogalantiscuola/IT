@@ -18,8 +18,8 @@ La cardinalità (o molteplicità) in un'associazione UML indica quanti oggetti d
 
 - 1 (esattamente uno)
 - 0..1 (zero o uno)
-- 0..* (zero o più)
-- 1..* (uno o più)
+- 0..\* (zero o più)
+- 1..\* (uno o più)
 - n (un numero specifico)
 
 Ecco un esempio di associazione con cardinalità:
@@ -30,8 +30,9 @@ classDiagram
 ```
 
 In questo diagramma:
-- Uno studente può frequentare zero o più corsi (0..*)
-- Un corso può avere uno o più studenti (1..*)
+
+- Uno studente può frequentare zero o più corsi (0..\*)
+- Un corso può avere uno o più studenti (1..\*)
 
 ### Direzionalità delle associazioni
 
@@ -105,6 +106,10 @@ class Dipendente:
         self.nome = nome
         self.dipartimento = None
 
+    def assegna_dipartimento(self, dipartimento):
+        self.dipartimento = dipartimento
+        dipartimento.dipendenti.append(self)
+
 class Dipartimento:
     def __init__(self, nome):
         self.nome = nome
@@ -120,7 +125,7 @@ anna = Dipendente("Anna")
 luca = Dipendente("Luca")
 
 it_dept.aggiungi_dipendente(anna)
-it_dept.aggiungi_dipendente(luca)
+luca.assegna_dipartimento(it_dept)
 ```
 
 #### Associazione molti a molti
