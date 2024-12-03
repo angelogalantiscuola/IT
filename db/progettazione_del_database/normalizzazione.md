@@ -37,18 +37,18 @@ Ogni attributo deve contenere un valore atomico (non divisibile).
 
 #### Esempio Non 1NF
 
-| Studente_ID (PK) | Nome    | Telefoni         |
-| ----------- | ------- | ---------------- |
-| 1           | Mario   | 123-456, 789-012 |
+| Studente_ID (PK) | Nome  | Telefoni         |
+| ---------------- | ----- | ---------------- |
+| 1                | Mario | 123-456, 789-012 |
 
 - Violazione dell'atomicità: la colonna **Telefoni** contiene valori multipli separati da virgola.
 
 #### Esempio 1NF
 
 | Studente_ID (PK) | Nome  | Telefono (PK) |
-| ----------- | ----- | -------- |
-| 1           | Mario | 123-456  |
-| 1           | Mario | 789-012  |
+| ---------------- | ----- | ------------- |
+| 1                | Mario | 123-456       |
+| 1                | Mario | 789-012       |
 
 ### Seconda Forma Normale (2NF)
 
@@ -59,9 +59,9 @@ Una tabella è in 2NF se soddisfa le seguenti condizioni:
 
 #### Esempio Non 2NF
 
-| Studente_ID | Corso_ID | Corso_Nome | Studente_Città | Voto |
-| ----------- | -------- | ---------- | -------------- | ---- |
-| 1           | C1       | Math       | Roma           | 30   |
+| Studente_ID (PK) | Corso_ID (PK) | Corso_Nome | Studente_Città | Voto |
+| ---------------- | ------------- | ---------- | -------------- | ---- |
+| 1                | C1            | Math       | Roma           | 30   |
 
 - **Corso_Nome** dipende completamente da **Corso_ID**, non dall'intera chiave primaria composta da **Studente_ID** e **Corso_ID**.
 - **Studente_Città** dipende completamente da **Studente_ID**, non dall'intera chiave primaria.
@@ -100,8 +100,8 @@ Una tabella è in 3NF se soddisfa le seguenti condizioni:
 #### Esempio Non 3NF
 
 | Dipartimento_ID (PK) | Dipartimento_Nome | Capo_Dipartimento | Stipendio_Capo |
-| --------------- | ----------------- | ----------------- | -------------- |
-| 1               | Informatica       | Rossi             | 50000          |
+| -------------------- | ----------------- | ----------------- | -------------- |
+| 1                    | Informatica       | Rossi             | 50000          |
 
 - In questo caso, **Stipendio_Capo** dipende transitivamente da **Dipartimento_ID** attraverso **Capo_Dipartimento**.
 
