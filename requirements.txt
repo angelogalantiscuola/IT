@@ -6,3 +6,4 @@ requests
 psutil
 flask
 pytest
+mysql-connector-python

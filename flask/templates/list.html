@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>All Entries</title>
+</head>
+<body>
+    <h1>All Entries</h1>
+    <ul>
+    {% for entry in entries %}
+        <li>
+            <strong>{{ entry.name }}</strong>: {{ entry.message }}
+        </li>
+    {% endfor %}
+    </ul>
+    <p><a href="/add">Add new entry</a></p>
+</body>
+</html>
