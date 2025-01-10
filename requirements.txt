@@ -7,3 +7,5 @@ psutil
 flask
 pytest
 mysql-connector-python
+flask-login 
+werkzeug
