@@ -1,11 +1,8 @@
-<!DOCTYPE html>
-<html>
-<head>
-    <title>All Entries</title>
-    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='styles.css') }}">
-</head>
-<body>
-    <div class="container">
+{% extends "layout.html" %}
+
+{% block title %}All Entries{% endblock %}
+
+{% block content %}
         <div style="float: right;">
             {% if session.get('username') %}
                 Welcome, {{ session['username'] }} | <a href="{{ url_for('logout') }}">Logout</a>
@@ -85,14 +82,15 @@
                 </form>
             </div>
         </div>
-    </div>
-    <script>
-        function openModal(modalId) {
-            document.getElementById(modalId).style.display = "block";
-        }
-        function closeModal(modalId) {
-            document.getElementById(modalId).style.display = "none";
-        }
-    </script>
-</body>
-</html>
+{% endblock %}
+
+{% block scripts %}
+<script>
+    function openModal(modalId) {
+        document.getElementById(modalId).style.display = "block";
+    }
+    function closeModal(modalId) {
+        document.getElementById(modalId).style.display = "none";
+    }
+</script>
+{% endblock %}

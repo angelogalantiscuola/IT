@@ -1,0 +1,12 @@
+{% extends "layout.html" %}
+
+{% block title %}User Profile{% endblock %}
+
+{% block content %}
+    <h1>User Profile</h1>
+    <form method="POST" action="{{ url_for('profile') }}">
+        <label for="username">Username:</label>
+        <input type="text" id="username" name="username" value="{{ user.username }}" required>
+        <button type="submit">Update Profile</button>
+    </form>
+{% endblock %}

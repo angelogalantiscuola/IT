@@ -116,7 +116,27 @@ def login():
     return render_template("login.html")
 
 
-@app.route("/logout")
+@app.route("/password_reset_request", methods=["GET", "POST"])
+def password_reset_request():
+    if request.method == "POST":
+        _ = request.form["email"]
+        # Logic to send password reset email goes here
+        flash("Password reset email sent")
+        return redirect(url_for("login"))
+    return render_template("password_reset_request.html")
+
+
+@app.route("/password_reset/<token>", methods=["GET", "POST"])
+def password_reset(token):
+    if request.method == "POST":
+        _ = request.form["password"]
+        # Logic to reset the password goes here
+        flash("Password has been reset")
+        return redirect(url_for("login"))
+    return render_template("password_reset.html", token=token)
+
+
+@app.route("/logout", methods=["GET"])
 def logout():
     session.clear()
     return redirect(url_for("login"))
@@ -204,6 +224,28 @@ def delete_entry(id):
     cursor.close()
     conn.close()
     return render_template("delete.html", entry=entry)
+
+
+@app.route("/profile", methods=["GET", "POST"])
+def profile():
+    if "user_id" not in session:
+        return redirect(url_for("login"))
+    conn = get_db_connection()
+    cursor = conn.cursor(dictionary=True)
+    cursor.execute("SELECT * FROM users WHERE id = %s", (session["user_id"],))
+    user = cursor.fetchone()
+    if request.method == "POST":
+        username = request.form["username"]
+        # Logic to update user profile goes here
+        cursor.execute(
+            "UPDATE users SET username = %s WHERE id = %s",
+            (username, session["user_id"]),
+        )
+        conn.commit()
+        flash("Profile updated")
+    cursor.close()
+    conn.close()
+    return render_template("profile.html", user=user)
 
 
 if __name__ == "__main__":

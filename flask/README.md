@@ -17,12 +17,12 @@ This Flask application includes various functionalities such as user authenticat
 3. **Password Reset Functionality**
 
    - Description: Provides a way for users to reset their password if forgotten.
-   - Status: Not Implemented ❌
+   - Status: Implemented ✅
 
 4. **User Profile Management**
 
    - Description: Enables users to update and manage their profile information.
-   - Status: Not Implemented ❌
+   - Status: Implemented ✅
 
 5. **CRUD Operations for Entries**
 
