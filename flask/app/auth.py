@@ -1,6 +1,5 @@
 from functools import wraps
 from flask import session, redirect, url_for
-from .models.user import User
 
 
 def login_required(f):
@@ -11,10 +10,3 @@ def login_required(f):
         return f(*args, **kwargs)
 
     return decorated_function
-
-
-def load_logged_in_user():
-    user_id = session.get("user_id")
-    if user_id is None:
-        return None
-    return User.get_by_id(user_id)

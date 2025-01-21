@@ -1,13 +1,8 @@
 import os
 import json
 from flask import Flask
-from app.database import init_db, get_db_connection
+from .database import init_db, get_db_connection
 from werkzeug.security import generate_password_hash
-
-# Import and register blueprints
-from app.routes.auth import auth
-from app.routes.entries import entries
-from app.routes.profile import profile
 
 
 # Configuration
@@ -63,6 +58,11 @@ def create_app(config=None):
             conn.commit()
         cursor.close()
         conn.close()
+
+    # Import and register blueprints
+    from .routes.auth import auth
+    from .routes.entries import entries
+    from .routes.profile import profile
 
     app.register_blueprint(auth)
     app.register_blueprint(entries)

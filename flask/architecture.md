@@ -4,107 +4,121 @@
 
 ```
 flask/
-├── app/                      # Directory principale del pacchetto
-│   ├── __init__.py          # Factory dell'applicazione
-│   ├── models/              # Modelli per l'interazione con il database
-│   │   ├── __init__.py
-│   │   ├── user.py         # Modello User per gli utenti
-│   │   └── entry.py        # Modello Entry per i messaggi
-│   ├── routes/             # Blueprints per il routing
-│   │   ├── __init__.py
-│   │   ├── auth.py        # Route per l'autenticazione
-│   │   ├── entries.py     # Route per la gestione dei messaggi
-│   │   └── profile.py     # Route per la gestione del profilo
-│   ├── database.py        # Gestione della connessione al database
-│   └── auth.py           # Utilità per l'autenticazione
-├── static/               # File statici (CSS, JS, ecc.)
-├── templates/           # Template HTML
-├── config.py           # Configurazione dell'applicazione
-└── run.py             # Punto di ingresso dell'applicazione
+├── app/                  # Directory principale dell'applicazione
+│   ├── __init__.py       # Inizializzazione dell'app Flask
+│   ├── app.py            # Configurazione e creazione dell'app
+│   ├── auth.py           # Gestione dell'autenticazione
+│   ├── database.py       # Gestione del database MySQL
+│   ├── routes/           # Blueprint per il routing
+│   │   ├── auth.py       # Route per l'autenticazione
+│   │   ├── entries.py    # Route per la gestione dei messaggi
+│   │   └── profile.py    # Route per la gestione del profilo
+├── static/               # File statici (CSS, JSON)
+│   ├── styles.css        # Stili dell'applicazione
+│   └── messages.json     # Dati iniziali per i messaggi
+├── templates/            # Template HTML
+│   ├── layout.html       # Template base
+│   ├── index.html        # Pagina principale
+│   ├── list.html         # Lista dei messaggi
+│   ├── login.html        # Pagina di login
+│   ├── menu.html         # Menu di navigazione
+│   ├── profile.html      # Pagina del profilo
+│   └── register.html     # Pagina di registrazione
+└── run.py                # Script per l'avvio dell'applicazione
 ```
 
 ## Componenti Principali
 
-### Models (app/models/)
+### Configurazione (app/app.py)
 
-I modelli definiscono la struttura dei dati e l'interazione con il database.
+La classe `Config` gestisce le configurazioni principali dell'applicazione:
 
-#### User (models/user.py)
+- Chiave segreta per la sicurezza
+- Parametri di connessione MySQL:
+  - Host
+  - Utente
+  - Password
+  - Nome del database
 
-- Gestisce le operazioni CRUD per gli utenti
-- Implementa la verifica della password
-- Fornisce metodi di ricerca per ID e username
+### Database (app/database.py)
 
-#### Entry (models/entry.py)
+Il modulo gestisce l'interazione con MySQL:
 
-- Gestisce le operazioni CRUD per i messaggi
-- Implementa la ricerca di messaggi
-- Gestisce l'eliminazione sicura dei record
+- `get_db_connection()`: Crea una connessione al database
+- `init_db()`: Inizializza lo schema del database con:
+  - Tabella `users` per gli utenti
+  - Tabella `entries` per i messaggi
 
-### Routes (app/routes/)
+Schema del Database:
 
-I blueprint organizzano le route in moduli logici.
+```sql
+-- Tabella users
+CREATE TABLE users (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    username VARCHAR(80) UNIQUE NOT NULL,
+    password VARCHAR(255) NOT NULL
+)
 
-#### Auth (routes/auth.py)
+-- Tabella entries
+CREATE TABLE entries (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    name VARCHAR(80) NOT NULL,
+    message VARCHAR(200) NOT NULL
+)
+```
 
-- Gestione registrazione utenti
-- Login e logout
-- Reset della password
-- Implementa la protezione delle route
+### Factory dell'Applicazione (app/app.py)
 
-#### Entries (routes/entries.py)
+La funzione `create_app()`:
 
-- Visualizzazione lista messaggi
-- Creazione nuovi messaggi
-- Modifica messaggi esistenti
-- Eliminazione messaggi
-- Implementa la protezione delle route autenticate
+- Crea l'istanza Flask
+- Carica la configurazione
+- Inizializza il database
+- Crea un utente iniziale
+- Carica i messaggi da JSON se il database è vuoto
+- Registra i blueprint per il routing
 
-#### Profile (routes/profile.py)
+### Blueprint Routes (app/routes/)
 
-- Visualizzazione profilo utente
-- Aggiornamento dati utente
-- Gestione sessione utente
+L'applicazione è organizzata in tre blueprint principali:
 
-### Utilità
+1. **Auth** (routes/auth.py)
 
-#### Database (app/database.py)
+   - Gestione login/logout
+   - Registrazione utenti
+   - Reset password
 
-- Gestione connessione al database MySQL
-- Inizializzazione schema database
-- Funzioni helper per le query
+2. **Entries** (routes/entries.py)
 
-#### Auth (app/auth.py)
+   - Visualizzazione messaggi
+   - Creazione messaggi
+   - Modifica messaggi
+   - Eliminazione messaggi
 
-- Decoratore login_required
-- Gestione sessione utente
-- Utilità per l'autenticazione
-
-### Configurazione
-
-#### Config (config.py)
-
-- Configurazioni del database
-- Chiave segreta dell'applicazione
-- Altre impostazioni dell'ambiente
-
-#### Factory (app/**init**.py)
-
-- Inizializzazione dell'applicazione Flask
-- Registrazione dei blueprint
-- Configurazione iniziale del database
-- Caricamento dati iniziali
+3. **Profile** (routes/profile.py)
+   - Gestione profilo utente
+   - Aggiornamento informazioni personali
 
 ## Flusso dell'Applicazione
 
 1. L'applicazione viene avviata da `run.py`
-2. La factory in `__init__.py` crea l'istanza dell'applicazione
-3. Vengono caricate le configurazioni da `config.py`
-4. Il database viene inizializzato con `database.py`
-5. I blueprint vengono registrati per gestire le route
-6. I modelli gestiscono l'interazione con il database
-7. Le route gestiscono le richieste HTTP
-8. I template rendono le pagine HTML
+2. `create_app()` inizializza l'applicazione:
+   - Carica la configurazione
+   - Inizializza il database
+   - Crea l'utente predefinito
+   - Carica i dati iniziali dei messaggi
+   - Registra i blueprint
+3. Il database MySQL gestisce la persistenza dei dati
+4. I blueprint gestiscono le richieste HTTP
+5. I template Jinja2 renderizzano le pagine HTML
+
+## Inizializzazione dei Dati
+
+L'applicazione include:
+
+- Creazione automatica di un utente predefinito
+- Caricamento iniziale dei messaggi da `static/messages.json`
+- Inizializzazione automatica dello schema del database
 
 ## Utilizzo
 
@@ -115,3 +129,10 @@ python run.py
 ```
 
 L'applicazione sarà accessibile all'indirizzo `http://localhost:5000`
+
+## Sicurezza
+
+- Password hashate con Werkzeug security
+- Protezione della sessione utente
+- Chiave segreta configurabile
+- Validazione dei dati in input
