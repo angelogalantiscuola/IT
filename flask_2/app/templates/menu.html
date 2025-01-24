@@ -1,0 +1,14 @@
+<nav>
+    <ul>
+        <li><a href="{{ url_for('entries.list') }}"><i class="fas fa-home"></i> Home</a></li>
+        {% if session.get('username') %}
+            <li><a href="{{ url_for('profile.view') }}"><i class="fas fa-user"></i> Profile</a></li>
+            <li><a href="{{ url_for('auth.password_reset_request') }}"><i class="fas fa-key"></i> Reset Password</a></li>
+            <li><a href="{{ url_for('auth.logout') }}"><i class="fas fa-sign-out-alt"></i> Logout</a></li>
+            <li style="margin-left: auto; color: #ecf0f1;">Welcome, {{ session.get('username') }}!</li>
+        {% else %}
+            <li style="margin-left: auto;"><a href="{{ url_for('auth.login') }}"><i class="fas fa-sign-in-alt"></i> Login</a></li>
+            <li><a href="{{ url_for('auth.register') }}"><i class="fas fa-user-plus"></i> Register</a></li>
+        {% endif %}
+    </ul>
+</nav>

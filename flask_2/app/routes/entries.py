@@ -1,10 +1,11 @@
-from flask import render_template, request, redirect, url_for, jsonify
-from . import entries
+from flask import Blueprint, render_template, request, redirect, url_for, jsonify
 from ..models.entry import Entry
 from ..auth import login_required
 
+entries = Blueprint("entries", __name__)
 
-@entries.route("/")
+
+@entries.route("/entries")
 def list():
     search = request.args.get("search")
     entries_list = Entry.get_all(search)

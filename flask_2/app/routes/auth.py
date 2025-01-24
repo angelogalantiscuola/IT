@@ -1,6 +1,7 @@
-from flask import render_template, request, redirect, url_for, flash, session
-from . import auth
+from flask import Blueprint, render_template, request, redirect, url_for, flash, session
 from ..models.user import User
+
+auth = Blueprint("auth", __name__)
 
 
 @auth.route("/register", methods=["GET", "POST"])
