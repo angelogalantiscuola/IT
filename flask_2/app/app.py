@@ -1,6 +1,5 @@
 from flask import Flask, redirect, url_for
-from .database import init_db, get_db_connection
-from werkzeug.security import generate_password_hash
+from .database import init_db
 
 
 def create_app():
@@ -18,19 +17,6 @@ def create_app():
     # Initialize database
     with app.app_context():
         init_db()
-
-        # Create initial user if needed
-        conn = get_db_connection()
-        cursor = conn.cursor()
-        try:
-            cursor.execute(
-                "INSERT INTO users (username, password) VALUES (%s, %s)",
-                ("x", generate_password_hash("x")),
-            )
-            conn.commit()
-        finally:
-            cursor.close()
-            conn.close()
 
     # Register blueprints
     from .routes.auth import auth

@@ -1,5 +1,7 @@
 import mysql.connector
 from flask import current_app
+from werkzeug.security import generate_password_hash
+import json
 
 
 def get_db_connection():
@@ -37,6 +39,21 @@ def init_db():
             message VARCHAR(200) NOT NULL
         )
     """)
+
+    # Insert initial user
+    cursor.execute(
+        "INSERT INTO users (username, password) VALUES (%s, %s)",
+        ("x", generate_password_hash("x")),
+    )
+
+    # Load initial entries from messages.json
+    with open(current_app.root_path + "/static/messages.json") as f:
+        messages = json.load(f)
+        for message in messages:
+            cursor.execute(
+                "INSERT INTO entries (name, message) VALUES (%s, %s)",
+                (message["name"], message["message"]),
+            )
 
     conn.commit()
     cursor.close()
