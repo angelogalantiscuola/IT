@@ -15,10 +15,12 @@ def create_app():
     )
 
     # Initialize database
+    # Database initialization requires knowing which app's configuration to use
     with app.app_context():
         init_db()
 
     # Register blueprints
+    # Blueprints are modular components that group related routes and functionality
     from .routes.auth import auth
     from .routes.entries import entries
     from .routes.profile import profile

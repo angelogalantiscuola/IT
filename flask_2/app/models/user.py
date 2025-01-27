@@ -8,6 +8,7 @@ class User:
         self.username = username
         self.password = password
 
+    # @staticmethod because we don't need instance access (self)
     @staticmethod
     def get_by_id(user_id):
         conn = get_db_connection()
@@ -18,6 +19,7 @@ class User:
         conn.close()
 
         if user_data:
+            # ** unpacks user_data dictionary into keyword arguments for User constructor
             return User(**user_data)
         return None
 
