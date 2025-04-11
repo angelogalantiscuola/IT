@@ -1,1 +1,0 @@
-Docker is referred to as a platform because it provides all the functionalities needed to develop, package, and run applications within containers. It provides a  runtime environment that is standardized, regardless of the underlying hardware or operating system.
