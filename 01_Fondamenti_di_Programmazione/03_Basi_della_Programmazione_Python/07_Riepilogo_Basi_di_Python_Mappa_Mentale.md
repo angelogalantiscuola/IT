@@ -52,13 +52,26 @@ markmap:
 #### for .. in range()
 ### while
 ## functions
-### TODO
+### def (definition)
+### parameters (input)
+### return (output)
+### *args & **kwargs
 ## modules
-### TODO
+### import
+### from ... import ...
+### as (alias)
 ## JSON
-### TODO
+### json.loads() (from string to dict)
+### json.dumps() (from dict to string)
 ## file handling
-### TODO
+### with open()
+### modes
+#### 'r' (read)
+#### 'w' (write)
+#### 'a' (append)
 ## error handling
-### TODO
+### try
+### except
+### finally
+### raise
 ```
