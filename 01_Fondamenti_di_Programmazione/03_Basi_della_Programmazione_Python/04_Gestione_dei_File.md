@@ -65,9 +65,74 @@ L'istruzione `with open(...) as ...` è il modo più sicuro per lavorare con i f
         print(f"Errore durante la lettura del file: {e}")
     ```
 
-## 3. Formati di File Comuni
+## 3. Lavorare con Formati Strutturati
 
-Oltre ai file di testo semplice (`.txt`), incontrerai spesso altri formati:
-*   **CSV (Comma-Separated Values)**: Dati tabellari, dove le colonne sono separate da virgole. Ottimo per esportare dati da fogli di calcolo.
-*   **JSON (JavaScript Object Notation)**: Strutturato in coppie chiave-valore, ideale per dati complessi e per la comunicazione tra applicazioni web.
-*   **XML (eXtensible Markup Language)**: Simile a HTML, usa dei tag per descrivere la struttura dei dati. È più verboso di JSON.
+Oltre al testo semplice, è fondamentale saper gestire formati di dati strutturati. Vediamo degli esempi per i più comuni, usando le librerie standard di Python.
+
+### a) JSON (JavaScript Object Notation)
+
+Ideale per dati complessi e gerarchici (come i dizionari Python) e molto usato nelle applicazioni web.
+
+```python
+import json
+
+# Dati di esempio: un dizionario che descrive uno studente
+studente_dati = {
+    "nome": "Laura Bianchi",
+    "eta": 17,
+    "corsi": ["Matematica", "Fisica"],
+    "promosso": True
+}
+
+# Scrivere dati su un file JSON
+try:
+    with open("studente.json", "w", encoding="utf-8") as f:
+        json.dump(studente_dati, f, indent=4) # 'indent=4' per una formattazione leggibile
+    print("\nFile 'studente.json' creato con successo.")
+except IOError as e:
+    print(f"Errore di scrittura JSON: {e}")
+
+# Leggere dati da un file JSON
+try:
+    with open("studente.json", "r", encoding="utf-8") as f:
+        dati_letti = json.load(f)
+        print("--- Dati letti da 'studente.json' ---")
+        print(dati_letti)
+        print(f"Nome letto dal file: {dati_letti['nome']}")
+except (FileNotFoundError, json.JSONDecodeError) as e:
+    print(f"Errore di lettura JSON: {e}")
+```
+
+### b) CSV (Comma-Separated Values)
+
+Perfetto per dati tabellari, come quelli provenienti da un foglio di calcolo. Ogni riga è una lista di valori.
+
+```python
+import csv
+
+# Dati di esempio: una lista di liste (la prima è l'intestazione)
+voti_dati = [
+    ["Studente", "Matematica", "Italiano"],
+    ["Alice", "8", "7"],
+    ["Bob", "6", "9"]
+]
+
+# Scrivere dati su un file CSV
+try:
+    with open("voti.csv", "w", newline="", encoding="utf-8") as f:
+        writer = csv.writer(f)
+        writer.writerows(voti_dati)
+    print("\nFile 'voti.csv' creato con successo.")
+except IOError as e:
+    print(f"Errore di scrittura CSV: {e}")
+
+# Leggere dati da un file CSV
+try:
+    with open("voti.csv", "r", newline="", encoding="utf-8") as f:
+        reader = csv.reader(f)
+        print("--- Dati letti da 'voti.csv' ---")
+        for riga in reader:
+            print(riga)
+except FileNotFoundError as e:
+    print(f"Errore di lettura CSV: {e}")
+```
