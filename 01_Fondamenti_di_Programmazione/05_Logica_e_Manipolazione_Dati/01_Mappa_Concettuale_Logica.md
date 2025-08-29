@@ -4,25 +4,25 @@ Questa mappa delinea il percorso che seguiremo per imparare a "pensare da progra
 
 ```mermaid
 graph TD
-    A[Problem Solving] --> B[Scomporre il Problema];
-    A --> C[Scegliere la Struttura Dati];
+    A[Problem<br>Solving] --> B[Scomporre<br>il Problema];
+    A --> C[Scegliere la<br>Struttura Dati];
     C --> C1[Lista];
     C --> C2[Dizionario];
 
-    B --> D[Pattern di Manipolazione Dati];
+    B --> D[Pattern di<br>Manipolazione Dati];
 
-    D --> E[Pattern su Liste];
+    D --> E[Pattern<br>su Liste];
     E --> E1[Ricerca];
     E --> E2[Filtraggio];
-    E --> E3[Trasformazione Mapping];
-    E --> E4[Aggregazione Reducing];
+    E --> E3[Trasformazione<br>Mapping];
+    E --> E4[Aggregazione<br>Reducing];
 
-    D --> F[Pattern su Dizionari];
-    F --> F1[Conteggio Frequenze];
-    F --> F2[Raggruppamento Dati];
+    D --> F[Pattern<br>su Dizionari];
+    F --> F1[Conteggio<br>Frequenze];
+    F --> F2[Raggruppamento<br>Dati];
     F --> F3[Indicizzazione];
 
-    D --> G[Applicazione su Dati Reali];
-    G --> G1[Lettura da File CSV/JSON];
-    G --> G2[Creazione di Report];
+    D --> G[Applicazione su<br>Dati Reali];
+    G --> G1[Lettura da File<br>CSV/JSON];
+    G --> G2[Creazione di<br>Report];
 ```

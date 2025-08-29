@@ -4,15 +4,15 @@ Questa mappa riassume i principali strumenti che ogni sviluppatore deve conoscer
 
 ```mermaid
 graph TD
-    A[Strumenti dello Sviluppatore] --> B[La Shell e Bash];
-    A --> C[Controllo di Versione con Git];
-    A --> D[Ambiente di Sviluppo IDE];
-    A --> E[Ambienti Virtuali Python];
-    A --> F[Testing del Software];
+    A[Strumenti dello<br>Sviluppatore] --> B[La Shell<br>e Bash];
+    A --> C[Controllo di Versione<br>con Git];
+    A --> D[Ambiente di<br>Sviluppo IDE];
+    A --> E[Ambienti Virtuali<br>Python];
+    A --> F[Testing<br>del Software];
 
-    B --> B1[Comandi Essenziali];
-    C --> C1[Repository: Clonare, Push, Pull];
+    B --> B1[Comandi<br>Essenziali];
+    C --> C1[Repository: Clonare,<br>Push, Pull];
     D --> D1[VSCode];
     D --> D2[WSL e SSH];
-    F --> F1[Pytest e TDD];
+    F --> F1[Pytest<br>e TDD];
 ```
