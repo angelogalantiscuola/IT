@@ -28,40 +28,23 @@ Una volta identificate le classi, la sfida più grande è modellarne le interazi
 *   *Esempi:* Un'`Automobile` **ha un** `Motore`. Un `Cliente` **usa un** `CarrelloDellaSpesa`.
 *   **Soluzione UML:** Associazione (una linea continua).
 
-Una volta stabilito che si tratta di un'associazione, la domanda successiva, fondamentale per l'implementazione, è: **"Quanto è forte questo legame?"**.
+## 3. Applicare le Cardinalità
 
-*   **Legame Forte (Attributo Permanente - "HAS-A"):** L'oggetto A "possiede" l'oggetto B come parte del suo stato. La relazione è duratura.
-    *   *Esempio:* Un `Personaggio` **ha un** `Inventario`. L'inventario è una parte fondamentale e permanente del personaggio.
-    *   *Implementazione:* L'oggetto B diventa un **attributo** dell'oggetto A, tipicamente inizializzato nel costruttore.
-        ```python
-        class Personaggio:
-            def __init__(self, nome: str):
-                self.nome = nome
-                self.inventario = Inventario() # L'inventario è un attributo
-        ```
-
-*   **Legame Debole (Interazione Temporanea - "USES-A"):** L'oggetto A "usa" l'oggetto B per compiere un'azione, ma non lo possiede. La relazione esiste solo durante l'esecuzione di un metodo.
-    *   *Esempio:* Un `Mago` **usa una** `PergamenaMagica` per lanciare un incantesimo. La pergamena non è parte del mago, è uno strumento esterno.
-    *   *Implementazione:* L'oggetto B viene passato come **parametro** a un metodo dell'oggetto A.
-        ```python
-        class Mago:
-            def lancia_incantesimo_da_pergamena(self, pergamena: PergamenaMagica):
-                # Il mago 'usa' la pergamena, ma non la salva come attributo
-                pergamena.attiva_magia()
-        ```
-
-In entrambi i casi, sul diagramma UML disegneremo una semplice linea di associazione. Capire questa differenza concettuale ci aiuterà a scrivere codice più logico e meglio organizzato.
-
-## 3. Definire le Cardinalità
-
-Per ogni relazione, è fondamentale specificare la **cardinalità**, ovvero quanti oggetti possono essere coinvolti.
+Come abbiamo visto nel modulo precedente, per ogni relazione è fondamentale specificare la **cardinalità**, ovvero quanti oggetti possono essere coinvolti nel legame. Riepiloghiamo brevemente i simboli:
 
 *   `1`: Esattamente uno.
 *   `*`: Zero o più (molti).
 *   `1..*`: Uno o più.
 *   `0..1`: Zero o uno (opzionale).
 
-*Esempio di lettura:*
-`Squadra "1" -- "*" Giocatore` si legge: "Una `Squadra` è associata a zero o più `Giocatori`, e un `Giocatore` è associato a esattamente una `Squadra`."
+In questa fase di progettazione, l'abilità chiave consiste nel leggere attentamente i requisiti per dedurre le cardinalità corrette.
 
-Applicando sistematicamente questa strategia (identifica classi, attributi, metodi, scegli la relazione, definisci la cardinalità), sarai in grado di trasformare qualsiasi requisito in un diagramma delle classi chiaro e ben strutturato.
+*Esempio di analisi del requisito:*
+> "Un `Cliente` può effettuare **più** `Ordini`. Ogni `Ordine` appartiene a **un solo** `Cliente`."
+
+*Traduzione in UML:*
+`Cliente "1" -- "*" Ordine`
+
+Questa si legge: "Un `Cliente` è associato a zero o più `Ordini`, e un `Ordine` è associato a esattamente un `Cliente`."
+
+Applicando sistematicamente questa strategia (identifica classi, attributi, metodi, scegli la relazione, e infine definisci la cardinalità), sarai in grado di trasformare qualsiasi requisito in un diagramma delle classi chiaro e ben strutturato.
