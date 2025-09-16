@@ -8,11 +8,9 @@ graph TD
     A --> C[Controllo di Versione<br>con Git];
     A --> D[Ambiente di<br>Sviluppo IDE];
     A --> E[Ambienti Virtuali<br>Python];
-    A --> F[Testing<br>del Software];
 
     B --> B1[Comandi<br>Essenziali];
     C --> C1[Repository: Clonare,<br>Push, Pull];
     D --> D1[VSCode];
     D --> D2[WSL e SSH];
-    F --> F1[Pytest<br>e TDD];
 ```
