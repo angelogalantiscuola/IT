@@ -51,7 +51,6 @@ erDiagram
 La **cardinalità** specifica il numero di istanze di un'entità che possono essere associate a un'istanza dell'altra entità. Le cardinalità più comuni sono:
 
 - **Uno a Uno (1:1)**: Un `Preside` dirige una `Scuola`.
-- **Uno a Molti (1:N)**: Un `Docente` insegna a molti `Studenti`.
 - **Uno a Molti (1:N)**: Un `Docente` insegna molti `Corsi`. Un `Corso` è insegnato da un solo `Docente`.
 - **Molti a Molti (M:N)**: Molti `Studenti` frequentano molti `Corsi`.
 
