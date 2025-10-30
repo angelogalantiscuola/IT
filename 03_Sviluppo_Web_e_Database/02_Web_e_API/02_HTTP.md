@@ -1,4 +1,3 @@
-<file path="03_Sviluppo_Web_e_Database/02_Web_e_API/lessons/02_HTTP.md">
 ## Il Protocollo HTTP <!-- omit in toc -->
 
 - [Cos'è HTTP?](#cosè-http)
