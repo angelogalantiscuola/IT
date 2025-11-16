@@ -60,9 +60,9 @@ sequenceDiagram
     participant Utente
     participant Browser
     participant Internet
-    participant Nginx (Server Web)
-    participant Gunicorn (WSGI)
-    participant Flask (App)
+    participant Nginx
+    participant Gunicorn
+    participant Flask
 
     Utente->>Browser: Invia il form di login
     Browser->>Internet: Richiesta POST /login (crittografata con HTTPS)
