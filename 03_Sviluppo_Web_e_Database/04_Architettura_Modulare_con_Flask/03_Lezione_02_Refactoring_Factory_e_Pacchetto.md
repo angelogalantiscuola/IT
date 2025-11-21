@@ -151,7 +151,9 @@ from app import create_app
 app = create_app()
 
 if __name__ == '__main__':
-    app.run(debug=True)```
+    app.run(debug=True)
+```
+
 *   **Importante:** `from app import create_app` funziona perché `app/` è un pacchetto (grazie a `__init__.py`) e `create_app` è definita al suo interno.
 
 **5. Inizializzare e Avviare la Nuova Applicazione**

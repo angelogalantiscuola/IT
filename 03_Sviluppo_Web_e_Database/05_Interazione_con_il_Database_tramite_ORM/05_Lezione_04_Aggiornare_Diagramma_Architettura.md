@@ -4,8 +4,6 @@ Nel capitolo precedente, abbiamo creato un diagramma UML per descrivere l'archit
 
 Ora che abbiamo introdotto l'ORM e definito i nostri dati come **classi modello**, possiamo creare un diagramma di architettura molto più ricco e completo, che descrive l'intero sistema in modo professionale.
 
-Questo è il diagramma finale che servirà come risposta al Task 5 dell'esame.
-
 ### 1. Cosa è Cambiato nella Nostra Architettura?
 
 Il refactoring con Peewee ha introdotto un nuovo livello di astrazione:
@@ -59,14 +57,14 @@ classDiagram
         +created: datetime
     }
 
-    FlaskApp o-- AuthBlueprint : registers
-    FlaskApp o-- PostsBlueprint : registers
+    FlaskApp --> AuthBlueprint : registers
+    FlaskApp --> PostsBlueprint : registers
 
-    User "1" -- "*" Post : writes
+    User "1" --> "*" Post : writes
 
-    AuthBlueprint ..> User : uses
-    PostsBlueprint ..> Post : uses
-    Posts-Blueprint ..> User : uses
+    AuthBlueprint --> User : uses
+    PostsBlueprint --> Post : uses
+    PostsBlueprint --> User : uses
 ```
 
 ### 3. Come Leggere e Spiegare il Diagramma Aggiornato
@@ -77,7 +75,7 @@ Questo diagramma è molto più potente del precedente e racconta una storia comp
 
 2.  **Struttura del Dominio (a destra):** Il "cuore" dei dati della nostra applicazione è rappresentato dai modelli `User` e `Post`. La linea solida tra di loro (`User "1" -- "*" Post`) descrive la **relazione fondamentale dei nostri dati**: un Utente può scrivere molti Post. Questa è una relazione **1-a-N**.
 
-3.  **Dipendenze (linee tratteggiate):** Le linee di dipendenza ora collegano i Blueprints direttamente ai Modelli che utilizzano.
+3.  **Dipendenze:** Le linee di dipendenza ora collegano i Blueprints direttamente ai Modelli che utilizzano.
     *   `AuthBlueprint` **usa** il modello `User` per creare nuovi utenti e per cercarli durante il login.
     *   `PostsBlueprint` **usa** sia il modello `Post` (per le operazioni CRUD sui post) sia il modello `User` (per verificare l'autore di un post).
 
@@ -85,10 +83,3 @@ Questo diagramma è molto più potente del precedente e racconta una storia comp
 *   La **vista architetturale** (come è organizzato il software).
 *   La **vista del dominio** (come sono strutturati e relazionati i dati).
 
-### 4. Conclusione del Capitolo e Preparazione per l'Esame
-
-Con questo diagramma, abbiamo raggiunto l'apice della progettazione per la nostra applicazione. Quando l'esame ti chiederà di presentare il "progetto di massima della struttura dell'applicazione web", questo è esattamente ciò che dovrai produrre.
-
-Presentare un diagramma come questo, accompagnato da una breve spiegazione, dimostra una comprensione completa e professionale dell'intero stack applicativo: dall'organizzazione del codice alla struttura dei dati.
-
-Nel capitolo finale, impareremo come prendere questa applicazione ben progettata e pubblicarla online.

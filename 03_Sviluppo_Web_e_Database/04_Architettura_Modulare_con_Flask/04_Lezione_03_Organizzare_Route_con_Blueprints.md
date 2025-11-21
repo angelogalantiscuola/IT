@@ -170,4 +170,4 @@ def create_app():
     *   Aggiorna **tutte** le chiamate a `url_for` con la sintassi `nome_blueprint.nome_funzione`.
 4.  Avvia l'applicazione con `python run.py`.
 
-Se tutto è stato collegato correttamente, l'applicazione funzionerà di nuovo, ma questa volta il suo codice sarà pulito, organizzato per funzionalità e pronto a crescere senza diventare un caos.````
+Se tutto è stato collegato correttamente, l'applicazione funzionerà di nuovo, ma questa volta il suo codice sarà pulito, organizzato per funzionalità e pronto a crescere senza diventare un caos.

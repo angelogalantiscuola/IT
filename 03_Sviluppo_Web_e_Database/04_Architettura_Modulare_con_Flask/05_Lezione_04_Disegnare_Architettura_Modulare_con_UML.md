@@ -60,13 +60,11 @@ classDiagram
       +close_db()
     }
 
-    ' Relazione di "Composizione": l'app è composta dai suoi blueprints
-    FlaskApp o-- AuthBlueprint : registers
-    FlaskApp o-- PostsBlueprint : registers
+    FlaskApp --> AuthBlueprint : registers
+    FlaskApp --> PostsBlueprint : registers
 
-    ' Relazione di "Dipendenza": i blueprints usano il database
-    AuthBlueprint ..> Database : uses
-    PostsBlueprint ..> Database : uses
+    AuthBlueprint --> Database : uses
+    PostsBlueprint --> Database : uses
 ```
 
 ### 4. Come Leggere e Spiegare il Diagramma
@@ -74,21 +72,8 @@ classDiagram
 Questo diagramma fornisce una "mappa" chiara della nostra applicazione:
 
 1.  **Componenti Principali:** L'applicazione (`FlaskApp`) è composta da due moduli funzionali principali: `AuthBlueprint` e `PostsBlueprint`.
-2.  **Registrazione:** La `FlaskApp` "registra" i due Blueprints. La linea con il rombo vuoto (`o--`) indica una relazione di **aggregazione**: l'applicazione "ha" dei Blueprints, ma questi potrebbero esistere anche indipendentemente.
+2.  **Registrazione:** La `FlaskApp` "registra" i due Blueprints. L'applicazione "ha" dei Blueprints, ma questi potrebbero esistere anche indipendentemente.
 3.  **Responsabilità:**
     *   `AuthBlueprint` è responsabile di tutte le operazioni legate all'utente (`register`, `login`, `logout`). Il suo prefisso URL è `/auth`.
     *   `PostsBlueprint` è responsabile di tutte le operazioni legate ai post (`home`, `create`, etc.).
-4.  **Dipendenze:** Le linee tratteggiate (`..>`) mostrano che **entrambi** i Blueprints dipendono dal componente `Database` per poter eseguire le loro operazioni. Questo evidenzia che la logica del database è centralizzata.
-
-### 5. Preparazione per l'Esame (Task 5)
-
-Quando l'esame ti chiede di "sviluppare il progetto di massima della struttura dell'applicazione web", questo tipo di diagramma è una risposta eccellente.
-
-**Perché?**
-*   **È Professionale:** Dimostra che non hai solo scritto codice, ma hai anche **progettato l'architettura** del tuo software.
-*   **È Chiaro:** Comunica in modo immediato come è organizzata l'applicazione, quali sono i suoi moduli principali e come interagiscono.
-*   **Mostra Comprensione:** Fa vedere che hai capito i principi di modularità e separazione delle responsabilità.
-
-**Consiglio:** Per una risposta completa all'esame, presenta questo diagramma e accompagnalo con una breve descrizione testuale (come quella al punto 4) che ne spiega il significato.
-
-Nella prossima lezione, che aprirà un nuovo capitolo, vedremo come migliorare ulteriormente questa architettura sostituendo il componente `Database` con un ORM, e aggiorneremo di conseguenza questo diagramma.
+4.  **Dipendenze:** i Blueprints dipendono dal componente `Database` per poter eseguire le loro operazioni. Questo evidenzia che la logica del database è centralizzata.
