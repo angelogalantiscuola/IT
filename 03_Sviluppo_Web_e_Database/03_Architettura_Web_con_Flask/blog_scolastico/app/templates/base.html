@@ -1,0 +1,34 @@
+<!-- app/templates/base.html -->
+<!doctype html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <title>{% block title %}Blog Scolastico{% endblock %}</title>
+    <!-- Qui potremmo linkare un CSS -->
+    <style>
+        body { font-family: sans-serif; max-width: 800px; margin: 0 auto; padding: 20px; }
+        nav a { margin-right: 10px; text-decoration: none; color: blue; }
+        hr { border: 0; border-top: 1px solid #ccc; }
+    </style>
+</head>
+<body>
+    <nav>
+        <h1>Blog 5^A</h1>
+        <!-- url_for genera l'URL dal nome della funzione -->
+        <!-- Sintassi Blueprint: 'nome_blueprint.nome_funzione' -->
+        <a href="{{ url_for('main.index') }}">Home</a>
+        <a href="{{ url_for('main.about') }}">Chi Siamo</a>
+    </nav>
+    <hr>
+
+    <!-- Qui mostreremo i messaggi flash (errori/conferme) in futuro -->
+    <main>
+        {% block content %}{% endblock %}
+    </main>
+
+    <hr>
+    <footer>
+        <small>&copy; 2024 - Classe 5^A Informatica</small>
+    </footer>
+</body>
+</html>

@@ -30,7 +30,6 @@ In Flask, la sessione si comporta come un dizionario che "sopravvive" tra una ri
 Crea il file `app/auth.py`.
 
 ```python
-import functools
 from flask import (
     Blueprint, flash, g, redirect, render_template, request, session, url_for
 )
@@ -110,78 +109,76 @@ def logout():
 
 ### 4. Il "Middleware": Riconoscere l'utente ovunque
 
-C'è un ultimo problema da risolvere.
-Flask gestisce il cookie di sessione, ma dentro al cookie c'è solo un numero (es. `user_id = 15`).
-Nelle nostre pagine web, però, noi vogliamo scrivere "Ciao, **Mario**" o controllare "Sei **Admin**?". Non ci basta il numero 15, ci servono tutti i dati dell'utente.
+C'è un ultimo problema. Flask gestisce il cookie di sessione (che contiene solo `user_id = 15`), ma noi vogliamo sapere chi è l'utente (es. "Mario") in **tutte le pagine**, per poter cambiare la barra di navigazione.
 
-Sarebbe noioso e ripetitivo dover scrivere il codice per cercare l'utente nel database in **ogni singola pagina** del sito.
+Sarebbe noioso dover cercare l'utente nel database dentro ogni singola funzione (`home`, `about`, `contact`...).
 
 **La Soluzione: `before_app_request`**
-Flask ci permette di definire una funzione che viene eseguita **automaticamente prima** di qualsiasi altra cosa. È come i controlli di sicurezza in aeroporto: tutti devono passarci prima di andare al gate (alla Route).
+Definiamo una funzione che Flask eseguirà **automaticamente prima** di qualsiasi altra route.
 
-Aggiungi questa funzione in `app/auth.py` (sotto le importazioni, prima delle route):
+Aggiungi questa funzione in `app/auth.py` (prima delle route):
 
 ```python
 @bp.before_app_request
 def load_logged_in_user():
     """
-    Questa funzione viene eseguita AUTOMATICAMENTE prima di ogni richiesta,
-    indipendentemente dalla pagina che l'utente vuole visitare.
+    Questa funzione viene eseguita AUTOMATICAMENTE prima di ogni richiesta.
+    Serve a caricare l'utente dal DB e renderlo disponibile in tutto il sito.
     """
-    # 1. Controlliamo se nello "zaino" della sessione c'è un ID utente
     user_id = session.get('user_id')
 
     if user_id is None:
-        # Nessun ID = Utente non loggato (Utente Anonimo)
         g.user = None
     else:
-        # C'è un ID = Utente loggato.
-        # Andiamo subito nel DB a prendere tutti i suoi dati (nome, email, ecc.)
-        # e li mettiamo nell'oggetto globale 'g', accessibile ovunque.
+        # Carichiamo l'utente e lo mettiamo in g.user
+        # Ora g.user sarà disponibile anche nei template HTML!
         g.user = user_repository.get_user_by_id(user_id)
 ```
 
-**Come funziona il flusso (Timeline):**
-Immagina che un utente clicchi sul link "Home Page":
+### 5. Aggiornare `base.html` (Navbar e Flash)
 
-1.  **Click:** La richiesta arriva al server.
-2.  **Intercettazione:** Flask vede il decoratore `@bp.before_app_request`. Ferma tutto e chiama `load_logged_in_user()`.
-3.  **Caricamento:** La funzione controlla la sessione, trova l'ID, scarica i dati dal DB e riempie `g.user`.
-4.  **Esecuzione:** Solo ora Flask chiama la funzione della route (`index()`).
-5.  **Risultato:** Quando `index()` parte, trova `g.user` già pronto all'uso, senza dover fare nulla!
-
-
-### 5. Aggiornare `base.html` per i Messaggi Flash
-
-Quando usiamo `flash(error)`, Flask mette il messaggio in una coda speciale. Dobbiamo dire all'HTML di mostrarlo.
-
-Apri `app/templates/base.html` e aggiungi questo blocco **sopra** `{% block content %}`:
+Ora sfruttiamo subito il lavoro fatto. Modifichiamo `app/templates/base.html` per:
+1.  Mostrare messaggi di errore (`flash`).
+2.  Cambiare la Navbar se l'utente è loggato (usando `g.user`).
 
 ```html
-    <!-- Zona Messaggi Flash (Errori e Conferme) -->
-    <header>
-        <!-- get_flashed_messages() svuota la coda dei messaggi e li restituisce -->
-        {% for message in get_flashed_messages() %}
-            <div class="flash" style="background: #ffdddd; padding: 10px; margin-bottom: 10px; border: 1px solid red;">
-                {{ message }}
-            </div>
-        {% endfor %}
-    </header>
+<!-- Dentro il <body>, prima del blocco content -->
+
+<nav>
+  <a href="{{ url_for('main.index') }}">Blog Scolastico</a>
+  
+  <!-- LOGICA DINAMICA DELLA NAVBAR -->
+  {% if g.user %}
+    <!-- Se g.user esiste, l'utente è loggato -->
+    <span>Ciao, {{ g.user['username'] }}</span>
+    <a href="{{ url_for('auth.logout') }}">Logout</a>
+  {% else %}
+    <!-- Altrimenti mostriamo i tasti di accesso -->
+    <a href="{{ url_for('auth.register') }}">Registrati</a>
+    <a href="{{ url_for('auth.login') }}">Login</a>
+  {% endif %}
+</nav>
+
+<hr>
+
+<!-- Zona Messaggi Flash -->
+{% for message in get_flashed_messages() %}
+    <div class="flash" style="color: red; border: 1px solid red; padding: 10px;">
+        {{ message }}
+    </div>
+{% endfor %}
 ```
 
-### 6. Registrazione e Template
+### 6. I Template di Registrazione e Login
 
-Per finire il lavoro:
+Infine, creiamo i file HTML mancanti nella cartella `app/templates/auth/`.
 
-1.  **Registra il Blueprint**: Apri `app/__init__.py` e aggiungi `app.register_blueprint(auth.bp)`.
-2.  **Crea i Template**: Crea la cartella `app/templates/auth/` e crea i file `login.html` e `register.html`.
-
-Esempio minimo di `app/templates/auth/login.html`:
+**`app/templates/auth/register.html`**
 ```html
 {% extends 'base.html' %}
 
 {% block content %}
-  <h2>Log In</h2>
+  <h2>Registrazione</h2>
   <form method="post">
     <label for="username">Username</label>
     <input name="username" id="username" required>
@@ -189,7 +186,37 @@ Esempio minimo di `app/templates/auth/login.html`:
     <label for="password">Password</label>
     <input type="password" name="password" id="password" required>
     
-    <input type="submit" value="Log In">
+    <input type="submit" value="Registrati">
   </form>
 {% endblock %}
+```
+
+**`app/templates/auth/login.html`**
+```html
+{% extends 'base.html' %}
+
+{% block content %}
+  <h2>Accedi</h2>
+  <form method="post">
+    <label for="username">Username</label>
+    <input name="username" id="username" required>
+    
+    <label for="password">Password</label>
+    <input type="password" name="password" id="password" required>
+    
+    <input type="submit" value="Login">
+  </form>
+{% endblock %}
+```
+
+### 7. Registrazione Finale
+
+Per far funzionare tutto, ricorda di registrare il nuovo blueprint in `app/__init__.py`:
+
+```python
+    # ... dentro create_app ...
+    from . import auth
+    app.register_blueprint(auth.bp)
+    
+    return app
 ```
