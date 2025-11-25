@@ -1,17 +1,31 @@
-<!-- app/templates/index.html -->
 {% extends 'base.html' %}
 
-{% block title %}Home - Blog{% endblock %}
-
 {% block content %}
-    <h2>Benvenuti!</h2>
-    <p>Questo è il blog ufficiale del nostro corso di informatica.</p>
-    
-    <!-- Esempio di logica nel template -->
-    <h3>Ultimi aggiornamenti:</h3>
-    <ul>
-    {% for news in notizie %}
-        <li>{{ news }}</li>
-    {% endfor %}
-    </ul>
+  <h1>Blog della Classe</h1>
+  
+  <!-- Mostra il tasto 'Nuovo' solo se sei loggato -->
+  {% if g.user %}
+    <a href="{{ url_for('main.create') }}" class="btn">Scrivi un nuovo post</a>
+    <hr>
+  {% endif %}
+
+  {% for post in posts %}
+    <article>
+      <header>
+          <!-- Titolo del post -->
+          <h2>{{ post['title'] }}</h2>
+          <!-- Info autore e data -->
+          <small>Scritto da <strong>{{ post['username'] }}</strong> il {{ post['created'].strftime('%Y-%m-%d') }}</small>
+      </header>
+      
+      <!-- Corpo del post -->
+      <p>{{ post['body'] }}</p>
+      
+      <!-- Tasto Modifica (visibile solo all'autore) -->
+      {% if g.user and g.user['id'] == post['author_id'] %}
+        <a href="{{ url_for('main.update', id=post['id']) }}">Modifica</a>
+      {% endif %}
+    </article>
+    <hr>
+  {% endfor %}
 {% endblock %}

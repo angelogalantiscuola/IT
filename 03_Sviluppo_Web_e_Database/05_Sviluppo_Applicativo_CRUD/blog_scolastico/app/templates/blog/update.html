@@ -1,0 +1,24 @@
+{% extends 'base.html' %}
+
+{% block content %}
+  <h1>Modifica "{{ post['title'] }}"</h1>
+  
+  <!-- Form di Modifica -->
+  <form method="post">
+    <label for="title">Titolo</label>
+    <input name="title" id="title" value="{{ request.form.get('title') or post['title'] }}" required>
+
+    <label for="body">Testo</label>
+    <textarea name="body" id="body">{{ request.form['body'] or post['body'] }}</textarea>
+
+    <input type="submit" value="Salva Modifiche">
+  </form>
+
+  <hr>
+  
+  <!-- Form di Cancellazione (Separato) -->
+  <!-- L'action punta alla route di delete con l'id del post -->
+  <form action="{{ url_for('main.delete', id=post['id']) }}" method="post">
+    <input type="submit" value="Elimina Post" onclick="return confirm('Sei sicuro di voler eliminare questo post?')">
+  </form>
+{% endblock %}

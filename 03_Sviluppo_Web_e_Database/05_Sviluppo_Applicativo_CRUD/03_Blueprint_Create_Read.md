@@ -1,38 +1,44 @@
-# Lezione 2: Blueprint Blog e Protezione delle Route
+# Lezione 2: Visualizzare e Creare i Post
 
-Ora costruiamo le route per visualizzare e creare i post.
-Useremo un nuovo Blueprint: `blog`.
+Ora che abbiamo il repository, dobbiamo aggiornare il nostro sito per usarlo.
+Non creeremo nuovi file: modificheremo `app/main.py` per mostrare i post veri invece di quelli finti.
 
-In questa lezione impareremo anche a **proteggere una pagina**: faremo in modo che se un utente non è loggato, venga rispedito alla pagina di login.
+### 1. Aggiornare la Homepage (`app/main.py`)
 
-### 1. Il Blueprint `app/blog.py`
+Apri `app/main.py`. Dobbiamo:
+1.  Importare il repository.
+2.  Aggiornare la funzione `index` per leggere dal DB.
+3.  Aggiungere la route `create` per scrivere nuovi post.
 
-Crea il file `app/blog.py`.
+Sostituisci il contenuto con questo:
 
 ```python
 from flask import (
     Blueprint, flash, g, redirect, render_template, request, url_for
 )
-from werkzeug.exceptions import abort
-# Importiamo solo il repository, niente decoratori complessi!
 from app.repositories import post_repository
 
-bp = Blueprint('blog', __name__)
+# Usiamo 'main' perché è il blueprint principale del sito
+bp = Blueprint('main', __name__)
 
 @bp.route('/')
 def index():
-    # Homepage: mostra tutti i post
-    posts = post_repository.find_all()
-    return render_template('blog/index.html', posts=posts)
+    # 1. Prendiamo i post veri dal database
+    posts = post_repository.get_all_posts()
+    
+    # 2. Passiamo la variabile 'posts' al template
+    return render_template('index.html', posts=posts)
 
+@bp.route('/about')
+def about():
+    return render_template('about.html')
+
+# --- NUOVA ROUTE: CREAZIONE POST ---
 @bp.route('/create', methods=('GET', 'POST'))
 def create():
-    # --- PROTEZIONE DELLA ROUTE ---
-    # Controlliamo manualmente se l'utente è loggato.
-    # Se g.user è None, significa che non c'è una sessione attiva.
+    # Protezione: Se non sei loggato, vai al login
     if g.user is None:
         return redirect(url_for('auth.login'))
-    # ------------------------------
 
     if request.method == 'POST':
         title = request.form['title']
@@ -45,52 +51,68 @@ def create():
         if error is not None:
             flash(error)
         else:
-            # Creiamo il post collegandolo all'ID dell'utente corrente
-            post_repository.create(title, body, g.user['id'])
-            return redirect(url_for('blog.index'))
+            # Creiamo il post usando l'ID dell'utente loggato (g.user['id'])
+            post_repository.create_post(title, body, g.user['id'])
+            return redirect(url_for('main.index'))
 
     return render_template('blog/create.html')
 ```
 
-### 2. Registrazione
+### 2. Aggiornare il Template `index.html`
 
-In `app/__init__.py`:
-```python
-from . import blog
-app.register_blueprint(blog.bp)
-app.add_url_rule('/', endpoint='index') # Rende la home del blog la home del sito
-```
-
-### 3. Template `blog/index.html`
-
-Crea `app/templates/blog/index.html`. 
-Nota come usiamo `post['username']` (grazie alla JOIN fatta nel repository).
+Apri `app/templates/index.html`. Ora i dati che arrivano (`posts`) sono oggetti reali del database, non stringhe. Dobbiamo accedere ai campi giusti (`title`, `body`, `username`).
 
 ```html
 {% extends 'base.html' %}
 
 {% block content %}
-  <h1>Blog</h1>
+  <h1>Blog della Classe</h1>
   
-  <!-- Mostra il tasto 'Nuovo' solo se loggato -->
+  <!-- Mostra il tasto 'Nuovo' solo se sei loggato -->
   {% if g.user %}
-    <a href="{{ url_for('blog.create') }}">Scrivi un nuovo post</a>
+    <a href="{{ url_for('main.create') }}" class="btn">Scrivi un nuovo post</a>
+    <hr>
   {% endif %}
 
   {% for post in posts %}
     <article>
       <header>
+          <!-- Titolo del post -->
           <h2>{{ post['title'] }}</h2>
-          <small>Scritto da {{ post['username'] }} il {{ post['created'].strftime('%Y-%m-%d') }}</small>
+          <!-- Info autore e data -->
+          <small>Scritto da <strong>{{ post['username'] }}</strong> il {{ post['created'].strftime('%Y-%m-%d') }}</small>
       </header>
+      
+      <!-- Corpo del post -->
       <p>{{ post['body'] }}</p>
       
-      <!-- Se l'utente corrente è l'autore, mostra il tasto Modifica -->
-      {% if g.user['id'] == post['author_id'] %}
-        <a href="{{ url_for('blog.update', id=post['id']) }}">Modifica</a>
+      <!-- Tasto Modifica (visibile solo all'autore) -->
+      {% if g.user and g.user['id'] == post['author_id'] %}
+        <a href="{{ url_for('main.update', id=post['id']) }}">Modifica</a>
       {% endif %}
     </article>
     <hr>
   {% endfor %}
+{% endblock %}
+```
+
+### 3. Creare il Template `blog/create.html`
+
+Crea la cartella `app/templates/blog/` e dentro il file `create.html`.
+
+```html
+{% extends 'base.html' %}
+
+{% block content %}
+  <h1>Nuovo Post</h1>
+  <form method="post">
+    <label for="title">Titolo</label>
+    <input name="title" id="title" required>
+
+    <label for="body">Testo del post</label>
+    <textarea name="body" id="body" rows="5" required></textarea>
+
+    <input type="submit" value="Pubblica">
+  </form>
 {% endblock %}
 ```
