@@ -1,0 +1,17 @@
+<!-- app/templates/index.html -->
+{% extends 'base.html' %}
+
+{% block title %}Home - Blog{% endblock %}
+
+{% block content %}
+    <h2>Benvenuti!</h2>
+    <p>Questo è il blog ufficiale del nostro corso di informatica.</p>
+    
+    <!-- Esempio di logica nel template -->
+    <h3>Ultimi aggiornamenti:</h3>
+    <ul>
+    {% for news in notizie %}
+        <li>{{ news }}</li>
+    {% endfor %}
+    </ul>
+{% endblock %}
