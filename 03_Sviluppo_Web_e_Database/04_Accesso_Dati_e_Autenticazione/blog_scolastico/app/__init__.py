@@ -17,9 +17,17 @@ def create_app():
         DATABASE=os.path.join(app.instance_path, 'blog.sqlite'),
     )
 
+    # --- AGGIUNGI QUESTO ---
+    from . import db
+    db.init_app(app)
+    # -----------------------
+
     # --- REGISTRAZIONE BLUEPRINTS ---
     from . import main
     app.register_blueprint(main.bp)
+    
+    from . import auth
+    app.register_blueprint(auth.bp)
     # --------------------------------
 
     return app

@@ -13,15 +13,28 @@
 </head>
 <body>
     <nav>
-        <h1>Blog 5^A</h1>
-        <!-- url_for genera l'URL dal nome della funzione -->
-        <!-- Sintassi Blueprint: 'nome_blueprint.nome_funzione' -->
-        <a href="{{ url_for('main.index') }}">Home</a>
-        <a href="{{ url_for('main.about') }}">Chi Siamo</a>
+        <a href="{{ url_for('main.index') }}">Blog Scolastico</a>
+        
+        <!-- LOGICA DINAMICA DELLA NAVBAR -->
+        {% if g.user %}
+            <!-- Se g.user esiste, l'utente è loggato -->
+            <span>Ciao, {{ g.user['username'] }}</span>
+            <a href="{{ url_for('auth.logout') }}">Logout</a>
+        {% else %}
+            <!-- Altrimenti mostriamo i tasti di accesso -->
+            <a href="{{ url_for('auth.register') }}">Registrati</a>
+            <a href="{{ url_for('auth.login') }}">Login</a>
+        {% endif %}
     </nav>
     <hr>
 
-    <!-- Qui mostreremo i messaggi flash (errori/conferme) in futuro -->
+    <!-- Zona Messaggi Flash -->
+    {% for message in get_flashed_messages() %}
+        <div class="flash" style="color: red; border: 1px solid red; padding: 10px;">
+            {{ message }}
+        </div>
+    {% endfor %}
+
     <main>
         {% block content %}{% endblock %}
     </main>
