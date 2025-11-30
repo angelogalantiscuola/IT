@@ -1,4 +1,3 @@
-<file path="03_Sviluppo_Web_e_Database/02_Web_e_API/00_Piano_di_Lavoro_Modulo_02.md">
 # Piano di Lavoro: Modulo 02 - Basi dello Sviluppo Web e API REST
 
 ## 1. Obiettivi di Apprendimento
@@ -62,4 +61,3 @@ Le attività pratiche di questo modulo sono focalizzate sull'interazione con API
 - La libreria `requests` (da installare con `pip install requests`).
 - Visual Studio Code con estensioni opzionali per testare API (es. Thunder Client).
 - Accesso a Internet.
-  </file>
