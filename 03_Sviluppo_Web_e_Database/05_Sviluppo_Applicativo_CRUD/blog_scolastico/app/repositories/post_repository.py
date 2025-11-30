@@ -1,4 +1,5 @@
 from app.db import get_db
+from datetime import datetime
 
 def get_all_posts():
     """
@@ -17,7 +18,14 @@ def get_all_posts():
         JOIN user u ON p.author_id = u.id
         ORDER BY p.created DESC
     """
-    return db.execute(query).fetchall()
+    posts = db.execute(query).fetchall()
+    # Converti 'created' da stringa a datetime
+    result = []
+    for post in posts:
+        post_dict = dict(post)
+        post_dict['created'] = datetime.fromisoformat(post_dict['created'])
+        result.append(post_dict)
+    return result
 
 def get_post_by_id(post_id):
     """Recupera un singolo post per ID (con JOIN per l'autore)."""
@@ -30,6 +38,10 @@ def get_post_by_id(post_id):
     """
     # fetchone() perché ci aspettiamo un solo risultato
     post = db.execute(query, (post_id,)).fetchone()
+    if post:
+        post_dict = dict(post)
+        post_dict['created'] = datetime.fromisoformat(post_dict['created'])
+        return post_dict
     return post
 
 def create_post(title, body, author_id):

@@ -1,21 +1,26 @@
-# Lezione 3: Update, Delete e Sicurezza
+# Lezione 3: Modifica e Cancellazione (Update/Delete)
 
-Mancano le operazioni di modifica e cancellazione.
+Per completare il blog, dobbiamo permettere agli autori di modificare o cancellare i propri post.
+Aggiungeremo queste funzioni nel nostro file principale: `app/main.py`.
+
 Qui introduciamo un concetto fondamentale: **Autorizzazione**.
-
 *   **Autenticazione:** Il sistema sa chi sei (Login).
 *   **Autorizzazione:** Hai il permesso di fare questa azione? (Es. modificare un post che non hai scritto tu).
 
 ### 1. Helper per i controlli (`get_post`)
 
-In `app/blog.py`, aggiungiamo una funzione per non ripetere codice. Questa funzione fa due cose:
-1.  Controlla se il post esiste.
-2.  Controlla se l'utente corrente è il proprietario del post.
+In `app/main.py`, aggiungiamo una funzione per non ripetere codice (mettila fuori dalle route, magari prima di `update`).
+Questa funzione fa tre cose:
+1.  Recupera il post dal DB.
+2.  Controlla se esiste.
+3.  Controlla se l'utente corrente è il proprietario del post.
 
 ```python
+from werkzeug.exceptions import abort
+
 def get_post(id, check_author=True):
-    # 1. Recupera il post dal DB
-    post = post_repository.find_by_id(id)
+    # 1. Recupera il post dal DB (usiamo la funzione creata nella Lezione 1)
+    post = post_repository.get_post_by_id(id)
 
     # 2. Se non esiste -> Errore 404 Not Found
     if post is None:
@@ -29,11 +34,13 @@ def get_post(id, check_author=True):
     return post
 ```
 
-### 2. Route di Update
+### 2. La Route di Update
 
 Qui dobbiamo applicare due livelli di sicurezza manualmente:
 1.  **Sei loggato?** (`if g.user is None`)
 2.  **È il tuo post?** (gestito da `get_post`)
+
+Aggiungi a `app/main.py`:
 
 ```python
 @bp.route('/<int:id>/update', methods=('GET', 'POST'))
@@ -57,16 +64,19 @@ def update(id):
         if error is not None:
             flash(error)
         else:
-            post_repository.update(id, title, body)
-            return redirect(url_for('blog.index'))
+            # Chiamiamo la funzione di update del repository
+            post_repository.update_post(id, title, body)
+            return redirect(url_for('main.index'))
 
     return render_template('blog/update.html', post=post)
 ```
 
-### 3. Route di Delete
+### 3. La Route di Delete
 
 Anche qui, doppio controllo di sicurezza.
 Nota che accettiamo solo il metodo `POST`. Perché? Per evitare che un link malevolo o un crawler cancelli i dati visitando l'URL.
+
+Aggiungi a `app/main.py`:
 
 ```python
 @bp.route('/<int:id>/delete', methods=('POST',))
@@ -75,21 +85,23 @@ def delete(id):
     if g.user is None:
         return redirect(url_for('auth.login'))
     
-    # 2. È tuo?
+    # 2. È tuo? (verifica anche che esista)
     get_post(id) 
     
-    # 3. Cancella
-    post_repository.delete(id)
-    return redirect(url_for('blog.index'))
+    # 3. Cancella usando il repository
+    post_repository.delete_post(id)
+    return redirect(url_for('main.index'))
 ```
 
 ### 4. Il Template `blog/update.html`
 
+Crea il file `app/templates/blog/update.html`.
+
 Simile a quello di creazione, ma con una differenza importante: usiamo `value` per pre-compilare i campi con i dati esistenti.
 
-La logica `request.form['title'] or post['title']` significa:
-*   Se l'utente ha provato a salvare ma c'era un errore (es. titolo vuoto), rimostra quello che ha appena scritto (`request.form`).
-*   Altrimenti (è la prima volta che apre la pagina), mostra il titolo originale salvato nel DB (`post`).
+La logica `request.form.get('title') or post['title']` significa:
+*   Se l'utente ha provato a salvare ma c'era un errore, rimostra quello che ha appena scritto.
+*   Altrimenti (è la prima volta che apre la pagina), mostra il titolo originale dal DB.
 
 ```html
 {% extends 'base.html' %}
@@ -103,7 +115,7 @@ La logica `request.form['title'] or post['title']` significa:
     <input name="title" id="title" value="{{ request.form.get('title') or post['title'] }}" required>
 
     <label for="body">Testo</label>
-    <textarea name="body" id="body">{{ request.form['body'] or post['body'] }}</textarea>
+    <textarea name="body" id="body" rows="5" required>{{ request.form.get('body') or post['body'] }}</textarea>
 
     <input type="submit" value="Salva Modifiche">
   </form>
@@ -112,8 +124,11 @@ La logica `request.form['title'] or post['title']` significa:
   
   <!-- Form di Cancellazione (Separato) -->
   <!-- L'action punta alla route di delete con l'id del post -->
-  <form action="{{ url_for('blog.delete', id=post['id']) }}" method="post">
-    <input type="submit" value="Elimina Post" onclick="return confirm('Sei sicuro di voler eliminare questo post?')">
+  <!-- Nota: l'endpoint è 'main.delete' -->
+  <form action="{{ url_for('main.delete', id=post['id']) }}" method="post">
+    <input type="submit" value="Elimina Post" 
+           onclick="return confirm('Sei sicuro di voler eliminare questo post?')"
+           style="background-color: red; color: white;">
   </form>
 {% endblock %}
 ```
