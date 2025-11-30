@@ -11,3 +11,4 @@ venv/
 temp.md
 temp_prompt.md
 .vscode/
+temp/
