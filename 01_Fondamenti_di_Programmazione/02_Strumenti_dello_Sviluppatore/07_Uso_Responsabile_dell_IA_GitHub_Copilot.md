@@ -8,14 +8,7 @@ Immagina di avere al tuo fianco un programmatore esperto che non si stanca mai, 
 
 *   **Analogia**: Pensa a Copilot non come a un pilota automatico che guida l'aereo per te, ma come a un **copilota esperto**. Tu, il pilota, hai sempre il controllo e la responsabilità finale. Il copilota ti aiuta con i compiti di routine, ti avvisa di possibili problemi e ti fornisce informazioni, ma la decisione su cosa fare spetta sempre a te.
 
-## 2. Come Ottenerlo (Gratis per Studenti)
-
-GitHub offre l'accesso gratuito a Copilot a tutti gli studenti iscritti al **GitHub Student Developer Pack**.
-
-1.  Vai su [https://education.github.com/pack](https://education.github.com/pack) e registrati con la tua email scolastica.
-2.  Una volta approvato, potrai attivare GitHub Copilot gratuitamente dal tuo profilo GitHub.
-
-## 3. Configurazione in VS Code
+## 2. Configurazione in VS Code
 
 Integrare Copilot nel tuo ambiente di lavoro è semplicissimo:
 
@@ -26,7 +19,7 @@ Integrare Copilot nel tuo ambiente di lavoro è semplicissimo:
 
 Una volta attivato, vedrai una piccola icona di Copilot nella barra di stato in basso a destra di VS Code.
 
-## 4. Le Regole d'Oro: Come Usarlo Correttamente
+## 3. Le Regole d'Oro: Come Usarlo Correttamente
 
 Usare l'IA in modo efficace è un'abilità. Seguire queste regole ti impedirà di usare Copilot come una "stampella" e ti aiuterà a usarlo come un "propulsore" per il tuo apprendimento.
 
@@ -39,7 +32,7 @@ Copilot è incredibilmente potente, ma **non è infallibile**. Può generare cod
 #### Regola n.3: Usa l'IA per Accelerare, non per Sostituire il Pensiero
 L'IA è uno strumento per automatizzare i compiti ripetitivi o per superare piccoli blocchi, non per evitare di pensare. La progettazione del programma, la logica generale e la struttura del codice devono venire da te.
 
-## 5. Casi d'Uso Virtuosi (Come Sfruttarlo al Meglio)
+## 4. Casi d'Uso Virtuosi (Come Sfruttarlo al Meglio)
 
 Ecco alcuni modi intelligenti per collaborare con il tuo copilota IA:
 
@@ -64,7 +57,7 @@ Ecco alcuni modi intelligenti per collaborare con il tuo copilota IA:
 
 *   **Scrivere Commenti e Documentazione:** Se hai scritto una funzione complessa, puoi chiedere a Copilot di documentarla per te. Seleziona la funzione e usa la chat di Copilot per chiedere: "Scrivi una docstring per questa funzione".
 
-## 6. Anti-Pattern (Cosa NON Fare)
+## 5. Anti-Pattern (Cosa NON Fare)
 
 *   **Scrivere un commento con la traccia dell'esercizio:** Non scrivere `# Esercizio 04: Gestore della lista della spesa` e aspettarti che Copilot scriva l'intera soluzione. Questo non ti insegna nulla.
 *   **Accettare i suggerimenti senza leggerli:** Premere `Tab` a ripetizione senza capire cosa si sta aggiungendo al codice è il modo più veloce per creare un programma pieno di bug e che non capisci.
