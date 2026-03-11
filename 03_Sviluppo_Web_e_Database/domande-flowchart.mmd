@@ -1,0 +1,75 @@
+flowchart TD
+    %% Aree Tematiche
+    subgraph A [1. Ecosistema Python]
+        PY[Python: Tipizzazione dinamica e Type Hints]
+        VENV[Ambiente Virtuale venv]
+        REQ[requirements.txt]
+    end
+
+    subgraph B [2. Progettazione Dati]
+        DBMS[DB, DBMS e Relazionale vs NoSQL]
+        ACID[Transazioni ACID]
+        REQ_ANALISI[Analisi Requisiti]
+        ER[Modello ER e Cardinalità]
+        NORM[Normalizzazione e Vincoli PK/FK]
+    end
+
+    subgraph C [3. Interazione Dati]
+        SQL[SQL: DML, DDL, JOIN, GROUP BY]
+        REPO[Repository Pattern e SQLite]
+        INJECT[SQL Injection]
+    end
+
+    subgraph D [4. Teoria Web]
+        HTTP[HTTP: GET/POST e Status Code]
+        STATE[Natura Stateless e Sessioni]
+        REST[API REST ed Endpoint]
+    end
+
+    subgraph E [5. Sviluppo Flask]
+        FLASK[Flask: __init__.py e Blueprints]
+        JINJA[Template Jinja2 e extends]
+        AUTH[Autenticazione, Autorizzazione e Hash]
+    end
+
+    subgraph F [6. Deployment & Sicurezza]
+        DEPLOY[Sviluppo vs Produzione]
+        WSGI[WSGI e Gunicorn]
+        ENV[Variabili Ambiente .env e .gitignore]
+        RENDER[Deploy Cloud e Dati Effimeri]
+    end
+
+    %% Collegamenti Logici Ecosistema Python -> Deployment
+    PY --> VENV
+    VENV --> REQ
+    REQ --> DEPLOY
+
+    %% Collegamenti Progettazione -> Interazione Dati
+    DBMS --> ACID
+    DBMS --> REQ_ANALISI
+    REQ_ANALISI --> ER
+    ER --> NORM
+    NORM --> SQL
+
+    %% Collegamenti Interazione Dati -> Sviluppo Web (Il ponte)
+    SQL --> REPO
+    SQL -.-> INJECT
+    INJECT --> ENV
+
+    %% Collegamenti Teoria Web -> Flask
+    HTTP --> FLASK
+    REST --> FLASK
+    HTTP --> STATE
+    STATE --> AUTH
+
+    %% Collegamenti Sviluppo Flask -> Dati e Deployment
+    FLASK --> JINJA
+    REPO --> FLASK
+    AUTH --> REPO
+    FLASK --> WSGI
+
+    %% Collegamenti Deployment & Sicurezza
+    ENV --> FLASK
+    WSGI --> DEPLOY
+    ENV --> DEPLOY
+    DEPLOY --> RENDER
