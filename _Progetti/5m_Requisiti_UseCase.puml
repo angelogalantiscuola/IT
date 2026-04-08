@@ -1,0 +1,16 @@
+@startuml
+left to right direction
+actor Visitatore
+actor Utente
+
+Visitatore --> (Visualizza elenco ricette)
+Visitatore --> (Visualizza dettaglio ricetta)
+
+Utente --> (Registrazione utente)
+Utente --> (Login)
+Utente --> (Crea ricetta)
+Utente --> (Modifica ricetta)
+Utente --> (Elimina ricetta)
+Utente --> (Aggiungi ai preferiti)
+Utente --> (Visualizza ricette preferite)
+@enduml
