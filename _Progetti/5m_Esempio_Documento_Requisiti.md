@@ -10,7 +10,7 @@
 Lo scopo di questo documento è:
 - descrivere in modo chiaro il prodotto che gli studenti dovranno realizzare;
 - raccogliere i requisiti funzionali e non funzionali;
-- fornire una prima progettazione concettuale con diagrammi ER, UML e casi d'uso;
+- fornire una prima progettazione concettuale e una roadmap di lavoro con diagrammi ER, UML e casi d'uso, organizzata nelle fasi di analisi, sviluppo e rifinitura;
 - definire una roadmap di lavoro con milestone e attività principali.
 
 ### 1.2 Contesto
@@ -79,7 +79,35 @@ RecipeHub è un ricettario digitale in cui gli utenti possono creare, condivider
 - Deve essere possibile eseguire il progetto localmente con un ambiente virtuale Python.
 - I dati devono essere persistenti tra una sessione e l'altra.
 
-## 6. Glossario dei termini
+## 6. Casi d'uso
+
+### 6.1 Casi d'uso principali
+
+1. `Registrazione utente`
+2. `Login`
+3. `Crea ricetta`
+4. `Modifica ricetta`
+5. `Elimina ricetta`
+6. `Visualizza elenco ricette`
+7. `Cerca ricette`
+8. `Aggiungi ai preferiti`
+9. `Visualizza ricette preferite`
+
+### 6.2 Descrizione semplificata dei casi d'uso
+
+- **Registrazione utente**: il visitatore inserisce nome, email e password; il sistema crea un account e apre la sessione.
+- **Login**: l'utente inserisce email e password; il sistema verifica le credenziali e apre la sessione.
+- **Crea ricetta**: l'utente autenticato compila un form con titolo, ingredienti, procedimento e categorie; il sistema salva la ricetta.
+- **Cerca ricette**: l'utente inserisce parole chiave o filtra per categoria/difficoltà; il sistema mostra i risultati corrispondenti.
+- **Aggiungi ai preferiti**: l'utente autenticato seleziona una ricetta e la salva tra i preferiti.
+
+### 6.3 Diagramma dei casi d'uso
+
+Il diagramma dei casi d'uso è stato generato come immagine a partire dal file PlantUML `5m_Requisiti_UseCase.puml`.
+
+![Diagramma casi d'uso](5m_Requisiti_UseCase.png)
+
+## 7. Glossario dei termini
 
 - `Ricetta`: un contenuto creato da un utente, composto da titolo, ingredienti, procedimento e metadati.
 - `Categoria`: un raggruppamento tematico di ricette (es. `vegan`, `dolci`, `antipasti`).
@@ -87,7 +115,48 @@ RecipeHub è un ricettario digitale in cui gli utenti possono creare, condivider
 - `Preferito`: associazione tra utente e ricetta salvata.
 - `Utente`: account registrato che può gestire ricette e preferiti.
 
-## 7. Entità e relazioni (schema ER)
+## 8. Pianificazione e milestone
+
+Questa sezione descrive la sequenza di lavoro del progetto, con tre fasi principali:
+
+- Analisi: definire i requisiti, i casi d'uso e i modelli concettuali.
+- Sviluppo: realizzare le funzionalità principali, l'interfaccia e la gestione dati.
+- Rifinitura: testare, correggere e preparare la consegna.
+
+Nella fase di analisi si producono gli schemi ER e UML; questi documenti aiutano a progettare il database e le classi prima di scrivere il codice.
+
+Un possibile piano di lavoro su 5 settimane:
+
+| Settimana | Attività |
+| --- | --- |
+| 1 | Analisi dei requisiti, scelta del tema, disegno ER e UML, preparazione ambiente di lavoro |
+| 2 | Configurazione Flask, sistema di autenticazione, gestione utenti |
+| 3 | Implementazione CRUD delle ricette e delle categorie |
+| 4 | Ricerca/filter, preferiti, commenti opzionali |
+| 5 | Testing, correzioni bug, documentazione, preparazione consegna GitHub |
+
+### 8.1 Gantt semplificato
+
+```mermaid
+gantt
+    dateFormat  YYYY-MM-DD
+    title Piano di progetto esempio
+    section Analisi
+    Requisiti e schema ER         :a1, 2026-04-15, 5d
+    Diagramma UML                  :a2, after a1, 3d
+    section Sviluppo
+    Autenticazione utente          :b1, after a2, 5d
+    CRUD ricette                   :b2, after b1, 6d
+    Filtri e ricerca               :b3, after b2, 4d
+    Preferiti e profilo            :b4, after b3, 4d
+    section Rifinitura
+    Test e documentazione          :c1, after b4, 4d
+    Consegna su GitHub             :c2, after c1, 2d
+```
+
+> Il Gantt è uno strumento utile per pianificare, ma in classe può bastare anche una tabella di milestone.
+
+## 9. Entità e relazioni (schema ER)
 
 Di seguito un esempio di schema concettuale. Questo diagramma aiuta a capire le tabelle principali e i loro legami.
 
@@ -149,9 +218,9 @@ erDiagram
 
 > Questo ER è utile per la fase di progettazione, ma non è obbligatorio: può essere sostituito da un disegno a mano libera o da un elenco di entità/relazioni.
 
-## 8. Diagramma UML delle classi
+## 10. Diagramma UML delle classi
 
-Di seguito un esempio di diagramma delle classi che mostra le classi principali dell'app.
+Di seguito un esempio semplificato di diagramma delle classi che mostra le classi principali del dominio dell'app.
 
 ```mermaid
 classDiagram
@@ -198,89 +267,17 @@ classDiagram
         +string testo
         +datetime data_creazione
     }
-    class RecipeRepository {
-        +getAll()
-        +getById(id)
-        +create(data)
-        +update(id, data)
-        +delete(id)
-    }
-    class UserRepository {
-        +getByEmail(email)
-        +create(data)
-        +getById(id)
-    }
 
     Utente "1" -- "*" Ricetta : crea
     Categoria "1" -- "*" Ricetta : contiene
+    Ricetta "1" -- "*" Ingrediente : contiene
     Ricetta "1" -- "*" Commento : riceve
     Utente "1" -- "*" Commento : scrive
     Utente "1" -- "*" Preferito : salva
     Ricetta "1" -- "*" Preferito : ricevuta
 ```
 
-> Il diagramma UML aiuta a capire le classi e i servizi principali. È utile ma non indispensabile; anche uno schema di classi semplificato è valido.
-
-## 9. Casi d'uso
-
-### 9.1 Casi d'uso principali
-
-1. `Registrazione utente`
-2. `Login`
-3. `Crea ricetta`
-4. `Modifica ricetta`
-5. `Elimina ricetta`
-6. `Visualizza elenco ricette`
-7. `Cerca ricette`
-8. `Aggiungi ai preferiti`
-9. `Visualizza ricette preferite`
-
-### 9.2 Descrizione semplificata dei casi d'uso
-
-- **Registrazione utente**: il visitatore inserisce nome, email e password; il sistema crea un account e invia una conferma di registrazione.
-- **Login**: l'utente inserisce email e password; il sistema verifica le credenziali e apre la sessione.
-- **Crea ricetta**: l'utente autenticato compila un form con titolo, ingredienti, procedimento e categorie; il sistema salva la ricetta.
-- **Cerca ricette**: l'utente inserisce parole chiave o filtra per categoria/difficoltà; il sistema mostra i risultati corrispondenti.
-- **Aggiungi ai preferiti**: l'utente autenticato seleziona una ricetta e la salva tra i preferiti.
-
-### 9.3 Diagramma dei casi d'uso
-
-Il diagramma dei casi d'uso è stato generato come immagine a partire dal file PlantUML `5m_Requisiti_UseCase.puml`.
-
-![Diagramma casi d'uso](5m_Requisiti_UseCase.png)
-
-## 10. Pianificazione e milestone
-
-Un possibile piano di lavoro su 5 settimane:
-
-| Settimana | Attività |
-| --- | --- |
-| 1 | Analisi dei requisiti, scelta del tema, disegno ER e UML, preparazione ambiente di lavoro |
-| 2 | Configurazione Flask, sistema di autenticazione, gestione utenti |
-| 3 | Implementazione CRUD delle ricette e delle categorie |
-| 4 | Ricerca/filter, preferiti, commenti opzionali |
-| 5 | Testing, correzioni bug, documentazione, preparazione consegna GitHub |
-
-### 10.1 Gantt semplificato
-
-```mermaid
-gantt
-    dateFormat  YYYY-MM-DD
-    title Piano di progetto esempio
-    section Analisi
-    Requisiti e schema ER         :a1, 2026-04-15, 5d
-    Diagramma UML                  :a2, after a1, 3d
-    section Sviluppo
-    Autenticazione utente          :b1, after a2, 5d
-    CRUD ricette                   :b2, after b1, 6d
-    Filtri e ricerca               :b3, after b2, 4d
-    Preferiti e profilo            :b4, after b3, 4d
-    section Rifinitura
-    Test e documentazione          :c1, after b4, 4d
-    Consegna su GitHub             :c2, after c1, 2d
-```
-
-> Il Gantt è uno strumento utile per pianificare, ma in classe può bastare anche una tabella di milestone.
+> Il diagramma UML aiuta a capire le classi principali del dominio. Le classi di servizio e accesso ai dati (per esempio i repository) possono essere aggiunte solo se si vuole rappresentare l'architettura dell'applicazione, ma non sono necessarie nel diagramma delle sole entità principali.
 
 ## 11. Suggerimenti per la consegna
 

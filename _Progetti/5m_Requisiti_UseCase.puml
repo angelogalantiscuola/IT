@@ -1,4 +1,4 @@
-@startuml
+@startuml uc
 left to right direction
 actor Visitatore
 actor Utente
