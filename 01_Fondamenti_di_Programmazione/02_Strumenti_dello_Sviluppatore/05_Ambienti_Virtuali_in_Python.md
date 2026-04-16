@@ -37,8 +37,13 @@ Prima di poterlo usare, l'ambiente deve essere "attivato".
 
 *   **Su Windows (Bash/WSL o Git Bash):**
     ```bash
-    source .venv/Scripts/activate
+    .venv/Scripts/activate
     ```
+    > Se usi PowerShell e hai problemi con l'esecuzione dello script, esegui questo comando in PowerShell come utente corrente:
+    > ```powershell
+    > Set-ExecutionPolicy -ExecutionPolicy Bypass -Scope CurrentUser
+    > ```
+    > Dopo di che puoi riprovare ad attivare l'ambiente.
 *   **Su macOS e Linux:**
     ```bash
     source .venv/bin/activate
