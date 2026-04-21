@@ -81,27 +81,48 @@ RecipeHub è un ricettario digitale in cui gli utenti possono creare, condivider
 
 ## 6. Casi d'uso
 
-### 6.1 Casi d'uso principali
+### 6.1 Casi d'uso essenziali
 
 1. `Registrazione utente`
 2. `Login`
-3. `Crea ricetta`
-4. `Modifica ricetta`
-5. `Elimina ricetta`
-6. `Visualizza elenco ricette`
-7. `Cerca ricette`
-8. `Aggiungi ai preferiti`
-9. `Visualizza ricette preferite`
+3. `Visualizza elenco ricette`
+4. `Visualizza dettaglio ricetta`
+5. `Crea ricetta`
+6. `Aggiungi ai preferiti`
 
 ### 6.2 Descrizione semplificata dei casi d'uso
 
 - **Registrazione utente**: il visitatore inserisce nome, email e password; il sistema crea un account e apre la sessione.
 - **Login**: l'utente inserisce email e password; il sistema verifica le credenziali e apre la sessione.
+- **Visualizza elenco ricette**: il visitatore o l'utente autenticato vede la lista delle ricette pubbliche.
+- **Visualizza dettaglio ricetta**: l'utente seleziona una ricetta dall'elenco e legge ingredienti, procedimento e metadati.
 - **Crea ricetta**: l'utente autenticato compila un form con titolo, ingredienti, procedimento e categorie; il sistema salva la ricetta.
-- **Cerca ricette**: l'utente inserisce parole chiave o filtra per categoria/difficoltà; il sistema mostra i risultati corrispondenti.
-- **Aggiungi ai preferiti**: l'utente autenticato seleziona una ricetta e la salva tra i preferiti.
+- **Aggiungi ai preferiti**: l'utente autenticato salva una ricetta tra i preferiti durante la visualizzazione dei dettagli.
 
-### 6.3 Diagramma dei casi d'uso
+### 6.3 Relazioni tra casi d'uso: include ed extend
+
+In un diagramma dei casi d'uso si usano due tipi di relazioni aggiuntive:
+
+- `<<include>>`: rappresenta un comportamento obbligatorio riutilizzabile. Un caso d'uso base include un altro caso d'uso quando il suo comportamento è sempre eseguito.
+- `<<extend>>`: rappresenta un comportamento opzionale o alternativo che si aggiunge al caso d'uso base solo in certe condizioni.
+
+I casi d'uso non devono essere confusi con i rapporti tra attori. Nel nostro esempio, `Utente` è un attore specializzato di `Visitatore`: l'utente può fare tutto ciò che può fare un visitatore, più alcune azioni aggiuntive. Questo si modella con una generalizzazione tra attori, non con `include` o `extend`.
+
+Per questo progetto, le relazioni principali sono:
+
+- `Crea ricetta` <<include>> `Verifica autenticazione`
+- `Aggiungi ai preferiti` <<include>> `Verifica autenticazione`
+
+Queste relazioni indicano che l'autenticazione è un passaggio obbligatorio per tutti i casi d'uso che accedono ai dati personali.
+
+Esempi di `extend`:
+
+- `Recupero password` <<extend>> `Login`: l'utente può richiedere il recupero password solo quando non ricorda le credenziali.
+- `Aggiungi ai preferiti` <<extend>> `Visualizza dettaglio ricetta`: aggiungere una ricetta ai preferiti è un'azione opzionale che si attiva quando l'utente visualizza i dettagli di una ricetta.
+
+Aggiungendo queste relazioni, il diagramma diventa più preciso e mette in evidenza i comportamenti comuni e le estensioni opzionali.
+
+### 6.4 Diagramma dei casi d'uso
 
 Il diagramma dei casi d'uso è stato generato come immagine a partire dal file PlantUML `5m_Requisiti_UseCase.puml`.
 
