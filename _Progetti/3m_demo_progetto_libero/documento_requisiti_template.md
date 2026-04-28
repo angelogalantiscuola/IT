@@ -55,6 +55,22 @@ Descrivi il menu e le schermate principali. Ad esempio:
 - Settimana 3: completamento funzionalità, test, integrazione package
 - Settimana 4: rifinitura, documentazione, consegna
 
+```mermaid
+gantt
+    title Cronoprogramma progetto 3M
+    dateFormat  YYYY-MM-DD
+    axisFormat  %d/%m
+    section Pianificazione
+    Requisiti           :a1, 2026-05-01, 7d
+    Progettazione       :a2, after a1, 7d
+    section Sviluppo
+    Implementazione     :b1, after a2, 7d
+    Test e integrazione :b2, after b1, 7d
+    section Consegna
+    Rifinitura          :c1, after b2, 4d
+    Documentazione      :c2, after c1, 3d
+```
+
 ## 10. Note aggiuntive
 
 Aggiungi qui commenti sul tema, sulle idee future o sulle difficoltà previste.

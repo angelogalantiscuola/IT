@@ -54,10 +54,33 @@ Il programma offre un menu a console che permette all'utente di giocare a un qui
 
 ## 9. Cronoprogramma (Gantt semplificato)
 
-- Settimana 1: scelta del tema, ricerca del package `pyjokes`, stesura dei requisiti
-- Settimana 2: progettazione del menu e divisione del lavoro
-- Settimana 3: sviluppo delle funzionalità del quiz e del mini-gioco
-- Settimana 4: test, integrazione del package esterno e documentazione
+- Settimana 1: definizione del progetto, selezione package, stesura requisiti e scelta delle domande
+- Settimana 2: progettazione del menu, divisione dei file e implementazione di `main.py`
+- Settimana 3: sviluppo del quiz, gioco dei dadi e integrazione di `pyjokes`
+- Settimana 4: test, correzioni, rifinitura dell'output e documentazione
+
+```mermaid
+gantt
+    title Cronoprogramma progetto 3M Quiz & Mini-Game
+    dateFormat  YYYY-MM-DD
+    axisFormat  %d/%m
+    section Pianificazione
+    Raccolta requisiti            :a1, 2026-05-01, 2d
+    Definizione domande quiz      :a2, after a1, 2d
+    Scelta package e setup ambiente :a3, after a2, 1d
+    section Progettazione
+    Progetto menu e flusso        :b1, 2026-05-04, 2d
+    Suddivisione dei file         :b2, after b1, 1d
+    section Sviluppo
+    Implementazione `main.py`     :c1, 2026-05-07, 2d
+    Implementazione `quiz.py`     :c2, after c1, 2d
+    Implementazione `game.py`     :c3, after c2, 2d
+    Integrazione `pyjokes`        :c4, after c3, 1d
+    section Test e consegna
+    Test input e gestione errori  :d1, 2026-05-13, 2d
+    Correzioni e migliorie        :d2, after d1, 2d
+    Documentazione finale         :d3, after d2, 2d
+```
 
 ## 10. Note aggiuntive
 
