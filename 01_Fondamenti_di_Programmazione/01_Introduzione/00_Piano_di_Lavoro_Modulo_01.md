@@ -1,39 +1,32 @@
-# Piano di Lavoro: Modulo 01 - Introduzione alla Programmazione
+# Piano di Lavoro: Modulo 01 - Fondamenti e Modelli Mentali
 
 ## 1. Obiettivi di Apprendimento
 
 ### Prerequisiti
-*   Nessuno. Questo è il punto di partenza assoluto.
+- Nessun prerequisito tecnico specifico (Modulo 00 completato).
 
 ### Competenze in Uscita
 Al termine di questo modulo, lo studente sarà in grado di:
-*   Comprendere il concetto di programmazione e di algoritmo.
-*   Conoscere i blocchi fondamentali del codice: variabili, istruzioni, controllo di flusso.
-*   Scrivere semplici script Python che utilizzano `input()` per ricevere dati e `print()` per mostrare risultati.
-*   Utilizzare la logica condizionale (`if/else`) per prendere decisioni.
-*   Utilizzare i cicli (`for`) per eseguire operazioni ripetitive.
-*   Eseguire un file Python dal terminale.
+- Comprendere il modello mentale di esecuzione del computer (sequenza, stato, memoria).
+- Utilizzare variabili scalari (testo, numeri, booleani) e collezioni elementari (**liste**).
+- Acquisire dati con `input()` ed esporre risultati con stampe formattate (`print`, f-string).
+- Controllare il flusso di esecuzione tramite decisioni (`if / elif / else`) e condizioni logiche.
+- Ripetere operazioni tramite cicli su collezioni (`for elemento in lista`) e cicli condizionali (`while`).
+- **Metodologia:** Analizzare una richiesta testuale e scomporla nello schema formale **Input $\to$ Elaborazione $\to$ Output**.
 
-## 2. Contenuti Teorici
-Le lezioni di riferimento per questo modulo sono:
+---
 
-*   **Lezione 01:** `01_Introduzione/01_Mappa_Concettuale_Introduzione.md`
-    *   *Argomento:* Visione d'insieme dei concetti del modulo.
-*   **Lezione 02:** `01_Introduzione/02_Introduzione_alla_Programmazione.md`
-    *   *Argomenti:* Cos'è la programmazione, variabili, istruzioni, `if/else`, cicli `for`, paradigmi e livelli di astrazione.
+## 2. Contenuti Teorici e Metodologici
 
-## 3. Attività Pratiche / Esercitazioni
-Le attività pratiche sono focalizzate sul consolidamento dei concetti base. Gli studenti svolgeranno una serie di esercizi guidati che copriranno:
-*   Dichiarazione di variabili e stampa formattata.
-*   Acquisizione dell'input dell'utente e conversione dei tipi.
-*   Implementazione della logica condizionale (`if/else`).
-*   Utilizzo dei cicli (`for`) per compiti ripetitivi.
+- **Lezione 01:** `01_Mappa_Concettuale_Introduzione.md`
+  - Panoramica visiva dei modelli mentali del modulo.
+- **Lezione 02:** `02_Introduzione_alla_Programmazione.md`
+  - Variabili come scatole, tipi primitivi, liste di base, istruzioni di controllo (`if`, `for`, `while`).
+- **Lezione 03:** `03_Dall_Idea_al_Flusso.md`
+  - Metodo di problem solving: come leggere un testo, individuare i dati in ingresso, la trasformazione richiesta e il formato di uscita.
 
-## 4. Metodologie di Valutazione
-*   Osservazione della partecipazione e della risoluzione dei problemi durante le ore di laboratorio.
-*   Correzione individuale degli esercizi per verificare la comprensione dei concetti base.
+---
 
-## 5. Strumenti Necessari
-*   Computer con Python 3.x installato.
-*   Un editor di testo semplice o un IDE come VS Code.
-*   Accesso al terminale (Prompt dei comandi, PowerShell, o Git Bash su Windows).
+## 3. Metodologie di Valutazione
+- Capacità di tracciare a mano o a voce il valore delle variabili durante l'esecuzione di un ciclo.
+- Esercizi di scomposizione logica: dato un testo reale, compilare la tabella Input/Elaborazione/Output prima di scrivere codice.

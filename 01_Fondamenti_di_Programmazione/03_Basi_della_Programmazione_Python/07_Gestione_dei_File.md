@@ -58,7 +58,7 @@ L'istruzione `with open(...) as ...` è il modo più sicuro per lavorare con i f
             # Leggere il file riga per riga (metodo consigliato per file grandi)
             print("\n--- Lettura riga per riga ---")
             for riga in file:
-                print(riga.strip()) # .strip() rimuove spazi e a-capo extra
+                print(riga.strip())  # .strip() rimuove spazi e a-capo extra
     except FileNotFoundError:
         print("Errore: il file 'appunti.txt' non è stato trovato.")
     except IOError as e:
@@ -77,17 +77,12 @@ Ideale per dati complessi e gerarchici (come i dizionari Python) e molto usato n
 import json
 
 # Dati di esempio: un dizionario che descrive uno studente
-studente_dati = {
-    "nome": "Laura Bianchi",
-    "eta": 17,
-    "corsi": ["Matematica", "Fisica"],
-    "promosso": True
-}
+studente_dati = {"nome": "Laura Bianchi", "eta": 17, "corsi": ["Matematica", "Fisica"], "promosso": True}
 
 # Scrivere dati su un file JSON
 try:
     with open("studente.json", "w", encoding="utf-8") as f:
-        json.dump(studente_dati, f, indent=4) # 'indent=4' per una formattazione leggibile
+        json.dump(studente_dati, f, indent=4)  # 'indent=4' per una formattazione leggibile
     print("\nFile 'studente.json' creato con successo.")
 except IOError as e:
     print(f"Errore di scrittura JSON: {e}")
@@ -111,11 +106,7 @@ Perfetto per dati tabellari, come quelli provenienti da un foglio di calcolo. Og
 import csv
 
 # Dati di esempio: una lista di liste (la prima è l'intestazione)
-voti_dati = [
-    ["Studente", "Matematica", "Italiano"],
-    ["Alice", "8", "7"],
-    ["Bob", "6", "9"]
-]
+voti_dati = [["Studente", "Matematica", "Italiano"], ["Alice", "8", "7"], ["Bob", "6", "9"]]
 
 # Scrivere dati su un file CSV
 try:

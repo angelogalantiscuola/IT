@@ -1,79 +1,99 @@
-# Pattern Comuni di Manipolazione delle Liste
+# I 4 Pattern Fondamentali sulle Liste
 
-Quando lavoriamo con i dati, ci troviamo spesso a ripetere le stesse operazioni logiche. Imparare a riconoscere e implementare questi "pattern" (schemi) ci rende programmatori più veloci ed efficaci.
+Nel lavoro quotidiano di manipolazione dati, il 90% delle operazioni si riconduce a quattro schemi logici ricorrenti (*pattern*). Imparare a riconoscerli permette di risolvere qualsiasi problema in modo rapido e ordinato.
 
-Consideriamo di avere la seguente lista di dati per tutti gli esempi:
+Prendiamo come riferimento questo catalogo per tutti gli esempi:
+
 ```python
-prodotti = [
-    {"id": 1, "nome": "Laptop", "prezzo": 1200, "categoria": "Elettronica"},
-    {"id": 2, "nome": "Tastiera", "prezzo": 80, "categoria": "Elettronica"},
-    {"id": 3, "nome": "Libro Python", "prezzo": 35, "categoria": "Libri"},
-    {"id": 4, "nome": "Scrivania", "prezzo": 200, "categoria": "Arredamento"},
+prodotti: list[dict] = [
+    {"id": 101, "nome": "Laptop", "prezzo": 1200.0, "categoria": "Informatica"},
+    {"id": 102, "nome": "Tastiera", "prezzo": 80.0, "categoria": "Informatica"},
+    {"id": 103, "nome": "Manuale Python", "prezzo": 35.0, "categoria": "Libri"},
+    {"id": 104, "nome": "Scrivania", "prezzo": 220.0, "categoria": "Arredamento"},
 ]
 ```
 
-### 1. Ricerca (Trovare un elemento)
-**Obiettivo:** Trovare un elemento specifico che soddisfa una condizione.
+---
 
-**Problema:** Trovare il prodotto con `id` uguale a 3.
-
-```python
-prodotto_cercato = None
-for prodotto in prodotti:
-    if prodotto["id"] == 3:
-        prodotto_cercato = prodotto
-        break # Trovato! Inutile continuare il ciclo.
-
-print(prodotto_cercato)
-# Output: {'id': 3, 'nome': 'Libro Python', 'prezzo': 35, 'categoria': 'Libri'}
-```
-
-### 2. Filtraggio (Selezionare un sottoinsieme)
-**Obiettivo:** Creare una nuova lista contenente solo gli elementi che soddisfano una condizione.
-
-**Problema:** Trovare tutti i prodotti della categoria "Elettronica".
+## 1. Pattern di Ricerca (Find)
+* **Obiettivo:** Trovare il **singolo elemento** che soddisfa un criterio univoco (es. cercare per ID).
 
 ```python
-prodotti_elettronici = [] # Inizializza una lista vuota
-for prodotto in prodotti:
-    if prodotto["categoria"] == "Elettronica":
-        prodotti_elettronici.append(prodotto)
+def trova_prodotto_per_id(prodotti: list[dict], id_cercato: int) -> dict | None:
+    """Restituisce il prodotto cercato oppure None se non trovato."""
+    for p in prodotti:
+        if p["id"] == id_cercato:
+            return p  # Trovato! Usciamo subito dalla funzione
+    return None
 
-print(prodotti_elettronici)
-# Output: [{'id': 1, ...}, {'id': 2, ...}]
+
+# Esempio
+risultato = trova_prodotto_per_id(prodotti, 103)
+print(risultato)  # {'id': 103, 'nome': 'Manuale Python', ...}
 ```
 
-### 3. Trasformazione (Mapping)
-**Obiettivo:** Creare una nuova lista trasformando ogni elemento della lista originale.
+---
 
-**Problema:** Creare una lista contenente solo i nomi di tutti i prodotti.
+## 2. Pattern di Filtraggio (Filter)
+* **Obiettivo:** Creare una **nuova lista** contenente solo gli elementi che soddisfano una data condizione (senza alterare la lista originale).
 
 ```python
-nomi_prodotti = []
-for prodotto in prodotti:
-    nomi_prodotti.append(prodotto["nome"])
+def filtra_per_categoria(prodotti: list[dict], categoria: str) -> list[dict]:
+    """Estrae solo i prodotti appartenenti alla categoria indicata."""
+    selezionati: list[dict] = []
+    for p in prodotti:
+        if p["categoria"].lower() == categoria.lower():
+            selezionati.append(p)
+    return selezionati
 
-print(nomi_prodotti)
-# Output: ['Laptop', 'Tastiera', 'Libro Python', 'Scrivania']
+
+# Esempio
+libri = filtra_per_categoria(prodotti, "Libri")
+print(libri)  # [{'id': 103, 'nome': 'Manuale Python', ...}]
 ```
 
-### 4. Aggregazione (Reducing)
-**Obiettivo:** Calcolare un singolo valore riassuntivo a partire da un'intera lista.
+---
 
-**Problema:** Calcolare il prezzo totale di tutti i prodotti in magazzino.
+## 3. Pattern di Trasformazione (Mapping)
+* **Obiettivo:** Creare una nuova lista trasformando o estraendo una proprietà specifica da ciascun elemento.
 
 ```python
-prezzo_totale = 0
-for prodotto in prodotti:
-    prezzo_totale += prodotto["prezzo"]
+def estrai_nomi_prodotti(prodotti: list[dict]) -> list[str]:
+    """Restituisce una lista di sole stringhe con i nomi dei prodotti."""
+    nomi: list[str] = []
+    for p in prodotti:
+        nomi.append(p["nome"])
+    return nomi
 
-print(f"Il valore totale del magazzino è: {prezzo_totale}€")
-# Output: Il valore totale del magazzino è: 1515€
 
-# Si può anche fare in modo più "Pythonico" usando la trasformazione
-# e la funzione sum()
-prezzi = [prodotto["prezzo"] for prodotto in prodotti] # Questo si chiama "list comprehension"
-prezzo_totale_pythonico = sum(prezzi)
-print(f"Valore totale (modo Pythonico): {prezzo_totale_pythonico}€")
+# Esempio
+lista_nomi = estrai_nomi_prodotti(prodotti)
+print(lista_nomi)  # ['Laptop', 'Tastiera', 'Manuale Python', 'Scrivania']
 ```
-Questi quattro pattern sono i mattoni fondamentali per quasi ogni operazione di analisi e manipolazione dei dati.
+
+---
+
+## 4. Pattern di Aggregazione (Reduce)
+* **Obiettivo:** Elaborare l'intera lista per calcolare un **singolo valore di sintesi** (totale, media, conteggio, massimo).
+
+```python
+def calcola_valore_magazzino(prodotti: list[dict]) -> float:
+    """Calcola la somma complessiva dei prezzi di tutti i prodotti."""
+    totale: float = 0.0
+    for p in prodotti:
+        totale += p["prezzo"]
+    return totale
+
+
+# Esempio
+valore_totale = calcola_valore_magazzino(prodotti)
+print(f"Valore complessivo magazzino: {valore_totale:.2f}€")  # 1535.00€
+```
+
+---
+
+## 🎯 Sintesi dei 4 Pattern:
+1. **Ricerca:** Da lista $\longrightarrow$ a un singolo elemento (o `None`).
+2. **Filtraggio:** Da lista $\longrightarrow$ a una sotto-lista con meno elementi.
+3. **Mappatura:** Da lista di record $\longrightarrow$ a una nuova lista della stessa lunghezza con dati trasformati.
+4. **Aggregazione:** Da lista $\longrightarrow$ a un singolo valore scalare (numero o testo).

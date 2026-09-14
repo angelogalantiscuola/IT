@@ -1,28 +1,24 @@
-# Mappa Concettuale: Logica di Programmazione e Manipolazione Dati
-
-Questa mappa delinea il percorso che seguiremo per imparare a "pensare da programmatori", trasformando problemi reali in soluzioni software attraverso la manipolazione efficace dei dati.
+# Mappa Concettuale: Logica e Manipolazione Dati
 
 ```mermaid
-graph TD
-    A[Problem<br>Solving] --> B[Scomporre<br>il Problema];
-    A --> C[Scegliere la<br>Struttura Dati];
-    C --> C1[Lista];
-    C --> C2[Dizionario];
+flowchart LR
+    subgraph S1 [1. Metodo & Strutture]
+        direction TB
+        PROBL[Scomposizione del Problema] --> STRUCT[Scelta Strutture Dati: Liste vs Dizionari]
+        STRUCT --> CONTR[Definizione Firme e Contratti]
+    end
 
-    B --> D[Pattern di<br>Manipolazione Dati];
+    subgraph S2 [2. Pattern di Elaborazione]
+        direction TB
+        LST_PAT[Pattern Liste: Ricerca, Filtro, Mappa, Riduci] --> DICT_PAT[Pattern Dizionari: Frequenze e Raggruppamento]
+        DICT_PAT --> PURE_FNC[Funzioni Pure senza Side-Effects]
+    end
 
-    D --> E[Pattern<br>su Liste];
-    E --> E1[Ricerca];
-    E --> E2[Filtraggio];
-    E --> E3[Trasformazione<br>Mapping];
-    E --> E4[Aggregazione<br>Reducing];
+    subgraph S3 [3. Pipeline su Dati Reali]
+        direction TB
+        LOAD[Caricamento da File CSV o JSON] --> PIPELINE[Elaborazione Modulare in Sequenza]
+        PIPELINE --> REPORT[Generazione Report Finale Formattato]
+    end
 
-    D --> F[Pattern<br>su Dizionari];
-    F --> F1[Conteggio<br>Frequenze];
-    F --> F2[Raggruppamento<br>Dati];
-    F --> F3[Indicizzazione];
-
-    D --> G[Applicazione su<br>Dati Reali];
-    G --> G1[Lettura da File<br>CSV/JSON];
-    G --> G2[Creazione di<br>Report];
+    S1 --> S2 --> S3
 ```

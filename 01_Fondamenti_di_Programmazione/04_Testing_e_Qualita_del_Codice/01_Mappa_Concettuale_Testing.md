@@ -1,25 +1,24 @@
-# Mappa Concettuale: Testing e Qualità del Codice
-
-Questa mappa riassume i concetti chiave che affronteremo in questo modulo, introducendo il testing automatico come pratica fondamentale per uno sviluppatore professionista.
+# Mappa Concettuale: Testing, Verifica e Code Review
 
 ```mermaid
-graph TD
-    A[Testing<br>del Codice] --> B[Perché Scrivere<br>Test?];
-    A --> C[Unit Test];
-    A --> D[Pytest];
+flowchart LR
+    subgraph S1 [1. Strategia di Verifica]
+        direction TB
+        MAN[Limiti del test manuale con print] --> MATR[Matrice dei Casi di Prova]
+        MATR --> EDGES[Casi normali, limite e anomali]
+    end
 
-    B --> B1[Limiti del Testing<br>Manuale con print];
-    B --> B2[Vantaggi del Testing<br>Automatico];
-    B2 --> B2a[Prevenzione delle<br>Regressioni];
-    B2 --> B2b[Documentazione<br>Vivente];
-    B2 --> B2c[Migliore<br>Progettazione];
+    subgraph S2 [2. Pytest in Azione]
+        direction TB
+        SETUP[Installazione pytest nel venv] --> CONV[Convenzioni: file test_*.py]
+        CONV --> ASSRT[Istruzione assert e report errori]
+    end
 
-    C --> C1[Testare Piccole<br>Unità Isolate];
-    C1 --> C1a[Una Funzione è<br>un'Unità Perfetta];
+    subgraph S3 [3. Code Review Attiva]
+        direction TB
+        AUDIT[Analisi critica del codice] --> TRAPS[Caccia ai tranelli e allucinazioni]
+        TRAPS --> REFACTOR[Correzione e rifinitura con Ruff]
+    end
 
-    D --> D1[Installazione e<br>Configurazione];
-    D --> D2[Convenzioni di<br>Pytest];
-    D --> D3[L'istruzione<br>'assert'];
-    D --> D4[Eseguire i<br>Test];
-
+    S1 --> S2 --> S3
 ```

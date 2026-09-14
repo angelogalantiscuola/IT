@@ -1,16 +1,23 @@
-# Mappa Concettuale: Strumenti dello Sviluppatore
-
-Questa mappa riassume i principali strumenti che ogni sviluppatore deve conoscere. Affronteremo ciascuno di questi argomenti nelle prossime lezioni.
+# Mappa Concettuale: Strumenti dello Sviluppatore e Metodo
 
 ```mermaid
-graph TD
-    A[Strumenti dello<br>Sviluppatore] --> B[La Shell<br>e Bash];
-    A --> C[Controllo di Versione<br>con Git];
-    A --> D[Ambiente di<br>Sviluppo IDE];
-    A --> E[Ambienti Virtuali<br>Python];
+flowchart LR
+    subgraph S1 [1. Ambiente e Versioning]
+        direction TB
+        BASH[Shell Bash su WSL] --> VSC[Editor VS Code]
+        VSC --> GIT[Git & GitHub: Commit e Push]
+    end
 
-    B --> B1[Comandi<br>Essenziali];
-    C --> C1[Repository: Clonare,<br>Push, Pull];
-    D --> D1[VSCode];
-    D --> D2[WSL e SSH];
+    subgraph S2 [2. Qualità Automatica]
+        direction TB
+        RUFF[Ruff Linter: correzione errori] --> STYLE[Ruff Formatter: stile on-save]
+    end
+
+    subgraph S3 [3. Metodo con l'IA]
+        direction TB
+        ROLE[Ruolo: Pilota vs Copilota] --> SPEC[Specifiche Tecniche Chiare]
+        SPEC --> DETECT[Detective: Code Review attiva]
+    end
+
+    S1 --> S2 --> S3
 ```

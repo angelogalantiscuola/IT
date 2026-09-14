@@ -1,39 +1,36 @@
-# Piano di Lavoro: Modulo 03 - Basi della Programmazione Python
+# Piano di Lavoro: Modulo 03 - Dati, Funzioni, Contratti e Modularità
 
 ## 1. Obiettivi di Apprendimento
 
 ### Prerequisiti
-*   Completamento con successo dei Moduli 01 e 02.
-*   Familiarità con l'ambiente di sviluppo (VS Code, terminale, Git).
+- Modulo 01 (variabili, if, for su liste, while) e Modulo 02 (Git, VS Code, Ruff).
 
 ### Competenze in Uscita
 Al termine di questo modulo, lo studente sarà in grado di:
-*   Utilizzare le principali strutture dati di Python: liste e dizionari.
-*   Scrivere codice modulare progettando e utilizzando funzioni con parametri e valori di ritorno.
-*   Leggere dati da file di testo e scrivere dati su di essi.
-*   Gestire gli errori comuni (es. input non valido) in modo robusto tramite `try...except`.
-*   Comprendere la differenza tra moduli e package per l'organizzazione del codice.
+- Modellare entità complesse tramite **dizionari** e dataset tabellari tramite **liste di dizionari**.
+- Progettare funzioni come **contratti software** (Type Hints, docstring, parametri, valori di ritorno puri).
+- Applicare la **scomposizione Top-Down a 3 strati** (separare I/O utente, logica di calcolo pura e orchestrazione nel `main`).
+- Comprendere la **mutabilità** in memoria ed evitare modifiche accidentali ai dati di partenza (*side-effects*).
+- Gestire errori e imprevisti in modo controllato tramite blocchi `try...except...finally`.
+- Salvare e leggere dati strutturati su file **JSON** e **CSV**.
+- Organizzare il codice in **moduli** e **package**, installare librerie con **`pip`** e gestire l'ambiente isolato con **`venv`**.
 
-## 2. Contenuti Teorici
-Le lezioni di riferimento per questo modulo sono:
+---
 
-*   `02_Variabili_Tipi_e_Strutture_Dati.md`: Focus su Type Hinting, liste e dizionari.
-*   `03_Funzioni_e_Progettazione_Modulare.md`: Definizione di funzioni, parametri, `return`, approccio Top-Down.
-*   `04_Gestione_dei_File.md`: Lavorare con file di testo e formati strutturati (JSON, CSV).
-*   `05_Gestione_delle_Eccezioni.md`: Il blocco `try...except...finally`.
-*   `06_Organizzazione_del_Codice_Moduli_e_Package.md`: Basi per la strutturazione di progetti complessi.
+## 2. Contenuti Teorici e Metodologici
 
-## 3. Attività Pratiche / Esercitazioni
-Gli esercizi per questo modulo sono progettati per aumentare progressivamente di complessità, richiedendo l'integrazione di più concetti. Le attività pratiche si concentrano su:
-*   Manipolazione di liste e dizionari per gestire collezioni di dati.
-*   Refactoring di codice esistente attraverso la creazione di funzioni modulari.
-*   Lettura e scrittura su file di testo per garantire la persistenza dei dati.
-*   Implementazione della gestione delle eccezioni per creare programmi robusti.
+- **Lezione 01:** `01_Mappa_Concettuale_Modulo_03.md`
+- **Lezione 02:** `02_Dizionari_e_Dati_Strutturati.md` (Dizionari, Liste di Dizionari, Type Hinting).
+- **Lezione 03:** `03_Funzioni_e_Contratti_Software.md` (Firme, Docstring, Return vs Print, Top-Down).
+- **Lezione 04:** `04_Metodo_di_Scomposizione_TopDown.md` (Metodologia a 3 strati: I/O, Cervello, Main).
+- **Lezione 05:** `05_Mutabilita_e_Dati_Protetti.md` (Modifiche in-place, copie, rispetto dei dati originali).
+- **Lezione 06:** `06_Gestione_delle_Eccezioni.md` (Try / Except / Finally).
+- **Lezione 07:** `07_Gestione_dei_File.md` (Persistenza su JSON e CSV).
+- **Lezione 08:** `08_Moduli_Package_Pip_e_Virtualenv.md` (Moduli, Package `__init__.py`, Pip e Venv).
 
-## 4. Metodologie di Valutazione
-*   Correzione individuale degli esercizi, con particolare attenzione alla qualità e organizzazione del codice.
-*   Un breve test scritto o un quiz per verificare la comprensione dei concetti teorici (es. differenza tra lista e dizionario, scopo di una funzione).
-*   Valutazione di un esercizio riepilogativo come "mini-progetto" che riassume le competenze del modulo.
+---
 
-## 5. Strumenti Necessari
-*   Tutti gli strumenti configurati nel Modulo 02.
+## 3. Metodologie di Valutazione
+- Valutazione della scomposizione: dato un problema reale, verificare la corretta separazione tra funzioni di I/O e funzioni di logica pura.
+- Analisi del codice: assenza di `print` dentro le funzioni di calcolo e rispetto della mutabilità dei dati.
+- Creazione e attivazione corretta di un ambiente virtuale `venv` con installazione di pacchetti via `pip`.

@@ -18,7 +18,7 @@ Per gestire le eccezioni, Python usa il blocco `try...except`.
 try:
     # Codice che potrebbe causare un errore
     eta_str = input("Inserisci la tua età: ")
-    eta = int(eta_str) # Questa riga può fallire se l'input non è un numero
+    eta = int(eta_str)  # Questa riga può fallire se l'input non è un numero
     print(f"Tra un anno avrai {eta + 1} anni.")
 
 except ValueError:
@@ -51,7 +51,7 @@ except ZeroDivisionError:
 Il blocco **`finally`** contiene codice che viene eseguito **sempre**, indipendentemente dal fatto che si sia verificata un'eccezione o meno. È fondamentale per le operazioni di "pulizia", come chiudere una connessione o un file.
 
 ```python
-file = None # Inizializziamo la variabile
+file = None  # Inizializziamo la variabile
 try:
     file = open("dati.txt", "r")
     contenuto = file.read()
@@ -60,6 +60,6 @@ except FileNotFoundError:
     print("Il file non esiste.")
 finally:
     if file:
-        file.close() # Questa operazione viene eseguita sempre
+        file.close()  # Questa operazione viene eseguita sempre
         print("File chiuso correttamente.")
 ```

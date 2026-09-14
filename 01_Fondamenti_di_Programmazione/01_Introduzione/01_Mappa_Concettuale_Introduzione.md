@@ -1,21 +1,24 @@
-# Mappa Concettuale: Introduzione alla Programmazione
-
-Questa mappa riassume visivamente i concetti chiave che affronteremo in questa lezione introduttiva.
+# Mappa Concettuale: Fondamenti e Modelli Mentali
 
 ```mermaid
-graph TD
-    A[Introduzione alla<br>Programmazione] --> B[Cos'è la<br>Programmazione?];
-    A --> C[I Blocchi<br>Fondamentali];
-    A --> D[Il Contesto<br>Generale];
+flowchart LR
+    subgraph S1 [1. Memoria e Dati]
+        direction TB
+        V_PRIM[Variabili Primitive: int, float, str, bool] --> TYPE[Type Hinting esplicito]
+        TYPE --> LIST_B[Liste a scomparti indicizzati]
+    end
 
-    C --> C1[Variabili];
-    C --> C2[Istruzioni];
-    C --> C3[Controllo del<br>Flusso];
-    C3 --> C3a[Selezione<br>if/else];
-    C3 --> C3b[Iterazione<br>cicli];
+    subgraph S2 [2. Controllo del Flusso]
+        direction TB
+        COND[Decisioni: if / elif / else] --> FOR_L[Ciclo for su collezioni]
+        FOR_L --> WHILE_L[Ciclo while condizionale]
+    end
 
-    D --> D1[Paradigmi di<br>Programmazione];
-    D1 --> D1a[Imperativo vs<br>Dichiarativo];
-    
-    D --> D2[Livelli di<br>Astrazione];
-    D2 --> D2a[Basso Livello vs<br>Alto Livello];
+    subgraph S3 [3. Modello I-E-O]
+        direction TB
+        INP[Input utente con casting] --> ELAB[Elaborazione & Trasformazione]
+        ELAB --> OUT[Output formattato con f-string]
+    end
+
+    S1 --> S2 --> S3
+```
