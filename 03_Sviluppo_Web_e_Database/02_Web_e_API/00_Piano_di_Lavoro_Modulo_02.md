@@ -22,7 +22,7 @@ Al termine di questo modulo, lo studente sarà in grado di:
 
 ## 2. Contenuti Teorici
 
-Questo modulo fornisce il vocabolario e i concetti essenziali per capire come le applicazioni comunicano su Internet. I file si troveranno nella sottocartella `lessons/`.
+Questo modulo fornisce il vocabolario e i concetti essenziali per capire come le applicazioni comunicano su Internet.
 
 1.  **Il Protocollo del Web**:
 
@@ -34,11 +34,11 @@ Questo modulo fornisce il vocabolario e i concetti essenziali per capire come le
     - `04_API.md`: Definizione di API e Web API.
     - `05_REST.md`: I principi dell'architettura REST.
     - `06_Endpoint.md`: Cosa sono e come si usano gli endpoint.
-    - `07_WSGI_ASGI.md`: Il ponte tra il server web e l'applicazione Python.
+    - `07_Consumare_API_con_Python_Requests.md`: Scrivere script Python per interagire con API REST.
+    - `08_WSGI_ASGI.md`: Il ponte tra il server web e l'applicazione Python.
 
 3.  **Concetti Moderni**:
-    - `08_Asynchronous_Code.md`: Introduzione al concetto di asincronia.
-    - `09_Web_Framework.md`: A cosa serve un web framework (introduzione a Flask/FastAPI).
+    - `09_Il_Ciclo_di_Vita_di_una_Richiesta_Web.md`: Come una richiesta HTTP viene elaborata dall'inizio alla fine.
 
 ## 3. Attività Pratiche / Esercitazioni
 

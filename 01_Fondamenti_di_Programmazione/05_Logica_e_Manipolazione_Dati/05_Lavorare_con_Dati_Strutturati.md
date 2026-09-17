@@ -89,7 +89,10 @@ def stampa_report_vendite(incasso: float, pezzi_libri: int, top_ordine: dict | N
     print("       REPORT COMMERCIALE VENDITE         ")
     print("==========================================")
     print(f"Fatturato Complessivo:       {incasso:.2f}€")
-    print(f"Totale Libri Venduti:        {pieces_libri} copie" if (pieces_libri := pezzi_libri) else "Nessun libro")
+    if pezzi_libri > 0:
+        print(f"Totale Libri Venduti:        {pezzi_libri} copie")
+    else:
+        print("Totale Libri Venduti:        Nessun libro")
 
     if top_ordine:
         ricavo = top_ordine["quantita"] * top_ordine["prezzo_unitario"]

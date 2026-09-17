@@ -21,29 +21,29 @@ Al termine di questo modulo, lo studente sarà in grado di:
 Le lezioni di questo modulo costruiscono una solida base teorica e pratica per tutto ciò che riguarda i dati. Il percorso logico è il seguente:
 
 1.  **Introduzione**:
-    *   `db/fondamenti_di_database.md`: Cos'è un database e perché è fondamentale.
-    *   `db/dbms.md`: Il ruolo e le responsabilità del DBMS (ACID, concorrenza, sicurezza).
+    *   `02_Fondamenti_di_Database.md`: Cos'è un database e perché è fondamentale.
+    *   `03_DBMS.md`: Il ruolo e le responsabilità del DBMS (ACID, concorrenza, sicurezza).
 
 2.  **Progettazione del Database (Design-First)**:
-    *   `db/progettazione_del_database/progettazione_del_database.md`: Panoramica delle fasi di progettazione.
-    *   `db/progettazione_del_database/analisi_dei_requisiti.md`: Come raccogliere e analizzare le necessità.
-    *   `db/progettazione_del_database/diagrammi_er.md`: Modellazione concettuale con i diagrammi Entità-Relazione.
-    *   `db/progettazione_del_database/normalizzazione.md`: Eliminare le ridondanze e migliorare l'integrità.
-    *   `db/progettazione_del_database/progettazione_logica.md`: Dallo schema ER allo schema relazionale.
+    *   `04_Progettazione_del_Database.md`: Panoramica delle fasi di progettazione.
+    *   `05_Analisi_dei_Requisiti.md`: Come raccogliere e analizzare le necessità.
+    *   `06_Diagrammi_ER.md`: Modellazione concettuale con i diagrammi Entità-Relazione.
+    *   `07_Normalizzazione.md`: Eliminare le ridondanze e migliorare l'integrità.
+    *   `06a_Da_ER_a_SQL_La_Guida_Pratica.md`: Dallo schema ER allo schema relazionale.
 
 3.  **Il Modello Relazionale**:
-    *   `db/modello_relazionale/modello_relazionale.md`: Tabelle, tuple e attributi.
-    *   `db/modello_relazionale/chiavi_primaria_esterna.md`: Le colonne che creano le relazioni.
-    *   `db/modello_relazionale/vincoli_di_integrita.md`: Le regole che garantiscono la coerenza dei dati.
+    *   `08_Modello_Relazionale.md`: Tabelle, tuple e attributi.
+    *   `09_Chiavi_Primaria_Esterna.md`: Le colonne che creano le relazioni.
+    *   `10_Vincoli_di_Integrita.md`: Le regole che garantiscono la coerenza dei dati.
 
 4.  **Interrogazione e Manipolazione (SQL)**:
-    *   `db/sql/sql.md`: Il linguaggio per parlare con i database (DDL, DML, `SELECT`, `WHERE`, `GROUP BY`, `JOIN`).
-    *   `db/sql/sql_in_python.md`: Come eseguire query SQL da un'applicazione Python.
+    *   `11_SQL.md`: Il linguaggio per parlare con i database (DDL, DML, `SELECT`, `WHERE`, `GROUP BY`, `JOIN`).
+    *   `12_SQL_in_Python.md`: Come eseguire query SQL da un'applicazione Python.
 
 5.  **Sicurezza**:
-    *   `db/sicurezza_del_database/nozioni_di_sicurezza.md`: Panoramica delle principali minacce e contromisure.
-    *   `db/sicurezza_del_database/gestione_utenti_permessi.md`: Controllare chi può fare cosa.
-    *   `db/sicurezza_del_database/sql_injection.md`: Conoscere e prevenire una delle vulnerabilità più critiche.
+    *   `14_Nozioni_di_Sicurezza.md`: Panoramica delle principali minacce e contromisure.
+    *   `15_Gestione_Utenti_Permessi.md`: Controllare chi può fare cosa.
+    *   `16_SQL_Injection.md`: Conoscere e prevenire una delle vulnerabilità più critiche.
 
 ## 3. Attività Pratiche / Esercitazioni
 

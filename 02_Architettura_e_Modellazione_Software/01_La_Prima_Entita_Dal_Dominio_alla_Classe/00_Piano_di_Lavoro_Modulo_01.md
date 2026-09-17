@@ -21,9 +21,9 @@ Al termine di questo modulo, lo studente sarà in grado di:
 ## 2. Contenuti Teorici e Metodologici
 
 - **Lezione 01:** `01_Mappa_Concettuale_Modulo_01.md`
-- **Lezione 02:** `02_Dall_Entita_alla_Classe_UML_ER.md`
+- **Lezione 02:** `02_Dall_Entita_alla_Classe_Tradizionale.md`
   - Il concetto di Entità; il modello ER con Chiave Primaria (PK); la sintassi `class`, `__init__`, `self` e le istanze in Python.
-- **Lezione 03:** `03_Proteggere_lo_Stato_Properties_Dunder.md`
+- **Lezione 03:** `03_Evoluzione_Moderna_Dataclass.md`
   - Perché proteggere i dati; attributi privati (`__`); `@property` e setter con logica di validazione; metodi `__str__` e `__repr__`.
 
 ---
