@@ -17,6 +17,28 @@ Un **linter** analizza il tuo codice *mentre lo scrivi*, alla ricerca di errori,
 * Nomi di variabili o funzioni scritti male.
 * Errori di sintassi evidenti prima del lancio.
 
+### Perché si chiama "linter"?
+
+Il termine deriva da **lint**, una parola inglese che indica i pelucchi sui vestiti. Nel **1979**, Stephen C. Johnson chiamò così il primo strumento di analisi statica per il C, perché "spazzolava" il codice alla ricerca dei piccoli difetti.
+
+Oggi un **linter** analizza il codice senza eseguirlo e segnala problemi come variabili inutilizzate, nomi non definiti e importazioni superflue.
+
+### Esempio pratico in Python
+
+```python
+def saluta(nome):
+    messaggio = f"Ciao, {nome}!"
+    print(messagio)  # nome scritto in modo diverso
+```
+
+Ruff segnala il nome non definito:
+
+```text
+F821 Undefined name `messagio`
+```
+
+È sufficiente correggere `messagio` in `messaggio`, senza dover prima eseguire il programma.
+
 ---
 
 ## 2. Il Formatter: L'Impaginatore Automatico

@@ -2,88 +2,38 @@
 
 L'avvento dell'Intelligenza Artificiale (come GitHub Copilot o i modelli LLM) ha trasformato radicalmente il lavoro del programmatore. Oggi scrivere codice è diventato velocissimo, ma questo comporta una nuova e fondamentale responsabilità: **saper guidare l'IA e verificare criticamente tutto ciò che produce.**
 
----
+## Metodologia AI: il Pilota e il Detective del Codice
 
-## 1. La Regola Fondamentale: Pilota vs Copilota
+L'Intelligenza Artificiale rende più veloce la scrittura del codice, ma non sostituisce la responsabilità del programmatore: ogni risultato va compreso e verificato.
 
-Immagina di essere su un aereo:
-* **Tu sei il Pilota:** Hai in mano i comandi, decidi la rotta, conosci la destinazione e sei il solo e unico responsabile della sicurezza del volo.
-* **L'IA è il Copilota:** È un assistente instancabile che ti aiuta nelle operazioni ripetitive, ti suggerisce opzioni e consulta i manuali per te, ma **non decide mai cosa fare**.
+## 1. Tu sei il Pilota
 
-> **Regola d'Oro:** La responsabilità del codice è **sempre e solo tua**. Se un programma contiene un bug o cancella dei dati, non puoi dire *"è colpa dell'IA"*. Se accetti una riga di codice, devi essere in grado di spiegarla riga per riga a voce.
+L'IA è un **copilota**: suggerisce codice, propone alternative e aiuta nelle operazioni ripetitive. Tu, invece, definisci il problema, scegli la soluzione e approvi il risultato.
 
-```
-                    ┌────────────────────────────────────────┐
-                    │      TU (Il Pilota / Architetto)       │
-                    │  - Definisci il problema               │
-                    │  - Stabilisci cosa entra e cosa esce   │
-                    │  - Verifichi e approvi il codice       │
-                    └────────────────────────────────────────┘
-                                        ▲
-                                        │  Prompt chiari & Revisione
-                                        ▼
-                    ┌────────────────────────────────────────┐
-                    │       L'IA (Il Copilota / Aiutante)    │
-                    │  - Suggerisce la sintassi              │
-                    │  - Evita lavoro ripetitivo (boilerplate)│
-                    │  - Propone alternative di scrittura    │
-                    └────────────────────────────────────────┘
-```
+> **Regola d'oro:** se accetti una riga di codice, devi essere in grado di spiegarla. Un bug o una perdita di dati restano responsabilità tua, non dell'IA.
 
----
+## 2. Scrivi una specifica chiara
 
-## 2. Come Parlare all'IA: La Specifica Tecnica
+L'IA non legge nel pensiero. Un prompt utile indica:
 
-L'IA non sa leggere nel pensiero. Se le fai una richiesta generica come *"calcolami lo sconto"*, l'IA inventerà regole arbitrarie.
+1. quali dati riceve in ingresso;
+2. quale regola deve applicare;
+3. cosa deve restituire;
+4. quali casi anomali deve gestire.
 
-Per ottenere codice di qualità devi fornirle una **specifica tecnica non ambigua**:
-1. **Quali dati riceve in ingresso?** (Tipi e significato).
-2. **Qual è la regola precisa di calcolo?**
-3. **Cosa deve restituire in uscita?**
-4. **Quali casi anomali deve gestire?**
+### Esempio
 
-### Esempio a confronto:
-- ❌ **Prompt vago:** *"Fai una funzione per i biglietti del cinema."*
-- ✅ **Specifica tecnica precisa:** 
-  > *"Scrivi una funzione Python `calcola_biglietto(eta: int, giorno: str) -> float` che calcola il prezzo: tariffa base 8.50€, se l'età è minore di 14 o maggiore di 65 anni applica uno sconto del 30%, se il giorno è 'Mercoledì' tariffa fissa a 5.00€ per tutti. Se l'età è minore di 0, solleva un ValueError."*
+- ❌ **Prompt vago:** «Fai una funzione per i biglietti del cinema.»
+- ✅ **Prompt preciso:** «Scrivi una funzione Python `calcola_biglietto(eta: int, giorno: str) -> float`. Il prezzo base è 8.50 euro; sotto i 14 o sopra i 65 anni applica uno sconto del 30%; il mercoledì il prezzo è 5.00 euro per tutti; per un'età negativa solleva `ValueError`.»
 
----
+## 3. Diventa Detective del Codice
 
-## 3. Il Metodo del "Detective del Codice" (Code Review)
+Il codice generato può sembrare corretto e contenere comunque errori. Prima di accettarlo, verifica:
 
-I modelli di intelligenza artificiale non "ragionano", ma generano testo in base a probabilità statistiche. Per questo motivo possono generare **allucinazioni** o codice che sembra perfetto a prima vista ma nasconde trappole logiche.
+1. **Rispetta il contratto?** Gli input e il valore restituito sono quelli richiesti?
+2. **Gestisce i casi limite?** Cosa succede con una lista vuota, uno zero o un valore negativo?
+3. **È comprensibile?** Sai spiegare ogni riga? Usa variabili esterne o contiene codice inutile?
 
-Prima di premere `Tab` per accettare un suggerimento, attiva la modalità **Detective** e poniti queste 3 domande:
+## In sintesi
 
-```
-┌────────────────────────────────────────────────────────────────────────────┐
-│                  LE 3 DOMANDE DEL DETECTIVE DEL CODICE                     │
-├────────────────────────────────────────────────────────────────────────────┤
-│ 1. RISPETTA IL CONTRATTO?                                                  │
-│    I tipi di input e il valore restituito sono esattamente quelli richiesti?│
-├────────────────────────────────────────────────────────────────────────────┤
-│ 2. HA GESTITO I CASI STRANI?                                               │
-│    Cosa succede se la lista è vuota, il numero è zero o negativo?          │
-├────────────────────────────────────────────────────────────────────────────┤
-│ 3. CI SONO TRAPPOLE O COSE INUTILI?                                        │
-│    Il codice tocca variabili esterne senza permesso? Ci sono righe oscure  │
-│    che non so spiegare?                                                    │
-└────────────────────────────────────────────────────────────────────────────┘
-```
-
----
-
-## 4. Gli Anti-Pattern: Cosa NON Fare Mai
-
-1. **Premere `Tab` a raffica:** Accettare codice senza averlo letto è il modo più rapido per riempire il progetto di bug incomprensibili.
-2. **Incollare il testo del compito per farsi dare la soluzione completa:** In questo modo non alleni la mente a scomporre il problema e ti troverai bloccato alla prima verifica in classe o colloquio di lavoro.
-3. **Chiedere "correggi l'errore" senza capire il perché:** Quando un programma fallisce, chiedi all'IA: *"Qual è la causa di questo messaggio di errore?"*, così impari a fare debug in autonomia.
-
----
-
-## 5. Sintesi del Flusso di Lavoro Moderno
-
-```
-1. PENSA & SCOMPONI  ──>  2. SCRIVI IL CONTRATTO  ──>  3. SFRUTTA L'IA  ──>  4. FAI LA REVIEW (Detective)
-   (Su carta o mente)        (Firme, Tipi, Docstring)      (Genera bozza)       (Verifica e correggi con Ruff)
-```
+**Pensa e scomponi il problema → scrivi una specifica → usa l'IA per una bozza → verifica e correggi il codice.**
