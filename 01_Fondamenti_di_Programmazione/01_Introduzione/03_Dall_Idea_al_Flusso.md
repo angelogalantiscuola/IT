@@ -26,13 +26,17 @@ Qualsiasi problema software può essere diviso in tre blocchi logici:
 > *"Abbiamo una lista di scontrini di un viaggio. Vogliamo calcolare la spesa totale, verificare se abbiamo superato il budget di 150€ e avvisare l'utente."*
 
 ### Passo 1: Individuare l'INPUT
-- Una lista di numeri decimali rappresentanti le spese (`spese: list[float]`).
+- Una lista inizialmente vuota che conterrà i numeri decimali delle spese (`spese: list[float] = []`).
+- Il numero predefinito di scontrini da inserire (`numero_scontrini: int = 4`).
 - Una soglia numerica di budget (`budget: float = 150.0`).
+- Gli importi inseriti dall'utente tramite `input`.
 
 ### Passo 2: Progettare l'ELABORAZIONE (I Passaggi Logici)
-1. Creo una variabile `totale = 0.0`.
-2. Scorro ogni spesa nella lista e la sommo a `totale`.
-3. Confronto: `totale > budget`?
+1. Creo una lista vuota `spese = []`.
+2. Ripeto per il numero predefinito di scontrini: chiedo all'utente l'importo e lo aggiungo alla lista.
+3. Creo una variabile `totale = 0.0`.
+4. Scorro ogni spesa nella lista e la sommo a `totale`.
+5. Confronto: `totale > budget`?
    - Se sì: calcolo di quanto abbiamo sforato (`totale - budget`).
 
 ### Passo 3: Definire l'OUTPUT
@@ -48,8 +52,13 @@ Solo dopo aver chiarito la tabella I-E-O passiamo al codice Python:
 
 ```python
 # 1. INPUT
-spese: list[float] = [34.50, 12.00, 89.90, 45.00]
+spese: list[float] = []
+numero_scontrini: int = 4
 budget: float = 150.0
+
+for numero in range(numero_scontrini):
+    spesa: float = float(input(f"Inserisci l'importo dello scontrino {numero + 1}: "))
+    spese.append(spesa)
 
 # 2. ELABORAZIONE
 totale_speso: float = 0.0
