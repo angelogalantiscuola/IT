@@ -55,7 +55,7 @@ print(catalogo_raggruppato["Informatica"])
 
 ---
 
-## 3. Indicizzazione per Accesso Istantaneo ($O(1)$)
+## 3. Indicizzazione per Accesso Istantaneo
 * **Obiettivo:** Trasformare una lista in un dizionario indice (`id -> record`) per evitare di dover scorrere tutta la lista ogni volta con un ciclo `for`.
 
 ```python
