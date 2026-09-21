@@ -97,19 +97,56 @@ print(f"Totale da pagare: {prezzo:.2f}€")  # Stampa: 4.50€
 ## 5. Il Controllo del Flusso
 
 ### a) Prendere Decisioni (`if / elif / else`)
-Esegue un blocco di codice solo se una condizione logica è vera.
+Un programma spesso deve scegliere quale strada seguire. Una condizione logica e' una domanda a cui Python puo' rispondere solo `True` (vero) o `False` (falso).
+
+`if`, `elif` e `else` formano **un'unica catena di scelta**:
+
+- `if` pone la prima domanda.
+- `elif` significa "altrimenti, se...": e' collegato all'`if` precedente e viene controllato solo se le condizioni prima di lui erano false.
+- `else` significa "in tutti gli altri casi".
+
+Python esegue **un solo blocco** della catena. Appena trova una condizione vera, esegue quel blocco e salta tutti quelli successivi.
 
 ```python
-if eta >= 18:
-    print("Accesso consentito: sei maggiorenne.")
-elif eta >= 14:
-    print("Accesso consentito con limitazioni (minorenne).")
+voto: int = 9
+
+if voto >= 8:
+    print("Ottimo")
+elif voto >= 6:
+    print("Promosso")
 else:
-    print("Accesso negato.")
+    print("Da recuperare")
 ```
 
+Con `voto = 9` viene stampato solo `Ottimo`: anche se `voto >= 6` e' vera, l'`elif` non viene piu' controllato, perche' il primo `if` ha gia' trovato il caso giusto.
+
+### `if / elif / else` oppure due `if`?
+
+Usa `if / elif / else` quando le alternative sono **mutuamente esclusive**: vuoi scegliere **un solo caso**.
+
+Due `if` scritti uno dopo l'altro, invece, sono due decisioni indipendenti. Python controlla entrambe le condizioni, quindi possono essere vere ed eseguire entrambi i blocchi:
+
+```python
+voto: int = 9
+
+if voto >= 8:
+    print("Ottimo")
+
+if voto >= 6:
+    print("Promosso")
+```
+
+Con `voto = 9` questo programma stampa:
+
+```text
+Ottimo
+Promosso
+```
+
+> **Regola pratica:** usa una catena `if / elif / else` per scegliere una sola risposta. Usa piu' `if` separati per controllare condizioni indipendenti che possono essere vere insieme.
+
 ### b) Scorrere le Liste con il ciclo `for`
-In Python, il ciclo `for` scorre una lista in modo naturale, prendendo un elemento alla volta:
+Un ciclo serve per ripetere un'azione. In Python, il ciclo `for` scorre una lista prendendo un elemento alla volta: esegue il blocco indentato una volta per ogni elemento, poi termina quando la lista e' finita.
 
 ```python
 studenti: list[str] = ["Alice", "Bob", "Carla"]
@@ -119,15 +156,34 @@ for studente in studenti:
     print(f"Benvenuto/a {studente}!")
 ```
 
-Se invece dobbiamo ripetere un'azione per un numero prefissato di volte, usiamo `range()`:
+Python esegue quindi il `print()` tre volte, una per ciascuno studente:
+
+```text
+Benvenuto/a Alice!
+Benvenuto/a Bob!
+Benvenuto/a Carla!
+```
+
+Se dobbiamo invece ripetere un'azione un numero prefissato di volte, usiamo `range()`. `range(5)` produce i numeri da `0` a `4`, cioe' cinque numeri in tutto:
+
 ```python
 # Conta da 0 a 4 (5 giri)
 for i in range(5):
     print(f"Giro numero {i + 1}")
 ```
 
+L'`i + 1` serve soltanto per mostrare all'utente i giri da 1 a 5:
+
+```text
+Giro numero 1
+Giro numero 2
+Giro numero 3
+Giro numero 4
+Giro numero 5
+```
+
 ### c) Ripetere finché una condizione è vera (`while`)
-Si usa quando non si conosce in anticipo il numero di ripetizioni:
+Il ciclo `while` significa "finche'": ripete il blocco indentato finche' la sua condizione e' vera. Si usa quando non conosciamo in anticipo il numero di ripetizioni.
 
 ```python
 password_inserita = ""
@@ -137,9 +193,13 @@ while password_inserita != "1234":
 print("PIN corretto, benvenuto!")
 ```
 
----
+All'inizio `password_inserita` e' vuota, quindi e' diversa da `"1234"` e il ciclo chiede il PIN. Se l'utente inserisce un PIN errato, la condizione resta vera e il ciclo riparte. Quando inserisce `1234`, la condizione diventa falsa, il ciclo termina e viene eseguito il messaggio finale:
 
-## 6. Alto Livello vs Basso Livello
+```text
+Inserisci il PIN: 0000
+Inserisci il PIN: 1234
+PIN corretto, benvenuto!
+```
 
-- **Basso Livello (es. Assembly o C):** Il programmatore deve preoccuparsi della memoria fisica, dei registri della CPU e di come i dati sono memorizzati nei singoli byte.
-- **Alto Livello (Python):** Nasconde la complessità della macchina. Con una sola riga (`voti.append(10)`) Python alloca memoria, sposta i dati e aggiorna la lista automaticamente, permettendo a noi di concentrarci sulla **risoluzione del problema**.
+> **Attenzione:** dentro un `while` qualcosa deve cambiare, altrimenti la condizione potrebbe restare sempre vera e il ciclo non terminerebbe mai.
+
