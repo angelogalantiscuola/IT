@@ -7,36 +7,24 @@ p1 = {"nome": "Aragorn", "livello": 1, "punti_vita": 100}
 p2 = {"name": "Legolas", "pv": 85}  # Errori di battitura facili, nessun controllo
 ```
 
-Questo approccio separa i dati dalle funzioni che li manipolano.
-Nella **Programmazione a Oggetti (OOP)** uniamo **dati (attributi)** e **azioni (metodi)** in una singola struttura: la **Classe**.
+Questo approccio separa i dati dalle funzioni che li manipolano. Per capire come rappresentarli meglio, partiamo dal concetto che stiamo descrivendo: il personaggio.
 
 ---
 
-## 1. I 4 Concetti Cardine
+## 1. Nel Dominio: Entità e Sue Istanze
 
-```
-┌─────────────────────────────────────────────────────────────────────────────┐
-│ 1. LA CLASSE (Lo Stampo / Il Progetto)                                      │
-│    È la definizione teorica: stabilisce quali dati e quali azioni           │
-│    avranno tutti gli elementi di quel tipo (es. "Personaggio").              │
-├─────────────────────────────────────────────────────────────────────────────┤
-│ 2. L'OGGETTO o ISTANZA (La Cosa Concreta in RAM)                            │
-│    È l'individuo reale costruito a partire dallo stampo.                    │
-│    Occupa spazio nella memoria RAM ed esiste con i suoi valori specifici.   │
-├─────────────────────────────────────────────────────────────────────────────┤
-│ 3. GLI ATTRIBUTI (Le Variabili Interne)                                     │
-│    I dati memorizzati dentro l'oggetto (es. id, nome, punti_vita).          │
-├─────────────────────────────────────────────────────────────────────────────┤
-│ 4. I METODI (Le Azioni)                                                     │
-│    Le funzioni interne all'oggetto che operano sui suoi attributi.          │
-└─────────────────────────────────────────────────────────────────────────────┘
+Nel dominio del problema, `Personaggio` è un'**entità**: descrive la categoria degli eroi del sistema. Aragorn, Legolas e ogni altro personaggio concreto sono invece **istanze dell'entità** `Personaggio`.
+
+```text
+Entità: Personaggio
+Istanze dell'entità: Aragorn, Legolas, Gimli
 ```
 
 ---
 
-## 2. Il Modello ER: La Tabella su Disco e la Chiave Primaria (PK)
+## 2. Nel Database: Tabella, Righe e Chiave Primaria (PK)
 
-Quando i dati devono essere salvati stabilmente nel database, l'entità `Personaggio` diventa una **Tabella**.
+Quando questi dati devono essere salvati stabilmente, l'entità viene rappresentata da una **tabella** e ogni sua istanza viene rappresentata da una **riga**.
 
 ```
 Tabella: PERSONAGGIO
@@ -74,10 +62,13 @@ erDiagram
 
 ---
 
-## 3. Il Modello UML: La Classe nella Memoria RAM
+## 3. Nel Programma: Classe e Oggetti
 
-Nel codice del nostro programma, l'entità diventa una **Classe UML**. 
-Anche qui l'attributo `id` è il primo elemento fondamentale della struttura:
+Nella **Programmazione a Oggetti (OOP)** uniamo **dati (attributi)** e **azioni (metodi)** in una struttura chiamata **classe**. Nel codice, l'entità `Personaggio` viene rappresentata dalla classe `Personaggio`; un'istanza dell'entità, come Aragorn, può essere rappresentata da un oggetto, per esempio `eroe1`.
+
+La differenza principale è questa: nel modello ER un'entità descrive i **dati** del dominio; una classe descrive gli stessi dati e aggiunge le **azioni** che il programma può compiere su di essi.
+
+Una classe si può descrivere con un diagramma UML:
 
 ```mermaid
 classDiagram
@@ -89,6 +80,40 @@ classDiagram
         +presentati() str
         +subisci_danno(quantita: int) void
     }
+```
+
+La tabella e la classe rappresentano lo stesso concetto in due contesti diversi. Anche una riga e un oggetto possono rappresentare lo stesso personaggio, ma non sono la stessa cosa:
+
+```text
+PROGRAMMA                         DATABASE
+
+Classe: Personaggio               Tabella: PERSONAGGIO
+    │                                  │
+    │ crea                             │ contiene
+    ▼                                  ▼
+Oggetto: eroe1 (Aragorn)           Riga: (1, Aragorn, 1, 100)
+```
+
+L'oggetto vive nella memoria RAM mentre il programma è in esecuzione; la riga vive nel database e resta disponibile anche dopo la chiusura del programma.
+
+### I 4 Concetti Cardine della Programmazione a Oggetti
+
+```
+┌─────────────────────────────────────────────────────────────────────────────┐
+│ 1. LA CLASSE (Lo Stampo / Il Progetto)                                      │
+│    È la definizione teorica: stabilisce quali dati e quali azioni           │
+│    avranno tutti gli oggetti di quel tipo (es. "Personaggio").              │
+├─────────────────────────────────────────────────────────────────────────────┤
+│ 2. L'OGGETTO o ISTANZA (La Cosa Concreta in RAM)                            │
+│    È l'individuo concreto costruito a partire dalla classe.                 │
+│    Occupa spazio nella memoria RAM ed esiste con i suoi valori specifici.   │
+├─────────────────────────────────────────────────────────────────────────────┤
+│ 3. GLI ATTRIBUTI (Le Variabili Interne)                                     │
+│    I dati memorizzati dentro l'oggetto (es. id, nome, punti_vita).          │
+├─────────────────────────────────────────────────────────────────────────────┤
+│ 4. I METODI (Le Azioni)                                                     │
+│    Le funzioni interne all'oggetto che operano sui suoi attributi.          │
+└─────────────────────────────────────────────────────────────────────────────┘
 ```
 
 ---
