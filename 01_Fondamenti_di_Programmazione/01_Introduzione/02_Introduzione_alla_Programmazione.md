@@ -30,6 +30,42 @@ is_iscritto: bool = True  # bool (booleano): solo due valori possibili (True o F
 > 1. Rende il codice auto-esplicativo per chi lo legge (e per l'IA).
 > 2. VS Code e gli strumenti di qualità (come Ruff) possono segnalarci subito gli errori se proviamo a usare un numero come testo.
 
+### b) Regole per i Nomi delle Variabili: Niente Spazi e Niente Accenti
+
+Il nome di una variabile deve essere chiaro e descrittivo (ad esempio `prezzo_scontato` invece di una lettera generica come `x`). Tuttavia, esistono regole sintattiche obbligatorie e convenzioni professionali che ogni sviluppatore deve rispettare:
+
+#### 1. ❌ MAI inserire spazi nel nome
+In Python, lo spazio serve per separare comandi diversi. Se metti uno spazio all'interno del nome di una variabile, Python genera un errore di sintassi (`SyntaxError: invalid syntax`).
+- ❌ **Sbagliato:** `voto studente = 8` oppure `prezzo totale = 15.5`
+- ✅ **Corretto (`snake_case`):** In Python le parole multiple si uniscono con un trattino basso (`_`):
+  ```python
+  voto_studente: int = 8
+  prezzo_totale: float = 15.5
+  ```
+
+#### 2. ❌ MAI usare lettere accentate o caratteri speciali
+Anche se Python 3 permette tecnicamente alcuni caratteri Unicode, nella programmazione professionale **le lettere accentate (`à`, `è`, `é`, `ì`, `ò`, `ù`) e i simboli speciali non si usano MAI nei nomi delle variabili**.
+- ❌ **Sbagliato:** `età = 16`, `città = "Milano"`, `quantità = 3`, `è_maggiorenne = True`
+- ✅ **Corretto:** Sostituisci sempre la lettera accentata con la corrispondente lettera normale (ASCII):
+  ```python
+  eta: int = 16
+  citta: str = "Milano"
+  quantita: int = 3
+  is_maggiorenne: bool = True
+  ```
+
+> **💡 Perché evitiamo assolutamente gli accenti nei nomi?**
+> 1. **Compatibilità universale ed Encoding:** Caratteri accentati e simboli possono corrompersi o causare errori imprevedibili quando il codice viene salvato o eseguito su sistemi operativi diversi (Windows, Linux, macOS) o trasferito tramite Git.
+> 2. **Standard professionali (PEP 8):** Le linee guida ufficiali di Python stabiliscono che il codice sorgente deve usare caratteri ASCII standard per essere leggibile e manutenibile da programmatori di qualsiasi nazionalità.
+> 3. **Tastiere diverse:** Su molte tastiere estere i tasti con le lettere accentate italiane non sono presenti.
+>
+> *(Nota: all'interno del **testo delle stringhe**, come ad esempio `"L'età dello studente è 16"`, accenti e caratteri speciali sono ammessi; il divieto riguarda solo i **nomi delle variabili, delle funzioni e dei file**).*
+
+#### 3. Altre regole fondamentali di sintassi
+- **Iniziare sempre con una lettera o `_`:** Un nome di variabile non può **mai** iniziare con una cifra numerica (`1voto` ❌ genera errore; `voto1` ✅ è corretto).
+- **Case-sensitive (maiuscole e minuscole contano):** Per Python `voto`, `Voto` e `VOTO` sono tre variabili distinte. La convenzione in Python è scrivere i nomi sempre in **tutto minuscolo** con trattino basso (`snake_case`).
+- **No alle parole riservate (Keywords):** Non si possono usare come nomi di variabili i comandi e le parole chiave riservate di Python (come `if`, `else`, `for`, `while`, `def`, `class`, `import`, `print`).
+
 ---
 
 ## 3. La Scatola a Scomparti: Le Liste
@@ -94,7 +130,42 @@ print(f"Totale da pagare: {prezzo:.2f}€")  # Stampa: 4.50€
 
 ---
 
-## 5. Il Controllo del Flusso
+## 5. La Struttura del Codice: L'Indentazione
+
+Prima di vedere come prendere decisioni e ripetere azioni, dobbiamo comprendere la regola sintattica e visiva più importante di Python: **l'indentazione**.
+
+### 📐 Il Rientro ha Significato!
+
+In molti linguaggi di programmazione (come C, C++, Java o JavaScript) i blocchi di codice sono racchiusi tra parentesi graffe `{ ... }` e l'allineamento del testo ha uno scopo puramente estetico.
+
+In **Python**, invece, **l'indentazione (lo spazio vuoto a inizio riga) fa parte della sintassi ed è obbligatoria**: stabilisce dove inizia e dove finisce un blocco di istruzioni.
+
+1. **I Due Punti (`:`):** Alla fine di istruzioni di controllo come `if`, `elif`, `else`, `for`, `while` o delle funzioni `def`, si mettono sempre i due punti `:`. I due punti dicono a Python: *"Attenzione, da qui inizia un blocco di istruzioni collegate"*.
+2. **Il Rientro di 4 Spazi:** Tutte le istruzioni che appartengono a quel blocco devono essere rientrate verso destra dello stesso numero di spazi. Lo standard ufficiale di Python (**PEP 8**) prevede esattamente **4 spazi** per ogni livello di rientro (in VS Code basta premere il tasto **`Tab`**, che inserisce automaticamente i 4 spazi).
+3. **Uscire dal blocco (De-indent):** Per indicare a Python che il blocco è concluso, si torna indietro a sinistra verso il margine (premendo `Backspace` o `Shift + Tab`), riallineandosi con l'istruzione precedente.
+
+```python
+# Esempio pratico di indentazione corretta:
+temperatura: float = 28.5
+
+if temperatura > 25.0:
+    # ──> RIENTRO DI 4 SPAZI: queste due righe appartengono all'if
+    print("Fa caldo!")
+    print("Accendi il ventilatore.")
+
+# ──> NESSUN RIENTRO (allineato a sinistra): questa riga è FUORI dall'if
+print("Controllo della temperatura completato.")  # Verrà eseguita SEMPRE
+```
+
+#### ⚠️ Errori Comuni da Evitare: `IndentationError`
+Se non rispetti l'allineamento dei blocchi, Python rifiuterà di avviare il programma e segnalerà un errore prima dell'esecuzione:
+- `IndentationError: expected an indented block`: hai scritto un'istruzione che termina con i due punti `:`, ma la riga successiva non è rientrata a destra.
+- `IndentationError: unexpected indent`: hai inserito uno spazio o un rientro a inizio riga dove non era richiesto alcun blocco.
+- **Suggerimento pratico in VS Code:** VS Code ti aiuta mostrando delle linee verticali sottili che guidano visivamente i livelli di rientro. Inoltre, salvando con `Ctrl + S`, il formatter (**Ruff**) corregge e allinea automaticamente eventuali imprecisioni negli spazi.
+
+---
+
+## 6. Il Controllo del Flusso
 
 ### a) Prendere Decisioni (`if / elif / else`)
 Un programma spesso deve scegliere quale strada seguire. Una condizione logica e' una domanda a cui Python puo' rispondere solo `True` (vero) o `False` (falso).
@@ -202,4 +273,20 @@ PIN corretto, benvenuto!
 ```
 
 > **Attenzione:** dentro un `while` qualcosa deve cambiare, altrimenti la condizione potrebbe restare sempre vera e il ciclo non terminerebbe mai.
+
+---
+
+## 7. Dove Cercare Nuovi Comandi: W3Schools
+
+Non serve imparare ogni comando a memoria: la vera abilità è saper consultare documentazione chiara ed essenziale.
+
+Il punto di riferimento consigliato è **[W3Schools Python](https://www.w3schools.com/python/)**:
+- **Esempi minimi:** per capire al volo la sintassi di ogni comando.
+- **Tasto "Try it Yourself":** per provare e modificare il codice direttamente nel browser.
+- **Tabelle di riferimento pratiche:**
+  - [Metodi delle Liste](https://www.w3schools.com/python/python_ref_list.asp) (`append`, `remove`, `pop`, `sort`)
+  - [Metodi delle Stringhe](https://www.w3schools.com/python/python_ref_string.asp) (`lower`, `upper`, `strip`, `split`)
+  - [Funzioni integrate](https://www.w3schools.com/python/python_ref_functions.asp) (`len`, `range`, `min`, `max`, `sum`)
+
+> **Regola pratica:** quando non ricordi un comando o cerchi un metodo già pronto, cercalo su W3Schools, fai una prova rapida nel browser e poi usalo in VS Code.
 
