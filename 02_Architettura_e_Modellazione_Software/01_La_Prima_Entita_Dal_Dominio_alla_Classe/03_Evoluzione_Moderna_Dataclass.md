@@ -62,7 +62,45 @@ Ora che conosci la meccanica tradizionale di `__init__`, capisci esattamente cos
 
 ---
 
-## 3. Creare e Usare le Istanze
+## 3. Inizializzare Liste e Dizionari
+
+Per un attributo semplice, come `livello: int = 1`, il valore predefinito può essere scritto direttamente. Liste e dizionari, invece, sono modificabili: un valore predefinito scritto direttamente potrebbe essere condiviso tra le istanze. Le versioni moderne di `dataclasses` rifiutano i default mutabili più comuni, come `[]` e `{}`, proprio per prevenire questo problema.
+
+Con `field(default_factory=...)` chiediamo alla dataclass di creare una nuova lista o un nuovo dizionario ogni volta che costruiamo un oggetto:
+
+```python
+from dataclasses import dataclass, field
+
+
+@dataclass
+class Inventario:
+    oggetti: list[str] = field(default_factory=list)
+    quantita_per_oggetto: dict[str, int] = field(default_factory=dict)
+```
+
+`list` e `dict` sono funzioni senza parentesi: la dataclass le chiama per creare le collezioni vuote. Non scrivere `default_factory=list()` o `default_factory=dict()`: in quel caso passeresti il risultato della chiamata, non la funzione da chiamare per ogni istanza.
+
+```python
+zaino_eroe = Inventario()
+zaino_compagno = Inventario()
+
+zaino_eroe.oggetti.append("Pozione")
+zaino_eroe.quantita_per_oggetto["Pozione"] = 2
+
+print(zaino_eroe.oggetti)       # ['Pozione']
+print(zaino_compagno.oggetti)   # []
+print(zaino_compagno.quantita_per_oggetto)  # {}
+```
+
+Ogni oggetto riceve le proprie collezioni. Per questo non si scrivono valori predefiniti mutabili direttamente, come `oggetti: list[str] = []`: per liste e dizionari si usa `default_factory`.
+
+Il costruttore generato accetta comunque collezioni iniziali, se vuoi fornirle tu:
+
+```python
+zaino = Inventario(oggetti=["Spada"], quantita_per_oggetto={"Pozione": 3})
+```
+
+## 4. Creare e Usare le Istanze
 
 ```python
 # Creiamo due oggetti distinti
@@ -77,7 +115,7 @@ print(f"PV di {eroe2.nome}: {eroe2.punti_vita}")  # 85 (intatto)
 
 ---
 
-## 4. Collaudare con Pytest
+## 5. Collaudare con Pytest
 
 I test scritti con `pytest` funzionano allo stesso identico modo:
 

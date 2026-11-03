@@ -11,7 +11,8 @@ flowchart LR
 
     subgraph S2 ["2. Struttura e Controllo del Flusso"]
         direction TB
-        INDENT["Indentazione a 4 spazi: definisce i blocchi"] --> COND["Decisioni: if / elif / else"]
+        INDENT["Indentazione a 4 spazi: definisce i blocchi"] --> BOOL["Espressioni booleane: confronti, and / or / not"]
+        BOOL --> COND["Decisioni: if / elif / else"]
         COND --> FOR_L["Ciclo for su collezioni"]
         FOR_L --> WHILE_L["Ciclo while condizionale"]
     end

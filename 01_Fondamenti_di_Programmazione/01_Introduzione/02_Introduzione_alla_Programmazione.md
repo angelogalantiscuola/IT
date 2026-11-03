@@ -167,8 +167,10 @@ Se non rispetti l'allineamento dei blocchi, Python rifiuterà di avviare il prog
 
 ## 6. Il Controllo del Flusso
 
+Per costruire condizioni con confronti e operatori come `and`, `or` e `not`, consulta la lezione [Espressioni Booleane](03_Espressioni_Booleane.md).
+
 ### a) Prendere Decisioni (`if / elif / else`)
-Un programma spesso deve scegliere quale strada seguire. Una condizione logica e' una domanda a cui Python puo' rispondere solo `True` (vero) o `False` (falso).
+Un programma spesso deve scegliere quale strada seguire. Una condizione logica è un'espressione a cui Python risponde `True` (vero) oppure `False` (falso).
 
 `if`, `elif` e `else` formano **un'unica catena di scelta**:
 
@@ -289,4 +291,3 @@ Il punto di riferimento consigliato è **[W3Schools Python](https://www.w3school
   - [Funzioni integrate](https://www.w3schools.com/python/python_ref_functions.asp) (`len`, `range`, `min`, `max`, `sum`)
 
 > **Regola pratica:** quando non ricordi un comando o cerchi un metodo già pronto, cercalo su W3Schools, fai una prova rapida nel browser e poi usalo in VS Code.
-
