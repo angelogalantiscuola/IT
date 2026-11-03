@@ -73,7 +73,7 @@ Vogliamo che ogni volta che premiamo **Salva (`Ctrl+S`)**, VS Code pulisca e for
 
 1. Premi `F1` (oppure `Ctrl+Shift+P`).
 2. Digita `Preferences: Open User Settings (JSON)` e premi Invio.
-3. Incolla questo blocco di configurazione:
+3. **Integra queste impostazioni nel file JSON esistente**:
 
 ```json
 {
@@ -87,6 +87,36 @@ Vogliamo che ogni volta che premiamo **Salva (`Ctrl+S`)**, VS Code pulisca e for
     }
 }
 ```
+
+**Attenzione:** il file `settings.json` spesso contiene già altre impostazioni. Non cancellare il suo contenuto e non incollare il blocco qui sopra come un secondo oggetto JSON: un file JSON può avere un solo oggetto principale. Aggiungi invece le nuove proprietà all'oggetto già presente, mantenendo quelle esistenti e separando le proprietà con una virgola.
+
+Per esempio, se il file contiene già:
+
+```json
+{
+    "editor.fontSize": 14,
+    "files.autoSave": "afterDelay"
+}
+```
+
+dopo l'integrazione dovrà contenere tutte le impostazioni, per esempio:
+
+```json
+{
+    "editor.fontSize": 14,
+    "files.autoSave": "afterDelay",
+    "[python]": {
+        "editor.defaultFormatter": "charliermarsh.ruff",
+        "editor.formatOnSave": true,
+        "editor.codeActionsOnSave": {
+            "source.fixAll": "explicit",
+            "source.organizeImports": "explicit"
+        }
+    }
+}
+```
+
+Se nel file esiste già una sezione `"[python]"`, **aggiungi le impostazioni Ruff al suo interno** invece di crearne un'altra. Non devono esserci due proprietà `"[python]"` allo stesso livello.
 
 ---
 
