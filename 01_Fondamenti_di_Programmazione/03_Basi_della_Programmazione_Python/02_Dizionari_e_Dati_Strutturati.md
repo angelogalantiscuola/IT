@@ -14,8 +14,10 @@ Un dizionario è una collezione di coppie **chiave: valore** racchiusa tra paren
 * **Valore (Value):** Il dato associato a quell'etichetta (può essere di qualsiasi tipo: numero, testo, booleano o persino un'altra lista!).
 
 ```python
+from typing import Any
+
 # Definizione di un dizionario che descrive uno studente
-studente: dict[str, any] = {
+studente: dict[str, Any] = {
     "nome": "Alice",
     "cognome": "Rossi",
     "eta": 17,
@@ -38,7 +40,13 @@ studente["classe"] = "3^A Info"  # Aggiunge una nuova chiave
 ## 2. Operazioni Comuni sui Dizionari
 
 ```python
-studente = {"nome": "Mario", "eta": 16, "citta": "Milano"}
+from typing import Any
+
+studente: dict[str, Any] = {
+    "nome": "Mario",
+    "eta": 16,
+    "citta": "Milano",
+}
 
 # Verificare se una chiave esiste prima di usarla (evita KeyError!)
 if "email" in studente:
